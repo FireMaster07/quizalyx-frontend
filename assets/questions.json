@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "question": "Which planet in our solar system is known for its prominent ring system?",
+    "options": ["Mars", "Jupiter", "Saturn", "Venus"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 2,
+    "question": "Which author wrote the novel '1984'?",
+    "options": ["Aldous Huxley", "George Orwell", "Ray Bradbury", "J.R.R. Tolkien"],
+    "answerIndex": 1,
+    "category": "Literature",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 3,
+    "question": "What is the capital city of Japan?",
+    "options": ["Seoul", "Beijing", "Tokyo", "Osaka"],
+    "answerIndex": 2,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 4,
+    "question": "In computing, what does 'HTTP' stand for?",
+    "options": [
+      "HyperText Transfer Protocol",
+      "High Transfer Text Process",
+      "Hyperlink Text Protocol",
+      "Host Transfer Text Protocol"
+    ],
+    "answerIndex": 0,
+    "category": "Technology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 5,
+    "question": "Which element is represented by the chemical symbol 'O'?",
+    "options": ["Gold", "Oxygen", "Osmium", "Oganesson"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 6,
+    "question": "Who painted the Mona Lisa?",
+    "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+    "answerIndex": 2,
+    "category": "Art",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 7,
+    "question": "What is the largest mammal on Earth?",
+    "options": ["African Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+    "answerIndex": 1,
+    "category": "Biology",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 8,
+    "question": "Which of these numbers is a prime number?",
+    "options": ["48", "51", "53", "57"],
+    "answerIndex": 2,
+    "category": "Math",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 9,
+    "question": "Which continent is the Sahara Desert located on?",
+    "options": ["Asia", "Africa", "Australia", "South America"],
+    "answerIndex": 1,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 10,
+    "question": "Which musical instrument has keys, pedals, and strings and is played by pressing keys?",
+    "options": ["Guitar", "Violin", "Piano", "Clarinet"],
+    "answerIndex": 2,
+    "category": "Music",
+    "difficulty": "Easy"
+  }
+]

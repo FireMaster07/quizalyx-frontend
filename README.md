@@ -1,6 +1,6 @@
 # quizalyx_prototype
 
-A mobile quiz appliction
+A mobile quiz application
 
 ## Getting Started
 

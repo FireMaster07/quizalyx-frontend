@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'package:flutter/services.dart';
+import 'intro_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
   runApp(const QuizAlyxApp());
 }
 
@@ -21,7 +26,7 @@ class QuizAlyxApp extends StatelessWidget {
           elevation: 0,
         ),
       ),
-      home: const HomeScreen(),
+      home: const IntroScreen(),
     );
   }
 }

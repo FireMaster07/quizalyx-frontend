@@ -83,5 +83,725 @@
     "answerIndex": 2,
     "category": "Music",
     "difficulty": "Easy"
+  },
+  {
+    "id": 11,
+    "question": "What is the hardest natural substance on Earth?",
+    "options": ["Diamond", "Gold", "Iron", "Quartz"],
+    "answerIndex": 0,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 12,
+    "question": "Which country hosted the 2016 Summer Olympics?",
+    "options": ["China", "Brazil", "United Kingdom", "Japan"],
+    "answerIndex": 1,
+    "category": "Sports",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 13,
+    "question": "Who developed the theory of relativity?",
+    "options": ["Isaac Newton", "Albert Einstein", "Nikola Tesla", "Galileo Galilei"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 14,
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "options": ["China", "Japan", "Thailand", "India"],
+    "answerIndex": 1,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 15,
+    "question": "Who was the first man to step on the Moon?",
+    "options": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "Michael Collins"],
+    "answerIndex": 1,
+    "category": "History",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 16,
+    "question": "Which gas do plants absorb from the atmosphere during photosynthesis?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "answerIndex": 1,
+    "category": "Biology",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 17,
+    "question": "What is the smallest prime number?",
+    "options": ["0", "1", "2", "3"],
+    "answerIndex": 2,
+    "category": "Math",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 18,
+    "question": "Which famous scientist introduced the idea of natural selection?",
+    "options": ["Gregor Mendel", "Charles Darwin", "Louis Pasteur", "Carl Linnaeus"],
+    "answerIndex": 1,
+    "category": "Biology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 19,
+    "question": "Who wrote 'Hamlet'?",
+    "options": ["Charles Dickens", "Mark Twain", "William Shakespeare", "Jane Austen"],
+    "answerIndex": 2,
+    "category": "Literature",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 20,
+    "question": "What is the chemical formula for water?",
+    "options": ["H2O", "CO2", "NaCl", "O2"],
+    "answerIndex": 0,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 21,
+    "question": "Which country gifted the Statue of Liberty to the United States?",
+    "options": ["United Kingdom", "Germany", "France", "Italy"],
+    "answerIndex": 2,
+    "category": "History",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 22,
+    "question": "What is the square root of 81?",
+    "options": ["7", "8", "9", "10"],
+    "answerIndex": 2,
+    "category": "Math",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 23,
+    "question": "Which part of the human body is responsible for pumping blood?",
+    "options": ["Lungs", "Brain", "Heart", "Liver"],
+    "answerIndex": 2,
+    "category": "Biology",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 24,
+    "question": "Who was known as the 'Maid of Orléans'?",
+    "options": ["Cleopatra", "Joan of Arc", "Queen Elizabeth I", "Marie Curie"],
+    "answerIndex": 1,
+    "category": "History",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 25,
+    "question": "Which element has the atomic number 1?",
+    "options": ["Oxygen", "Hydrogen", "Helium", "Carbon"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 26,
+    "question": "Who composed the Four Seasons?",
+    "options": ["Johann Sebastian Bach", "Antonio Vivaldi", "Ludwig van Beethoven", "Wolfgang Mozart"],
+    "answerIndex": 1,
+    "category": "Music",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 27,
+    "question": "Which continent is the Amazon Rainforest located on?",
+    "options": ["Africa", "Asia", "South America", "Australia"],
+    "answerIndex": 2,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 28,
+    "question": "What is the freezing point of water in Celsius?",
+    "options": ["-100°C", "0°C", "10°C", "100°C"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 29,
+    "question": "Who painted 'The Starry Night'?",
+    "options": ["Claude Monet", "Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci"],
+    "answerIndex": 2,
+    "category": "Art",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 30,
+    "question": "Which country is known for the Great Barrier Reef?",
+    "options": ["Australia", "Canada", "Mexico", "South Africa"],
+    "answerIndex": 0,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 31,
+    "question": "In what year did World War II end?",
+    "options": ["1940", "1943", "1945", "1950"],
+    "answerIndex": 2,
+    "category": "History",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 32,
+    "question": "What is the main ingredient in guacamole?",
+    "options": ["Tomato", "Avocado", "Cucumber", "Pepper"],
+    "answerIndex": 1,
+    "category": "Food",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 33,
+    "question": "Which animal is known as the 'King of the Jungle'?",
+    "options": ["Elephant", "Tiger", "Lion", "Cheetah"],
+    "answerIndex": 2,
+    "category": "Biology",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 34,
+    "question": "Which continent is the largest by land area?",
+    "options": ["Africa", "North America", "Asia", "Europe"],
+    "answerIndex": 2,
+    "category": "Geography",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 35,
+    "question": "What is the capital city of Canada?",
+    "options": ["Toronto", "Vancouver", "Ottawa", "Montreal"],
+    "answerIndex": 2,
+    "category": "Geography",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 36,
+    "question": "Which chemical element has the symbol 'Fe'?",
+    "options": ["Fluorine", "Iron", "Francium", "Fermium"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 37,
+    "question": "What does the 'E' in 'E-mail' stand for?",
+    "options": ["Electronic", "Encoded", "Express", "Encrypted"],
+    "answerIndex": 0,
+    "category": "Technology",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 38,
+    "question": "Who discovered penicillin?",
+    "options": ["Alexander Fleming", "Marie Curie", "Isaac Newton", "Albert Einstein"],
+    "answerIndex": 0,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 39,
+    "question": "What is 12 multiplied by 8?",
+    "options": ["80", "88", "96", "108"],
+    "answerIndex": 2,
+    "category": "Math",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 40,
+    "question": "Which sport is associated with Wimbledon?",
+    "options": ["Cricket", "Football", "Tennis", "Rugby"],
+    "answerIndex": 2,
+    "category": "Sports",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 41,
+    "question": "Who invented the telephone?",
+    "options": ["Nikola Tesla", "Alexander Graham Bell", "Thomas Edison", "Guglielmo Marconi"],
+    "answerIndex": 1,
+    "category": "Technology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 42,
+    "question": "Which ocean is the largest on Earth?",
+    "options": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+    "answerIndex": 2,
+    "category": "Geography",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 43,
+    "question": "In which country was the game of chess invented?",
+    "options": ["China", "Persia", "India", "Egypt"],
+    "answerIndex": 2,
+    "category": "History",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 44,
+    "question": "What is the largest internal organ in the human body?",
+    "options": ["Brain", "Liver", "Heart", "Lungs"],
+    "answerIndex": 1,
+    "category": "Biology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 45,
+    "question": "What is the value of Pi up to two decimal places?",
+    "options": ["3.12", "3.14", "3.16", "3.18"],
+    "answerIndex": 1,
+    "category": "Math",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 46,
+    "question": "Which artist is known for the painting 'Guernica'?",
+    "options": ["Salvador Dalí", "Pablo Picasso", "Claude Monet", "Frida Kahlo"],
+    "answerIndex": 1,
+    "category": "Art",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 47,
+    "question": "What is the main language spoken in Brazil?",
+    "options": ["Spanish", "Portuguese", "English", "French"],
+    "answerIndex": 1,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 48,
+    "question": "Which natural phenomenon is measured using the Richter scale?",
+    "options": ["Hurricanes", "Tornadoes", "Earthquakes", "Volcanic eruptions"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 49,
+    "question": "Who is the author of 'The Odyssey'?",
+    "options": ["Virgil", "Homer", "Plato", "Socrates"],
+    "answerIndex": 1,
+    "category": "Literature",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 50,
+    "question": "Which metal is liquid at room temperature?",
+    "options": ["Iron", "Mercury", "Silver", "Copper"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 51,
+    "question": "Which famous building is located in Agra, India?",
+    "options": ["Eiffel Tower", "Taj Mahal", "Great Wall", "Colosseum"],
+    "answerIndex": 1,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 52,
+    "question": "What is the main gas found in the Earth's atmosphere?",
+    "options": ["Oxygen", "Hydrogen", "Nitrogen", "Carbon Dioxide"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 53,
+    "question": "Who is the Greek god of the sea?",
+    "options": ["Zeus", "Poseidon", "Hades", "Apollo"],
+    "answerIndex": 1,
+    "category": "Mythology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 54,
+    "question": "What is the chemical symbol for gold?",
+    "options": ["G", "Go", "Au", "Ag"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 55,
+    "question": "Who painted 'The Last Supper'?",
+    "options": ["Raphael", "Michelangelo", "Leonardo da Vinci", "Donatello"],
+    "answerIndex": 2,
+    "category": "Art",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 56,
+    "question": "Which country invented paper?",
+    "options": ["Egypt", "China", "Greece", "India"],
+    "answerIndex": 1,
+    "category": "History",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 57,
+    "question": "What is the largest desert in the world?",
+    "options": ["Arabian", "Gobi", "Sahara", "Antarctic"],
+    "answerIndex": 3,
+    "category": "Geography",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 58,
+    "question": "In which country did the Renaissance begin?",
+    "options": ["France", "Italy", "Germany", "Spain"],
+    "answerIndex": 1,
+    "category": "History",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 59,
+    "question": "What is the process by which plants make their food?",
+    "options": ["Respiration", "Fermentation", "Photosynthesis", "Transpiration"],
+    "answerIndex": 2,
+    "category": "Biology",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 60,
+    "question": "Which planet is closest to the Sun?",
+    "options": ["Mercury", "Venus", "Earth", "Mars"],
+    "answerIndex": 0,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 61,
+    "question": "Which blood type is known as the universal donor?",
+    "options": ["A", "B", "AB", "O negative"],
+    "answerIndex": 3,
+    "category": "Biology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 62,
+    "question": "What does CPU stand for?",
+    "options": ["Central Process Unit", "Central Processing Unit", "Computer Personal Unit", "Central Processor Utility"],
+    "answerIndex": 1,
+    "category": "Technology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 63,
+    "question": "Who discovered gravity?",
+    "options": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Niels Bohr"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 64,
+    "question": "Which city is known as the Big Apple?",
+    "options": ["Los Angeles", "New York City", "Chicago", "San Francisco"],
+    "answerIndex": 1,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 65,
+    "question": "What is the boiling point of water in Celsius?",
+    "options": ["50°C", "90°C", "100°C", "120°C"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 66,
+    "question": "Which artist cut off his own ear?",
+    "options": ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Salvador Dali"],
+    "answerIndex": 1,
+    "category": "Art",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 67,
+    "question": "Which gas do humans need to breathe to survive?",
+    "options": ["Nitrogen", "Carbon Dioxide", "Oxygen", "Hydrogen"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 68,
+    "question": "What is the capital of France?",
+    "options": ["Paris", "Lyon", "Marseille", "Nice"],
+    "answerIndex": 0,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 69,
+    "question": "Who is the author of 'Pride and Prejudice'?",
+    "options": ["Charlotte Brontë", "Mary Shelley", "Jane Austen", "Emily Dickinson"],
+    "answerIndex": 2,
+    "category": "Literature",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 70,
+    "question": "What is the main component of the Sun?",
+    "options": ["Helium", "Carbon", "Hydrogen", "Nitrogen"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 71,
+    "question": "What is the largest planet in our solar system?",
+    "options": ["Earth", "Saturn", "Jupiter", "Neptune"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 72,
+    "question": "Who wrote the play 'Macbeth'?",
+    "options": ["William Shakespeare", "Oscar Wilde", "George Bernard Shaw", "T.S. Eliot"],
+    "answerIndex": 0,
+    "category": "Literature",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 73,
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Mars", "Venus", "Mercury", "Jupiter"],
+    "answerIndex": 0,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 74,
+    "question": "Which is the longest river in the world?",
+    "options": ["Amazon", "Yangtze", "Nile", "Mississippi"],
+    "answerIndex": 2,
+    "category": "Geography",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 75,
+    "question": "Which scientist is known as the father of modern physics?",
+    "options": ["Isaac Newton", "Albert Einstein", "Niels Bohr", "Max Planck"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 76,
+    "question": "In which country is Mount Everest located?",
+    "options": ["China", "India", "Nepal", "Bhutan"],
+    "answerIndex": 2,
+    "category": "Geography",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 77,
+    "question": "What does DNA stand for?",
+    "options": ["Deoxyribonucleic Acid", "Dinucleic Acid", "Deoxyribose Nucleic Agent", "Double Helix Acid"],
+    "answerIndex": 0,
+    "category": "Biology",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 78,
+    "question": "Who was the first President of the United States?",
+    "options": ["Thomas Jefferson", "Abraham Lincoln", "George Washington", "John Adams"],
+    "answerIndex": 2,
+    "category": "History",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 79,
+    "question": "Which is the smallest continent by land area?",
+    "options": ["Europe", "Australia", "Antarctica", "South America"],
+    "answerIndex": 1,
+    "category": "Geography",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 80,
+    "question": "Which gas do plants release during photosynthesis?",
+    "options": ["Carbon Dioxide", "Oxygen", "Hydrogen", "Nitrogen"],
+    "answerIndex": 1,
+    "category": "Biology",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 81,
+    "question": "Which famous physicist developed the laws of motion?",
+    "options": ["Albert Einstein", "Isaac Newton", "Stephen Hawking", "Galileo Galilei"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 82,
+    "question": "Which country is famous for the pyramids of Giza?",
+    "options": ["Egypt", "Mexico", "Peru", "Iraq"],
+    "answerIndex": 0,
+    "category": "History",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 83,
+    "question": "What is the process of water turning into vapor called?",
+    "options": ["Condensation", "Precipitation", "Evaporation", "Transpiration"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 84,
+    "question": "Who painted 'Girl with a Pearl Earring'?",
+    "options": ["Johannes Vermeer", "Rembrandt", "Michelangelo", "Caravaggio"],
+    "answerIndex": 0,
+    "category": "Art",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 85,
+    "question": "What is the powerhouse of the cell?",
+    "options": ["Nucleus", "Mitochondria", "Ribosome", "Chloroplast"],
+    "answerIndex": 1,
+    "category": "Biology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 86,
+    "question": "Which planet has the most moons?",
+    "options": ["Earth", "Jupiter", "Saturn", "Neptune"],
+    "answerIndex": 2,
+    "category": "Science",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 87,
+    "question": "Who invented the light bulb?",
+    "options": ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Benjamin Franklin"],
+    "answerIndex": 1,
+    "category": "Technology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 88,
+    "question": "Which is the fastest land animal?",
+    "options": ["Cheetah", "Lion", "Horse", "Leopard"],
+    "answerIndex": 0,
+    "category": "Biology",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 89,
+    "question": "Who wrote 'The Divine Comedy'?",
+    "options": ["Dante Alighieri", "Geoffrey Chaucer", "John Milton", "Homer"],
+    "answerIndex": 0,
+    "category": "Literature",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 90,
+    "question": "What is the currency of Japan?",
+    "options": ["Yuan", "Yen", "Won", "Baht"],
+    "answerIndex": 1,
+    "category": "Economy",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 91,
+    "question": "What is H2SO4 commonly known as?",
+    "options": ["Hydrochloric acid", "Sulfuric acid", "Nitric acid", "Acetic acid"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Hard"
+  },
+  {
+    "id": 92,
+    "question": "Who was the first woman to win a Nobel Prize?",
+    "options": ["Rosalind Franklin", "Marie Curie", "Ada Lovelace", "Jane Goodall"],
+    "answerIndex": 1,
+    "category": "History",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 93,
+    "question": "Which ocean lies on the east coast of the United States?",
+    "options": ["Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Arctic Ocean"],
+    "answerIndex": 0,
+    "category": "Geography",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 94,
+    "question": "Which part of the plant conducts photosynthesis?",
+    "options": ["Root", "Stem", "Leaf", "Flower"],
+    "answerIndex": 2,
+    "category": "Biology",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 95,
+    "question": "What is the capital city of Australia?",
+    "options": ["Sydney", "Melbourne", "Canberra", "Perth"],
+    "answerIndex": 2,
+    "category": "Geography",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 96,
+    "question": "Which country invented pizza?",
+    "options": ["France", "Italy", "Greece", "Spain"],
+    "answerIndex": 1,
+    "category": "Food",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 97,
+    "question": "Which metal is most commonly used in electrical wiring?",
+    "options": ["Gold", "Silver", "Copper", "Iron"],
+    "answerIndex": 2,
+    "category": "Technology",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 98,
+    "question": "Who composed 'Für Elise'?",
+    "options": ["Mozart", "Beethoven", "Bach", "Chopin"],
+    "answerIndex": 1,
+    "category": "Music",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 99,
+    "question": "Which instrument measures atmospheric pressure?",
+    "options": ["Thermometer", "Barometer", "Hygrometer", "Anemometer"],
+    "answerIndex": 1,
+    "category": "Science",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 100,
+    "question": "What is the main ingredient in bread?",
+    "options": ["Rice", "Flour", "Sugar", "Milk"],
+    "answerIndex": 1,
+    "category": "Food",
+    "difficulty": "Easy"
   }
 ]

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.quizalyx.quizalyx_prototype"
+    namespace = "com.quizalyx.quizalyx"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -16,12 +16,12 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = "11"
     }
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.quizalyx.quizalyx_prototype"
+        applicationId = "com.quizalyx.quizalyx"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

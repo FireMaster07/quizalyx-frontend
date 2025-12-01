@@ -1,4 +1,4 @@
-package com.quizalyx.quizalyx_prototype
+package com.quizalyx.quizalyx
 
 import io.flutter.embedding.android.FlutterActivity
 

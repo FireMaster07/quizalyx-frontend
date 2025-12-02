@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'main.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -21,7 +22,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _loadSettings();
   }
 
-  // Load saved settings from SharedPreferences
   Future<void> _loadSettings() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -33,200 +33,338 @@ class _SettingsScreenState extends State<SettingsScreen> {
     });
   }
 
+  Future<void> _saveSettings() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('purple_theme', isPurpleTheme);
+    await prefs.setInt('number_of_questions', numberOfQuestions);
+    await prefs.setBool('show_difficulty', showDifficulty);
+    await prefs.setInt('timed_duration', timedQuestionDuration);
+    await prefs.setInt('endless_duration', endlessDuration);
+
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('Settings saved successfully!'),
+          backgroundColor: AppColors.success,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadius.md),
+          ),
+        ),
+      );
+    }
+  }
+
+  Future<void> _resetHighScores() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: AppColors.surface,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadius.xl),
+        ),
+        title: const Text(
+          'Reset High Scores?',
+          style: TextStyle(color: Colors.white),
+        ),
+        content: const Text(
+          'This will delete all your high scores. This action cannot be undone.',
+          style: TextStyle(color: AppColors.textSecondary),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, true),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.error,
+              foregroundColor: Colors.white,
+            ),
+            child: const Text('Reset'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed == true) {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove('endless_highscore');
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('High scores reset successfully!'),
+            backgroundColor: AppColors.success,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(AppRadius.md),
+            ),
+          ),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final textColor = Colors.purpleAccent.shade100;
-
-    // deep purple background
-    final background = const Color(0xFF1A0033);
-
-    // Shockwave purple divider
-    final dividerColor = const Color(0xFF7A3CF4);
-
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
+        backgroundColor: AppColors.surface,
         title: const Text('Settings'),
-        backgroundColor: const Color(0xFF4B0082),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_rounded),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Theme Switch
-            SwitchListTile(
-              title: Text('Purple Theme', style: TextStyle(color: textColor)),
+      body: ListView(
+        padding: const EdgeInsets.all(AppSpacing.md),
+        children: [
+          const SizedBox(height: AppSpacing.md),
+          
+          // Appearance Section
+          _buildSectionHeader('Appearance', Icons.palette_rounded),
+          const SizedBox(height: AppSpacing.md),
+          _buildSettingCard(
+            child: SwitchListTile(
+              title: const Text(
+                'Purple Theme',
+                style: TextStyle(color: Colors.white),
+              ),
+              subtitle: Text(
+                'Use purple gradient for question cards',
+                style: TextStyle(color: AppColors.textSecondary, fontSize: 12),
+              ),
               value: isPurpleTheme,
-              onChanged: (val) {
-                setState(() => isPurpleTheme = val);
-              },
-              activeColor: Colors.purpleAccent.shade400,
+              onChanged: (val) => setState(() => isPurpleTheme = val),
+              activeColor: AppColors.primary,
+              contentPadding: EdgeInsets.zero,
             ),
-            Divider(color: dividerColor),
+          ),
+          const SizedBox(height: AppSpacing.xl),
 
-            // Number of Questions
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // Gameplay Section
+          _buildSectionHeader('Gameplay', Icons.gamepad_rounded),
+          const SizedBox(height: AppSpacing.md),
+          
+          _buildSettingCard(
+            child: Column(
               children: [
-                Text('Number of Questions', style: TextStyle(color: textColor)),
-                DropdownButton<int>(
+                _buildDropdownRow(
+                  label: 'Number of Questions',
+                  icon: Icons.format_list_numbered_rounded,
                   value: numberOfQuestions,
-                  dropdownColor: Colors.black,
-                  style: TextStyle(color: textColor, fontSize: 16),
-                  items: [5, 10, 15].map((e) {
-                    return DropdownMenuItem<int>(
-                      value: e,
-                      child: Text('$e'),
-                    );
-                  }).toList(),
+                  items: [5, 10, 15, 20],
                   onChanged: (val) {
-                    if (val != null) setState(() => numberOfQuestions = val);
+                    if (val != null) {
+                      setState(() => numberOfQuestions = val);
+                    }
                   },
                 ),
-              ],
-            ),
-            Divider(color: dividerColor),
-
-            // Show Difficulty Switch
-            SwitchListTile(
-              title: Text('Show Difficulty', style: TextStyle(color: textColor)),
-              value: showDifficulty,
-              onChanged: (val) {
-                setState(() => showDifficulty = val);
-              },
-              activeColor: Colors.purpleAccent.shade400,
-            ),
-            Divider(color: dividerColor),
-
-            // Timed Duration
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Timed Question Duration (s)', style: TextStyle(color: textColor)),
-                DropdownButton<int>(
+                Divider(color: AppColors.surfaceLight, height: 32),
+                _buildDropdownRow(
+                  label: 'Timed Duration (seconds)',
+                  icon: Icons.timer_rounded,
                   value: timedQuestionDuration,
-                  dropdownColor: Colors.black,
-                  style: TextStyle(color: textColor, fontSize: 16),
-                  items: [15, 30, 45].map((e) {
-                    return DropdownMenuItem<int>(
-                      value: e,
-                      child: Text('$e'),
-                    );
-                  }).toList(),
+                  items: [15, 30, 45, 60],
                   onChanged: (val) {
-                    if (val != null) setState(() => timedQuestionDuration = val);
+                    if (val != null) {
+                      setState(() => timedQuestionDuration = val);
+                    }
                   },
                 ),
-              ],
-            ),
-            Divider(color: dividerColor),
-
-            // Endless Mode Duration
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Endless Mode Duration (s)', style: TextStyle(color: textColor)),
-                DropdownButton<int>(
+                Divider(color: AppColors.surfaceLight, height: 32),
+                _buildDropdownRow(
+                  label: 'Endless Duration (seconds)',
+                  icon: Icons.all_inclusive_rounded,
                   value: endlessDuration,
-                  dropdownColor: Colors.black,
-                  style: TextStyle(color: textColor, fontSize: 16),
-                  items: [120, 180, 240].map((e) {
-                    return DropdownMenuItem<int>(
-                      value: e,
-                      child: Text('$e'),
-                    );
-                  }).toList(),
+                  items: [120, 180, 240, 300],
                   onChanged: (val) {
-                    if (val != null) setState(() => endlessDuration = val);
+                    if (val != null) {
+                      setState(() => endlessDuration = val);
+                    }
                   },
                 ),
               ],
             ),
+          ),
+          const SizedBox(height: AppSpacing.xl),
 
-            const SizedBox(height: 30),
-
-            // SAVE and RESET buttons
-            Row(
-              children: [
-                // Save Button
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () async {
-                      final prefs = await SharedPreferences.getInstance();
-                      await prefs.setBool('purple_theme', isPurpleTheme);
-                      await prefs.setInt('number_of_questions', numberOfQuestions);
-                      await prefs.setBool('show_difficulty', showDifficulty);
-                      await prefs.setInt('timed_duration', timedQuestionDuration);
-                      await prefs.setInt('endless_duration', endlessDuration);
-
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Settings saved!')),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF7A3CF4),
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: const Text('Save'),
-                  ),
-                ),
-
-                const SizedBox(width: 16),
-
-                // Reset Button
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () async {
-                      final prefs = await SharedPreferences.getInstance();
-                      await prefs.remove('endless_highscore');
-
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('High scores reset!')),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF7A3CF4),
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: const Text('Reset'),
-                  ),
-                ),
-              ],
+          // Display Section
+          _buildSectionHeader('Display', Icons.visibility_rounded),
+          const SizedBox(height: AppSpacing.md),
+          _buildSettingCard(
+            child: SwitchListTile(
+              title: const Text(
+                'Show Difficulty',
+                style: TextStyle(color: Colors.white),
+              ),
+              subtitle: Text(
+                'Display difficulty level for each question',
+                style: TextStyle(color: AppColors.textSecondary, fontSize: 12),
+              ),
+              value: showDifficulty,
+              onChanged: (val) => setState(() => showDifficulty = val),
+              activeColor: AppColors.primary,
+              contentPadding: EdgeInsets.zero,
             ),
+          ),
+          const SizedBox(height: AppSpacing.xl),
 
-            const SizedBox(height: 20),
-
-            // BACK Button
-            Center(
-              child: SizedBox(
-                width: 200,
-                child: ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF7A3CF4),
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: const Text('Back'),
+          // Actions Section
+          _buildSectionHeader('Actions', Icons.settings_rounded),
+          const SizedBox(height: AppSpacing.md),
+          
+          Row(
+            children: [
+              Expanded(
+                child: _buildActionButton(
+                  label: 'Save Settings',
+                  icon: Icons.save_rounded,
+                  onPressed: _saveSettings,
+                  isPrimary: true,
                 ),
               ),
-            ),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: _buildActionButton(
+                  label: 'Reset Scores',
+                  icon: Icons.restore_rounded,
+                  onPressed: _resetHighScores,
+                  isPrimary: false,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.xxl),
+        ],
+      ),
+    );
+  }
 
-            const SizedBox(height: 30), // bottom spacing reduced by 50%
-          ],
+  Widget _buildSectionHeader(String title, IconData icon) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(AppSpacing.sm),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [AppColors.primary, AppColors.primaryLight],
+            ),
+            borderRadius: BorderRadius.circular(AppRadius.sm),
+          ),
+          child: Icon(icon, color: Colors.white, size: 20),
         ),
+        const SizedBox(width: AppSpacing.md),
+        Text(
+          title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSettingCard({required Widget child}) {
+    return Container(
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: AppColors.surface,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(
+          color: AppColors.surfaceLight,
+          width: 1,
+        ),
+      ),
+      child: child,
+    );
+  }
+
+  Widget _buildDropdownRow({
+    required String label,
+    required IconData icon,
+    required int value,
+    required List<int> items,
+    required void Function(int?) onChanged,
+  }) {
+    return Row(
+      children: [
+        Icon(icon, color: AppColors.primary, size: 20),
+        const SizedBox(width: AppSpacing.md),
+        Expanded(
+          child: Text(
+            label,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.md,
+            vertical: AppSpacing.xs,
+          ),
+          decoration: BoxDecoration(
+            color: AppColors.surfaceLight,
+            borderRadius: BorderRadius.circular(AppRadius.sm),
+            border: Border.all(
+              color: AppColors.primary.withOpacity(0.3),
+              width: 1,
+            ),
+          ),
+          child: DropdownButton<int>(
+            value: value,
+            dropdownColor: AppColors.surfaceLight,
+            underline: const SizedBox.shrink(),
+            icon: Icon(
+              Icons.arrow_drop_down_rounded,
+              color: AppColors.primary,
+            ),
+            style: TextStyle(
+              color: AppColors.primary,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+            items: items.map((e) {
+              return DropdownMenuItem<int>(
+                value: e,
+                child: Text('$e'),
+              );
+            }).toList(),
+            onChanged: onChanged,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildActionButton({
+    required String label,
+    required IconData icon,
+    required VoidCallback onPressed,
+    required bool isPrimary,
+  }) {
+    return ElevatedButton.icon(
+      onPressed: onPressed,
+      icon: Icon(icon, size: 20),
+      label: Text(label),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: isPrimary ? AppColors.primary : AppColors.error,
+        foregroundColor: Colors.white,
+        padding: const EdgeInsets.symmetric(
+          vertical: AppSpacing.md,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadius.md),
+        ),
+        elevation: 0,
       ),
     );
   }

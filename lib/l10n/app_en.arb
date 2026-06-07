@@ -1,0 +1,238 @@
+{
+  "@@locale": "en",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "START QUIZ",
+  "settings": "Settings",
+  "offlineTitle": "No Internet Connection",
+  "offlineDesc": "Please check your internet connection. You can still play offline, but your progress will be saved locally as a guest.",
+  "playAsGuest": "Play as Guest",
+  "retry": "Retry",
+  "exitTitle": "Exit QuizAlyx?",
+  "exitDesc": "Are you sure you want to leave the game?",
+  "cancel": "Cancel",
+  "exit": "Exit",
+  "dailyRewardTitle": "Daily Reward",
+  "dailyRewardDesc": "You earned 5 coins for logging in today!",
+  "plus5Coins": "+5 COINS",
+  "collect": "Collect",
+  "currentStreak": "Current streak: {days} days!",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "Guest Player",
+  "notLoggedIn": "Not logged in",
+  "myAccount": "My Account",
+  "myStatistics": "My Statistics",
+  "loginSignup": "Log In / Sign Up",
+  "logOut": "Log Out",
+  "appSlogan": "Challenge Your Knowledge",
+  "missionCompleted": "MISSION COMPLETED!",
+  "leaderboards": "Leaderboards",
+    "leaderboardsOfflineDesc": "Leaderboards require an active internet connection to sync global scores.",
+    "unexpectedError": "An unexpected error occurred.",
+    "noOnePlayedYet": "No one has played yet!",
+    "beTheFirstToPlay": "Solve a quiz now and be the first to enter the list.",
+    "topPlayers": "Top Players",
+    "challengeThem": "Challenge them to claim your spot!",
+    "pts": "pts",
+    "signInWithGoogle": "Sign in with Google",
+      "continueAsGuest": "Continue as Guest",
+      "plusCoinsEarned": "+{coins} Coins!",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "Question Master",
+        "mission_global_desc": "Solve a total of X questions",
+        "mission_title_Math": "Math",
+        "mission_desc_Math": "Solve Math questions",
+        "mission_title_Physics": "Physics",
+        "mission_desc_Physics": "Solve Physics questions",
+        "mission_title_Chemistry": "Chemistry",
+        "mission_desc_Chemistry": "Solve Chemistry questions",
+        "mission_title_Biology": "Biology",
+        "mission_desc_Biology": "Solve Biology questions",
+        "mission_title_History": "History",
+        "mission_desc_History": "Solve History questions",
+        "mission_title_Geography": "Geography",
+        "mission_desc_Geography": "Solve Geography questions",
+        "mission_title_Literature": "Literature",
+        "mission_desc_Literature": "Solve Literature questions",
+        "mission_title_Art": "Art",
+        "mission_desc_Art": "Solve Art questions",
+        "mission_title_Music": "Music",
+        "mission_desc_Music": "Solve Music questions",
+        "mission_title_Sports": "Sports",
+        "mission_desc_Sports": "Solve Sports questions",
+        "mission_title_Technology": "Technology",
+        "mission_desc_Technology": "Solve Technology questions",
+        "mission_title_Software": "Software",
+        "mission_desc_Software": "Solve Software questions",
+        "mission_title_Mechanic": "Mechanic",
+        "mission_desc_Mechanic": "Solve Mechanic questions",
+        "mission_title_Religion": "Religion",
+        "mission_desc_Religion": "Solve Religion questions",
+        "careerAchievements": "Career & Achievements",
+          "totalAchievements": "Total Achievements",
+          "maxLevel": "MAX",
+          "completed": "Completed",
+          "levelProgress": "Level {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "Select Game Mode",
+            "modeClassic": "Classic",
+            "modeClassicDesc": "Fixed questions, take your time",
+            "modeTimed": "Timed",
+            "modeTimedDesc": "Race against the clock",
+            "modeEndless": "Endless",
+            "modeEndlessDesc": "Answer as many as you can",
+            "defaultPlayerName": "QuizAlyx Player",
+              "editProfileName": "Edit Profile Name",
+              "enterNewName": "Enter your new name",
+              "save": "Save",
+              "nameChangeLimitTitle": "Name Change Limit",
+              "nameChangeLimitDesc": "You can only change your name 2 times every 14 days. Please try again later.",
+              "ok": "OK",
+              "unknownDate": "Unknown",
+              "accountStatus": "Account Status",
+              "verified": "Verified",
+              "guestAccount": "Guest Account",
+              "joinedDate": "Joined Date",
+              "membership": "Membership",
+              "freeTier": "Free Tier",
+              "daysCount": "{count} Days",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "Data could not be loaded.",
+                "totalScore": "Total Score",
+                "quizzesPlayed": "Quizzes Played",
+                "accuracyRate": "Accuracy Rate",
+                "dailyStreak": "Daily Streak",
+                "enterPlayerNameError": "Please enter a cool player name!",
+                  "welcomeToQuizAlyx": "Welcome to QuizAlyx!",
+                  "chooseAvatarName": "Choose your player avatar and name.",
+                  "enterPlayerNameHint": "Enter Player Name",
+                  "startJourney": "Start Journey",
+                  "quitQuizTitle": "Quit Quiz?",
+                    "quitQuizDesc": "Your progress will be lost. Are you sure you want to go back to Home?",
+                    "quit": "Quit",
+                    "no5050JokerWarning": "You don't have any 50/50 Joker!",
+                    "noTimeFreezeWarning": "You don't have any Time Freeze!",
+                    "quiz": "Quiz",
+                    "timeSeconds": "Time: {seconds} s",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "Question {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "Quiz Completed!",
+                    "correct": "Correct",
+                    "wrong": "Wrong",
+                    "score": "Score",
+                    "continueBtn": "Continue",
+                    "whatsNext": "What's Next?",
+                    "playAgain": "Play Again",
+                    "backToHome": "Back to Home",
+                    "timesUp": "Time's Up!",
+                    "language": "Language",
+                      "settingsSaved": "Settings saved successfully!",
+                      "resetHighScoresTitle": "Reset High Scores?",
+                      "resetHighScoresDesc": "This will delete all your high scores. This action cannot be undone.",
+                      "reset": "Reset",
+                      "highScoresResetSuccess": "High scores reset successfully!",
+                      "appearance": "Appearance",
+                      "goldTheme": "Gold Theme",
+                      "premiumGoldLook": "Premium gold look",
+                      "unlockInStore": "Unlock in Store",
+                      "diamondTheme": "Diamond Theme",
+                      "legendaryDiamondLook": "Legendary diamond look",
+                      "unlockInStore1500": "Unlock in Store (1500 Coins)",
+                      "gameplay": "Gameplay",
+                      "numberOfQuestions": "Number of Questions",
+                      "timedDurationSec": "Timed duration (sec)",
+                      "endlessDurationSec": "Endless Duration (sec)",
+                      "display": "Display",
+                      "showDifficulty": "Show Difficulty",
+                      "showDifficultyDesc": "Display difficulty level for each question",
+                      "actions": "Actions",
+                      "saveSettings": "Save Settings",
+                      "resetScores": "Reset Scores",
+                      "visitStoreToUnlock": "Visit the Store to unlock!",
+                      "storeTitle": "Store",
+                        "specialBundlePurchased": "Special Bundle Purchased! (Remaining: {remaining})",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "Not enough coins!",
+                        "exchangeSuccessful": "Exchange successful!",
+                        "notEnoughPoints": "Not enough points!",
+                        "themeUnlockedSettings": "Theme Unlocked! Enable it in Settings.",
+                        "itemPurchased": "{itemName} purchased!",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "CURRENCY EXCHANGE",
+                        "shopItems": "SHOP ITEMS",
+                        "limitedOffer": "LIMITED OFFER",
+                        "endsInDays": "Ends in {days} days",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "Mega Booster Pack",
+                        "boosterPackDesc": "1x 50/50 Joker + 1x Time Freeze",
+                        "remainingLimit": "Remaining: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "Coins",
+                        "convertBtn": "Convert",
+                        "joker5050": "50/50 Joker",
+                        "joker5050Desc": "Removes 2 wrong options",
+                        "timeFreeze": "Time Freeze",
+                        "timeFreezeDesc": "Stops timer for 10s",
+                        "premiumTheme": "Premium Theme",
+                        "unlockGoldTheme": "Unlock Gold Theme",
+                        "unlockDiamondInterface": "Unlock Diamond Interface",
+                        "themeUnlocked": "Theme Unlocked",
+                        "owned": "OWNED",
+                        "selectTopic": "Select Topic",
+                          "topicDifficulty": "{topic} Difficulty",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "Beginner",
+                          "intermediate": "Intermediate",
+                          "advanced": "Advanced"
+}

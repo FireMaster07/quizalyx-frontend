@@ -1,0 +1,238 @@
+{
+  "@@locale": "tr",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "OYUNA BAŞLA",
+  "settings": "Ayarlar",
+  "offlineTitle": "İnternet Bağlantısı Yok",
+  "offlineDesc": "Lütfen internet bağlantınızı kontrol edin. Çevrimdışı oynamaya devam edebilirsiniz, ancak ilerlemeniz cihazınıza misafir olarak kaydedilecektir.",
+  "playAsGuest": "Misafir Olarak Oyna",
+  "retry": "Tekrar Dene",
+  "exitTitle": "QuizAlyx'ten Çıkılsın mı?",
+  "exitDesc": "Oyundan çıkmak istediğinize emin misiniz?",
+  "cancel": "İptal",
+  "exit": "Çıkış",
+  "dailyRewardTitle": "Günlük Ödül",
+  "dailyRewardDesc": "Bugün giriş yaptığınız için 5 jeton kazandınız!",
+  "plus5Coins": "+5 JETON",
+  "collect": "Topla",
+  "currentStreak": "Mevcut seri: {days} gün!",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "Misafir Oyuncu",
+  "notLoggedIn": "Giriş yapılmadı",
+  "myAccount": "Hesabım",
+  "myStatistics": "İstatistiklerim",
+  "loginSignup": "Giriş Yap / Kayıt Ol",
+  "logOut": "Çıkış Yap",
+  "appSlogan": "Bilgini Sına",
+  "missionCompleted": "GÖREV TAMAMLANDI!",
+  "leaderboards": "Liderlik Tablosu",
+    "leaderboardsOfflineDesc": "Küresel skorları senkronize etmek için internet bağlantısı gereklidir.",
+    "unexpectedError": "Beklenmeyen bir hata oluştu.",
+    "noOnePlayedYet": "Henüz kimse oynamadı!",
+    "beTheFirstToPlay": "Şimdi bir quiz çöz ve listeye giren ilk kişi sen ol.",
+    "topPlayers": "En İyi Oyuncular",
+    "challengeThem": "Yerini almak için onlara meydan oku!",
+    "pts": "puan",
+    "signInWithGoogle": "Google ile Giriş Yap",
+      "continueAsGuest": "Misafir Olarak Devam Et",
+      "plusCoinsEarned": "+{coins} Jeton!",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "Soru Üstadı",
+        "mission_global_desc": "Toplamda X soru çöz",
+        "mission_title_Math": "Matematik",
+        "mission_desc_Math": "Matematik soruları çöz",
+        "mission_title_Physics": "Fizik",
+        "mission_desc_Physics": "Fizik soruları çöz",
+        "mission_title_Chemistry": "Kimya",
+        "mission_desc_Chemistry": "Kimya soruları çöz",
+        "mission_title_Biology": "Biyoloji",
+        "mission_desc_Biology": "Biyoloji soruları çöz",
+        "mission_title_History": "Tarih",
+        "mission_desc_History": "Tarih soruları çöz",
+        "mission_title_Geography": "Coğrafya",
+        "mission_desc_Geography": "Coğrafya soruları çöz",
+        "mission_title_Literature": "Edebiyat",
+        "mission_desc_Literature": "Edebiyat soruları çöz",
+        "mission_title_Art": "Sanat",
+        "mission_desc_Art": "Sanat soruları çöz",
+        "mission_title_Music": "Müzik",
+        "mission_desc_Music": "Müzik soruları çöz",
+        "mission_title_Sports": "Spor",
+        "mission_desc_Sports": "Spor soruları çöz",
+        "mission_title_Technology": "Teknoloji",
+        "mission_desc_Technology": "Teknoloji soruları çöz",
+        "mission_title_Software": "Yazılım",
+        "mission_desc_Software": "Yazılım soruları çöz",
+        "mission_title_Mechanic": "Mekanik",
+        "mission_desc_Mechanic": "Mekanik soruları çöz",
+        "mission_title_Religion": "Din Kültürü",
+        "mission_desc_Religion": "Din Kültürü soruları çöz",
+        "careerAchievements": "Kariyer & Başarılar",
+          "totalAchievements": "Toplam Başarılar",
+          "maxLevel": "MAKS",
+          "completed": "Tamamlandı",
+          "levelProgress": "Seviye {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "Oyun Modunu Seç",
+            "modeClassic": "Klasik",
+            "modeClassicDesc": "Sabit sorular, acele etmeden çöz",
+            "modeTimed": "Süreli",
+            "modeTimedDesc": "Zamana karşı yarış",
+            "modeEndless": "Sonsuz",
+            "modeEndlessDesc": "Çözebildiğin kadar çok çöz",
+            "defaultPlayerName": "QuizAlyx Oyuncusu",
+              "editProfileName": "Profili Düzenle",
+              "enterNewName": "Yeni adınızı girin",
+              "save": "Kaydet",
+              "nameChangeLimitTitle": "İsim Değiştirme Sınırı",
+              "nameChangeLimitDesc": "İsminizi 14 günde sadece 2 kez değiştirebilirsiniz. Lütfen daha sonra tekrar deneyin.",
+              "ok": "TAMAM",
+              "unknownDate": "Bilinmiyor",
+              "accountStatus": "Hesap Durumu",
+              "verified": "Doğrulandı",
+              "guestAccount": "Misafir Hesabı",
+              "joinedDate": "Katılım Tarihi",
+              "membership": "Üyelik",
+              "freeTier": "Ücretsiz Plan",
+              "daysCount": "{count} Gün",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "Veriler yüklenemedi.",
+                "totalScore": "Toplam Skor",
+                "quizzesPlayed": "Oynanan Quizler",
+                "accuracyRate": "Doğruluk Oranı",
+                "dailyStreak": "Günlük Seri",
+                "enterPlayerNameError": "Lütfen havalı bir oyuncu adı gir!",
+                  "welcomeToQuizAlyx": "QuizAlyx'e Hoş Geldin!",
+                  "chooseAvatarName": "Oyuncu avatarını ve adını seç.",
+                  "enterPlayerNameHint": "Oyuncu Adını Gir",
+                  "startJourney": "Maceraya Başla",
+                  "quitQuizTitle": "Testten Çıkılsın mı?",
+                    "quitQuizDesc": "İlerlemen kaybolacak. Ana ekrana dönmek istediğine emin misin?",
+                    "quit": "Çık",
+                    "no5050JokerWarning": "Hiç 50/50 Jokerin kalmadı!",
+                    "noTimeFreezeWarning": "Hiç Zaman Dondurucun kalmadı!",
+                    "quiz": "Quiz",
+                    "timeSeconds": "Süre: {seconds} sn",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "Soru {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "Test Tamamlandı!",
+                    "correct": "Doğru",
+                    "wrong": "Yanlış",
+                    "score": "Puan",
+                    "continueBtn": "Devam Et",
+                    "whatsNext": "Sırada Ne Var?",
+                    "playAgain": "Tekrar Oyna",
+                    "backToHome": "Ana Ekrana Dön",
+                    "timesUp": "Süre Doldu!",
+                    "language": "Dil",
+                      "settingsSaved": "Ayarlar başarıyla kaydedildi!",
+                      "resetHighScoresTitle": "Skorlar Sıfırlansın mı?",
+                      "resetHighScoresDesc": "Bu işlem tüm yüksek skorlarını silecek. Bu işlem geri alınamaz.",
+                      "reset": "Sıfırla",
+                      "highScoresResetSuccess": "Yüksek skorlar başarıyla sıfırlandı!",
+                      "appearance": "Görünüm",
+                      "goldTheme": "Altın Tema",
+                      "premiumGoldLook": "Premium altın görünüm",
+                      "unlockInStore": "Mağazadan Kilidi Aç",
+                      "diamondTheme": "Elmas Tema",
+                      "legendaryDiamondLook": "Efsanevi elmas görünüm",
+                      "unlockInStore1500": "Mağazadan Aç (1500 Jeton)",
+                      "gameplay": "Oynanış",
+                      "numberOfQuestions": "Soru Sayısı",
+                      "timedDurationSec": "Süreli Mod Süresi (sn)",
+                      "endlessDurationSec": "Sonsuz Mod Süresi (sn)",
+                      "display": "Görüntü",
+                      "showDifficulty": "Zorluğu Göster",
+                      "showDifficultyDesc": "Her soru için zorluk seviyesini göster",
+                      "actions": "İşlemler",
+                      "saveSettings": "Ayarları Kaydet",
+                      "resetScores": "Skorları Sıfırla",
+                      "visitStoreToUnlock": "Kilidi açmak için Mağazayı ziyaret et!",
+                      "storeTitle": "Mağaza",
+                        "specialBundlePurchased": "Özel Paket Satın Alındı! (Kalan: {remaining})",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "Yeterli jeton yok!",
+                        "exchangeSuccessful": "Takas başarılı!",
+                        "notEnoughPoints": "Yeterli puan yok!",
+                        "themeUnlockedSettings": "Tema Açıldı! Ayarlardan etkinleştirin.",
+                        "itemPurchased": "{itemName} satın alındı!",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "DÖVİZ BOZDURMA",
+                        "shopItems": "MAĞAZA ÜRÜNLERİ",
+                        "limitedOffer": "SINIRLI TEKLİF",
+                        "endsInDays": "{days} gün içinde bitiyor",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "Mega Güç Paketi",
+                        "boosterPackDesc": "1x 50/50 Joker + 1x Zaman Dondurucu",
+                        "remainingLimit": "Kalan: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "Jeton",
+                        "convertBtn": "Çevir",
+                        "joker5050": "50/50 Joker",
+                        "joker5050Desc": "2 yanlış seçeneği eler",
+                        "timeFreeze": "Zaman Dondurucu",
+                        "timeFreezeDesc": "Süreyi 10 sn durdurur",
+                        "premiumTheme": "Premium Tema",
+                        "unlockGoldTheme": "Altın Temayı Aç",
+                        "unlockDiamondInterface": "Elmas Arayüzü Aç",
+                        "themeUnlocked": "Tema Açıldı",
+                        "owned": "SAHİP",
+                        "selectTopic": "Konu Seç",
+                          "topicDifficulty": "{topic} Zorluğu",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "Başlangıç",
+                          "intermediate": "Orta",
+                          "advanced": "İleri"
+}

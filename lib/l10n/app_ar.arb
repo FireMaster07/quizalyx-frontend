@@ -1,0 +1,238 @@
+{
+  "@@locale": "ar",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "ابدأ الاختبار",
+  "settings": "الإعدادات",
+  "offlineTitle": "لا يوجد اتصال بالإنترنت",
+  "offlineDesc": "يرجى التحقق من اتصالك بالإنترنت. لا يزال بإمكانك اللعب دون اتصال، ولكن سيتم حفظ تقدمك محلياً كضيف.",
+  "playAsGuest": "العب كضيف",
+  "retry": "حاول مجدداً",
+  "exitTitle": "الخروج من QuizAlyx؟",
+  "exitDesc": "هل أنت متأكد أنك تريد مغادرة اللعبة؟",
+  "cancel": "إلغاء",
+  "exit": "خروج",
+  "dailyRewardTitle": "مكافأة يومية",
+  "dailyRewardDesc": "لقد ربحت 5 عملات لتسجيل الدخول اليوم!",
+  "plus5Coins": "+5 عملات",
+  "collect": "جمع",
+  "currentStreak": "السلسلة الحالية: {days} أيام!",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "لاعب ضيف",
+  "notLoggedIn": "لم يتم تسجيل الدخول",
+  "myAccount": "حسابي",
+  "myStatistics": "إحصائياتي",
+  "loginSignup": "تسجيل الدخول / إنشاء حساب",
+  "logOut": "تسجيل الخروج",
+  "appSlogan": "تحدى معرفتك",
+  "missionCompleted": "اكتملت المهمة!",
+  "leaderboards": "لوحات الصدارة",
+    "leaderboardsOfflineDesc": "تتطلب لوحات الصدارة اتصالاً بالإنترنت لمزامنة النتائج العالمية.",
+    "unexpectedError": "حدث خطأ غير متوقع.",
+    "noOnePlayedYet": "لم يلعب أحد بعد!",
+    "beTheFirstToPlay": "حل اختباراً الآن وكن أول من يدخل القائمة.",
+    "topPlayers": "أفضل اللاعبين",
+    "challengeThem": "تحداهم للمطالبة بمكانك!",
+    "pts": "نقاط",
+    "signInWithGoogle": "تسجيل الدخول باستخدام Google",
+      "continueAsGuest": "المتابعة كضيف",
+      "plusCoinsEarned": "+{coins} عملات!",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "سيد الأسئلة",
+        "mission_global_desc": "حل إجمالي X سؤال",
+        "mission_title_Math": "الرياضيات",
+        "mission_desc_Math": "حل أسئلة الرياضيات",
+        "mission_title_Physics": "الفيزياء",
+        "mission_desc_Physics": "حل أسئلة الفيزياء",
+        "mission_title_Chemistry": "الكيمياء",
+        "mission_desc_Chemistry": "حل أسئلة الكيمياء",
+        "mission_title_Biology": "الأحياء",
+        "mission_desc_Biology": "حل أسئلة الأحياء",
+        "mission_title_History": "التاريخ",
+        "mission_desc_History": "حل أسئلة التاريخ",
+        "mission_title_Geography": "الجغرافيا",
+        "mission_desc_Geography": "حل أسئلة الجغرافيا",
+        "mission_title_Literature": "الأدب",
+        "mission_desc_Literature": "حل أسئلة الأدب",
+        "mission_title_Art": "الفن",
+        "mission_desc_Art": "حل أسئلة الفن",
+        "mission_title_Music": "الموسيقى",
+        "mission_desc_Music": "حل أسئلة الموسيقى",
+        "mission_title_Sports": "الرياضة",
+        "mission_desc_Sports": "حل أسئلة الرياضة",
+        "mission_title_Technology": "التكنولوجيا",
+        "mission_desc_Technology": "حل أسئلة التكنولوجيا",
+        "mission_title_Software": "البرمجيات",
+        "mission_desc_Software": "حل أسئلة البرمجيات",
+        "mission_title_Mechanic": "الميكانيكا",
+        "mission_desc_Mechanic": "حل أسئلة الميكانيكا",
+        "mission_title_Religion": "الدين",
+        "mission_desc_Religion": "حل أسئلة الدين",
+        "careerAchievements": "المهنة والإنجازات",
+          "totalAchievements": "إجمالي الإنجازات",
+          "maxLevel": "الحد الأقصى",
+          "completed": "مكتمل",
+          "levelProgress": "مستوى {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "اختر وضع اللعب",
+            "modeClassic": "كلاسيكي",
+            "modeClassicDesc": "أسئلة ثابتة، خذ وقتك",
+            "modeTimed": "موقت",
+            "modeTimedDesc": "سباق مع الزمن",
+            "modeEndless": "لا نهائي",
+            "modeEndlessDesc": "أجب على أكبر عدد ممكن",
+            "defaultPlayerName": "لاعب QuizAlyx",
+              "editProfileName": "تعديل اسم الملف الشخصي",
+              "enterNewName": "أدخل اسمك الجديد",
+              "save": "حفظ",
+              "nameChangeLimitTitle": "حد تغيير الاسم",
+              "nameChangeLimitDesc": "يمكنك تغيير اسمك مرتين فقط كل 14 يومًا. يرجى المحاولة مرة أخرى لاحقًا.",
+              "ok": "موافق",
+              "unknownDate": "غير معروف",
+              "accountStatus": "حالة الحساب",
+              "verified": "تم التحقق",
+              "guestAccount": "حساب ضيف",
+              "joinedDate": "تاريخ الانضمام",
+              "membership": "العضوية",
+              "freeTier": "مجاني",
+              "daysCount": "{count} أيام",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "تعذر تحميل البيانات.",
+                "totalScore": "إجمالي النقاط",
+                "quizzesPlayed": "الاختبارات الملعوبة",
+                "accuracyRate": "معدل الدقة",
+                "dailyStreak": "السلسلة اليومية",
+                "enterPlayerNameError": "الرجاء إدخال اسم لاعب رائع!",
+                  "welcomeToQuizAlyx": "مرحباً بك في QuizAlyx!",
+                  "chooseAvatarName": "اختر صورة اللاعب الرمزية واسمك.",
+                  "enterPlayerNameHint": "أدخل اسم اللاعب",
+                  "startJourney": "ابدأ الرحلة",
+                  "quitQuizTitle": "الخروج من الاختبار؟",
+                    "quitQuizDesc": "سيتم فقدان تقدمك. هل أنت متأكد أنك تريد العودة إلى الرئيسية؟",
+                    "quit": "خروج",
+                    "no5050JokerWarning": "ليس لديك أي وسيلة مساعدة 50/50!",
+                    "noTimeFreezeWarning": "ليس لديك أي تجميد للوقت!",
+                    "quiz": "اختبار",
+                    "timeSeconds": "الوقت: {seconds} ث",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "سؤال {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "اكتمل الاختبار!",
+                    "correct": "صحيح",
+                    "wrong": "خطأ",
+                    "score": "النتيجة",
+                    "continueBtn": "متابعة",
+                    "whatsNext": "ماذا بعد؟",
+                    "playAgain": "العب مرة أخرى",
+                    "backToHome": "العودة للرئيسية",
+                    "timesUp": "انتهى الوقت!",
+                    "language": "اللغة",
+                      "settingsSaved": "تم حفظ الإعدادات بنجاح!",
+                      "resetHighScoresTitle": "إعادة تعيين أعلى النتائج؟",
+                      "resetHighScoresDesc": "سيؤدي هذا إلى حذف جميع درجاتك العالية. لا يمكن التراجع عن هذا الإجراء.",
+                      "reset": "إعادة تعيين",
+                      "highScoresResetSuccess": "تم إعادة تعيين الدرجات بنجاح!",
+                      "appearance": "المظهر",
+                      "goldTheme": "المظهر الذهبي",
+                      "premiumGoldLook": "مظهر ذهبي مميز",
+                      "unlockInStore": "افتح من المتجر",
+                      "diamondTheme": "المظهر الماسي",
+                      "legendaryDiamondLook": "مظهر ماسي أسطوري",
+                      "unlockInStore1500": "افتح من المتجر (1500 عملة)",
+                      "gameplay": "أسلوب اللعب",
+                      "numberOfQuestions": "عدد الأسئلة",
+                      "timedDurationSec": "المدة المحددة (ثانية)",
+                      "endlessDurationSec": "المدة اللانهائية (ثانية)",
+                      "display": "العرض",
+                      "showDifficulty": "إظهار الصعوبة",
+                      "showDifficultyDesc": "عرض مستوى الصعوبة لكل سؤال",
+                      "actions": "الإجراءات",
+                      "saveSettings": "حفظ الإعدادات",
+                      "resetScores": "إعادة تعيين النتائج",
+                      "visitStoreToUnlock": "قم بزيارة المتجر لفتح القفل!",
+                      "storeTitle": "المتجر",
+                        "specialBundlePurchased": "تم شراء الحزمة الخاصة! (المتبقي: {remaining})",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "عملات غير كافية!",
+                        "exchangeSuccessful": "تم التبادل بنجاح!",
+                        "notEnoughPoints": "نقاط غير كافية!",
+                        "themeUnlockedSettings": "تم فتح المظهر! قم بتفعيله في الإعدادات.",
+                        "itemPurchased": "تم شراء {itemName}!",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "تحويل العملات",
+                        "shopItems": "عناصر المتجر",
+                        "limitedOffer": "عرض محدود",
+                        "endsInDays": "ينتهي خلال {days} أيام",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "حزمة التعزيز الضخمة",
+                        "boosterPackDesc": "1x مساعدة 50/50 + 1x تجميد الوقت",
+                        "remainingLimit": "المتبقي: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "العملات",
+                        "convertBtn": "تحويل",
+                        "joker5050": "مساعدة 50/50",
+                        "joker5050Desc": "يزيل إجابتين خاطئتين",
+                        "timeFreeze": "تجميد الوقت",
+                        "timeFreezeDesc": "يوقف الموقت لـ 10 ثوانٍ",
+                        "premiumTheme": "المظهر المتميز",
+                        "unlockGoldTheme": "فتح المظهر الذهبي",
+                        "unlockDiamondInterface": "فتح الواجهة الماسية",
+                        "themeUnlocked": "تم فتح المظهر",
+                        "owned": "مملوك",
+                        "selectTopic": "اختر الموضوع",
+                          "topicDifficulty": "صعوبة {topic}",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "مبتدئ",
+                          "intermediate": "متوسط",
+                          "advanced": "متقدم"
+}

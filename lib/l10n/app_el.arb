@@ -1,0 +1,238 @@
+{
+  "@@locale": "el",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "ΕΝΑΡΞΗ ΚΟΥΙΖ",
+  "settings": "Ρυθμίσεις",
+  "offlineTitle": "Χωρίς σύνδεση",
+  "offlineDesc": "Ελέγξτε τη σύνδεσή σας. Μπορείτε να παίξετε εκτός σύνδεσης, αλλά η πρόοδός σας θα αποθηκευτεί τοπικά ως επισκέπτης.",
+  "playAsGuest": "Παίξτε ως Επισκέπτης",
+  "retry": "Δοκιμάστε ξανά",
+  "exitTitle": "Έξοδος από το QuizAlyx;",
+  "exitDesc": "Είστε σίγουροι ότι θέλετε να εγκαταλείψετε το παιχνίδι;",
+  "cancel": "Ακύρωση",
+  "exit": "Έξοδος",
+  "dailyRewardTitle": "Ημερήσια Ανταμοιβή",
+  "dailyRewardDesc": "Κερδίσατε 5 νομίσματα για τη σημερινή σας είσοδο!",
+  "plus5Coins": "+5 ΝΟΜΙΣΜΑΤΑ",
+  "collect": "Συλλογή",
+  "currentStreak": "Τρέχον σερί: {days} ημέρες!",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "Επισκέπτης",
+  "notLoggedIn": "Δεν έχετε συνδεθεί",
+  "myAccount": "Ο Λογαριασμός μου",
+  "myStatistics": "Τα Στατιστικά μου",
+  "loginSignup": "Σύνδεση / Εγγραφή",
+  "logOut": "Αποσύνδεση",
+  "appSlogan": "Προκάλεσε τις γνώσεις σου",
+  "missionCompleted": "Η ΑΠΟΣΤΟΛΗ ΟΛΟΚΛΗΡΩΘΗΚΕ!",
+  "leaderboards": "Πίνακες Κατάταξης",
+    "leaderboardsOfflineDesc": "Οι πίνακες κατάταξης απαιτούν σύνδεση στο διαδίκτυο για συγχρονισμό.",
+    "unexpectedError": "Παρουσιάστηκε μη αναμενόμενο σφάλμα.",
+    "noOnePlayedYet": "Κανείς δεν έχει παίξει ακόμα!",
+    "beTheFirstToPlay": "Λύσε ένα κουίζ τώρα και γίνε ο πρώτος στη λίστα.",
+    "topPlayers": "Κορυφαίοι Παίκτες",
+    "challengeThem": "Προκάλεσέ τους για να πάρεις τη θέση σου!",
+    "pts": "π.",
+    "signInWithGoogle": "Σύνδεση με Google",
+      "continueAsGuest": "Συνέχεια ως επισκέπτης",
+      "plusCoinsEarned": "+{coins} Νομίσματα!",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "Κυρίαρχος Ερωτήσεων",
+        "mission_global_desc": "Λύστε συνολικά X ερωτήσεις",
+        "mission_title_Math": "Μαθηματικά",
+        "mission_desc_Math": "Λύστε ερωτήσεις μαθηματικών",
+        "mission_title_Physics": "Φυσική",
+        "mission_desc_Physics": "Λύστε ερωτήσεις φυσικής",
+        "mission_title_Chemistry": "Χημεία",
+        "mission_desc_Chemistry": "Λύστε ερωτήσεις χημείας",
+        "mission_title_Biology": "Βιολογία",
+        "mission_desc_Biology": "Λύστε ερωτήσεις βιολογίας",
+        "mission_title_History": "Ιστορία",
+        "mission_desc_History": "Λύστε ερωτήσεις ιστορίας",
+        "mission_title_Geography": "Γεωγραφία",
+        "mission_desc_Geography": "Λύστε ερωτήσεις γεωγραφίας",
+        "mission_title_Literature": "Λογοτεχνία",
+        "mission_desc_Literature": "Λύστε ερωτήσεις λογοτεχνίας",
+        "mission_title_Art": "Τέχνη",
+        "mission_desc_Art": "Λύστε ερωτήσεις τέχνης",
+        "mission_title_Music": "Μουσική",
+        "mission_desc_Music": "Λύστε ερωτήσεις μουσικής",
+        "mission_title_Sports": "Αθλητισμός",
+        "mission_desc_Sports": "Λύστε ερωτήσεις αθλητισμού",
+        "mission_title_Technology": "Τεχνολογία",
+        "mission_desc_Technology": "Λύστε ερωτήσεις τεχνολογίας",
+        "mission_title_Software": "Λογισμικό",
+        "mission_desc_Software": "Λύστε ερωτήσεις λογισμικού",
+        "mission_title_Mechanic": "Μηχανική",
+        "mission_desc_Mechanic": "Λύστε ερωτήσεις μηχανικής",
+        "mission_title_Religion": "Θρησκεία",
+        "mission_desc_Religion": "Λύστε ερωτήσεις θρησκείας",
+        "careerAchievements": "Καριέρα & Επιτεύγματα",
+          "totalAchievements": "Συνολικά Επιτεύγματα",
+          "maxLevel": "ΜΕΓ",
+          "completed": "Ολοκληρώθηκε",
+          "levelProgress": "Επίπεδο {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "Επιλογή Λειτουργίας",
+            "modeClassic": "Κλασική",
+            "modeClassicDesc": "Σταθερές ερωτήσεις, πάρτε το χρόνο σας",
+            "modeTimed": "Με χρόνο",
+            "modeTimedDesc": "Αγώνας ενάντια στο χρόνο",
+            "modeEndless": "Ατελείωτη",
+            "modeEndlessDesc": "Απαντήστε σε όσες περισσότερες μπορείτε",
+            "defaultPlayerName": "Παίκτης QuizAlyx",
+              "editProfileName": "Επεξεργασία Ονόματος",
+              "enterNewName": "Εισαγάγετε το νέο σας όνομα",
+              "save": "Αποθήκευση",
+              "nameChangeLimitTitle": "Όριο Αλλαγής Ονόματος",
+              "nameChangeLimitDesc": "Μπορείτε να αλλάξετε το όνομά σας μόνο 2 φορές κάθε 14 ημέρες. Προσπαθήστε ξανά αργότερα.",
+              "ok": "ΟΚ",
+              "unknownDate": "Άγνωστο",
+              "accountStatus": "Κατάσταση Λογαριασμού",
+              "verified": "Επαληθεύτηκε",
+              "guestAccount": "Λογαριασμός Επισκέπτη",
+              "joinedDate": "Ημερομηνία Εγγραφής",
+              "membership": "Συνδρομή",
+              "freeTier": "Δωρεάν",
+              "daysCount": "{count} Ημέρες",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "Δεν ήταν δυνατή η φόρτωση των δεδομένων.",
+                "totalScore": "Συνολική Βαθμολογία",
+                "quizzesPlayed": "Κουίζ που παίχτηκαν",
+                "accuracyRate": "Ποσοστό Ακρίβειας",
+                "dailyStreak": "Ημερήσιο Σερί",
+                "enterPlayerNameError": "Παρακαλώ εισαγάγετε ένα ωραίο όνομα παίκτη!",
+                  "welcomeToQuizAlyx": "Καλώς ήρθατε στο QuizAlyx!",
+                  "chooseAvatarName": "Επιλέξτε το άβαταρ και το όνομά σας.",
+                  "enterPlayerNameHint": "Εισαγωγή Ονόματος Παίκτη",
+                  "startJourney": "Έναρξη Ταξιδιού",
+                  "quitQuizTitle": "Έξοδος από το κουίζ;",
+                    "quitQuizDesc": "Η πρόοδός σας θα χαθεί. Είστε σίγουροι ότι θέλετε να επιστρέψετε στην Αρχική;",
+                    "quit": "Έξοδος",
+                    "no5050JokerWarning": "Δεν έχετε άλλα Τζόκερ 50/50!",
+                    "noTimeFreezeWarning": "Δεν έχετε άλλη Παύση Χρόνου!",
+                    "quiz": "Κουίζ",
+                    "timeSeconds": "Χρόνος: {seconds} δ",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "Ερώτηση {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "Το Κουίζ Ολοκληρώθηκε!",
+                    "correct": "Σωστό",
+                    "wrong": "Λάθος",
+                    "score": "Βαθμολογία",
+                    "continueBtn": "Συνέχεια",
+                    "whatsNext": "Τι ακολουθεί;",
+                    "playAgain": "Παίξτε Ξανά",
+                    "backToHome": "Επιστροφή στην Αρχική",
+                    "timesUp": "Τέλος Χρόνου!",
+                    "language": "Γλώσσα",
+                      "settingsSaved": "Οι ρυθμίσεις αποθηκεύτηκαν επιτυχώς!",
+                      "resetHighScoresTitle": "Επαναφορά Υψηλών Βαθμολογιών;",
+                      "resetHighScoresDesc": "Αυτό θα διαγράψει όλες τις υψηλές βαθμολογίες σας. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
+                      "reset": "Επαναφορά",
+                      "highScoresResetSuccess": "Οι υψηλές βαθμολογίες επαναφέρθηκαν επιτυχώς!",
+                      "appearance": "Εμφάνιση",
+                      "goldTheme": "Χρυσό Θέμα",
+                      "premiumGoldLook": "Premium χρυσή εμφάνιση",
+                      "unlockInStore": "Ξεκλείδωμα στο Κατάστημα",
+                      "diamondTheme": "Θέμα Διαμάντι",
+                      "legendaryDiamondLook": "Θρυλική εμφάνιση διαμαντιού",
+                      "unlockInStore1500": "Ξεκλείδωμα στο Κατάστημα (1500 Νομίσματα)",
+                      "gameplay": "Παιχνίδι",
+                      "numberOfQuestions": "Αριθμός Ερωτήσεων",
+                      "timedDurationSec": "Διάρκεια με χρόνο (δευτ.)",
+                      "endlessDurationSec": "Ατελείωτη Διάρκεια (δευτ.)",
+                      "display": "Οθόνη",
+                      "showDifficulty": "Εμφάνιση Δυσκολίας",
+                      "showDifficultyDesc": "Εμφάνιση επιπέδου δυσκολίας για κάθε ερώτηση",
+                      "actions": "Ενέργειες",
+                      "saveSettings": "Αποθήκευση Ρυθμίσεων",
+                      "resetScores": "Επαναφορά Βαθμολογιών",
+                      "visitStoreToUnlock": "Επισκεφθείτε το Κατάστημα για ξεκλείδωμα!",
+                      "storeTitle": "Κατάστημα",
+                        "specialBundlePurchased": "Το Ειδικό Πακέτο Αγοράστηκε! (Απομένουν: {remaining})",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "Δεν έχετε αρκετά νομίσματα!",
+                        "exchangeSuccessful": "Η ανταλλαγή ήταν επιτυχής!",
+                        "notEnoughPoints": "Δεν έχετε αρκετούς πόντους!",
+                        "themeUnlockedSettings": "Το Θέμα Ξεκλειδώθηκε! Ενεργοποιήστε το στις Ρυθμίσεις.",
+                        "itemPurchased": "Το {itemName} αγοράστηκε!",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "ΑΝΤΑΛΛΑΓΗ ΝΟΜΙΣΜΑΤΩΝ",
+                        "shopItems": "ΑΝΤΙΚΕΙΜΕΝΑ ΚΑΤΑΣΤΗΜΑΤΟΣ",
+                        "limitedOffer": "ΠΕΡΙΟΡΙΣΜΕΝΗ ΠΡΟΣΦΟΡΑ",
+                        "endsInDays": "Λήγει σε {days} ημέρες",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "Μέγα Πακέτο Ενίσχυσης",
+                        "boosterPackDesc": "1x Τζόκερ 50/50 + 1x Παύση Χρόνου",
+                        "remainingLimit": "Υπόλοιπο: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "Νομίσματα",
+                        "convertBtn": "Μετατροπή",
+                        "joker5050": "Τζόκερ 50/50",
+                        "joker5050Desc": "Αφαιρεί 2 λάθος επιλογές",
+                        "timeFreeze": "Παύση Χρόνου",
+                        "timeFreezeDesc": "Σταματά τον χρόνο για 10δ",
+                        "premiumTheme": "Premium Θέμα",
+                        "unlockGoldTheme": "Ξεκλείδωμα Χρυσού Θέματος",
+                        "unlockDiamondInterface": "Ξεκλείδωμα Διεπαφής Διαμαντιού",
+                        "themeUnlocked": "Το Θέμα Ξεκλειδώθηκε",
+                        "owned": "ΑΠΟΚΤΗΘΗΚΕ",
+                        "selectTopic": "Επιλογή Θέματος",
+                          "topicDifficulty": "Δυσκολία: {topic}",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "Αρχάριος",
+                          "intermediate": "Μεσαίος",
+                          "advanced": "Προχωρημένος"
+}

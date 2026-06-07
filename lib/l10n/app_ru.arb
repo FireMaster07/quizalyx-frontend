@@ -1,0 +1,238 @@
+{
+  "@@locale": "ru",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "НАЧАТЬ",
+  "settings": "Настройки",
+  "offlineTitle": "Нет подключения",
+  "offlineDesc": "Проверьте подключение к интернету. Вы можете играть офлайн, но ваш прогресс будет сохранен локально как гость.",
+  "playAsGuest": "Играть как гость",
+  "retry": "Повторить",
+  "exitTitle": "Выйти из QuizAlyx?",
+  "exitDesc": "Вы уверены, что хотите покинуть игру?",
+  "cancel": "Отмена",
+  "exit": "Выход",
+  "dailyRewardTitle": "Ежедневная награда",
+  "dailyRewardDesc": "Вы заработали 5 монет за вход сегодня!",
+  "plus5Coins": "+5 МОНЕТ",
+  "collect": "Забрать",
+  "currentStreak": "Текущая серия: {days} дн.!",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "Гость",
+  "notLoggedIn": "Не в сети",
+  "myAccount": "Мой аккаунт",
+  "myStatistics": "Моя статистика",
+  "loginSignup": "Войти / Регистрация",
+  "logOut": "Выйти",
+  "appSlogan": "Испытай свои знания",
+  "missionCompleted": "МИССИЯ ВЫПОЛНЕНА!",
+  "leaderboards": "Таблицы лидеров",
+    "leaderboardsOfflineDesc": "Для синхронизации глобальных результатов требуется подключение к интернету.",
+    "unexpectedError": "Произошла непредвиденная ошибка.",
+    "noOnePlayedYet": "Еще никто не играл!",
+    "beTheFirstToPlay": "Пройдите квиз сейчас и станьте первым в списке.",
+    "topPlayers": "Лучшие игроки",
+    "challengeThem": "Бросьте им вызов, чтобы занять свое место!",
+    "pts": "очков",
+    "signInWithGoogle": "Войти через Google",
+      "continueAsGuest": "Продолжить как гость",
+      "plusCoinsEarned": "+{coins} Монет!",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "Мастер Вопросов",
+        "mission_global_desc": "Решите в общей сложности X вопросов",
+        "mission_title_Math": "Математика",
+        "mission_desc_Math": "Решайте математические вопросы",
+        "mission_title_Physics": "Физика",
+        "mission_desc_Physics": "Решайте вопросы по физике",
+        "mission_title_Chemistry": "Химия",
+        "mission_desc_Chemistry": "Решайте вопросы по химии",
+        "mission_title_Biology": "Биология",
+        "mission_desc_Biology": "Решайте вопросы по биологии",
+        "mission_title_History": "История",
+        "mission_desc_History": "Решайте вопросы по истории",
+        "mission_title_Geography": "География",
+        "mission_desc_Geography": "Решайте вопросы по географии",
+        "mission_title_Literature": "Литература",
+        "mission_desc_Literature": "Решайте вопросы по литературе",
+        "mission_title_Art": "Искусство",
+        "mission_desc_Art": "Решайте вопросы по искусству",
+        "mission_title_Music": "Музыка",
+        "mission_desc_Music": "Решайте вопросы по музыке",
+        "mission_title_Sports": "Спорт",
+        "mission_desc_Sports": "Решайте вопросы о спорте",
+        "mission_title_Technology": "Технологии",
+        "mission_desc_Technology": "Решайте вопросы о технологиях",
+        "mission_title_Software": "Программирование",
+        "mission_desc_Software": "Решайте вопросы по программированию",
+        "mission_title_Mechanic": "Механика",
+        "mission_desc_Mechanic": "Решайте вопросы по механике",
+        "mission_title_Religion": "Религия",
+        "mission_desc_Religion": "Решайте вопросы по религии",
+        "careerAchievements": "Карьера и Достижения",
+          "totalAchievements": "Всего достижений",
+          "maxLevel": "МАКС",
+          "completed": "Завершено",
+          "levelProgress": "Уровень {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "Выберите режим",
+            "modeClassic": "Классический",
+            "modeClassicDesc": "Фиксированные вопросы, не торопитесь",
+            "modeTimed": "На время",
+            "modeTimedDesc": "Гонка со временем",
+            "modeEndless": "Бесконечный",
+            "modeEndlessDesc": "Ответьте на как можно больше вопросов",
+            "defaultPlayerName": "Игрок QuizAlyx",
+              "editProfileName": "Изменить имя",
+              "enterNewName": "Введите новое имя",
+              "save": "Сохранить",
+              "nameChangeLimitTitle": "Лимит смены имени",
+              "nameChangeLimitDesc": "Вы можете изменить имя только 2 раза за 14 дней. Пожалуйста, попробуйте позже.",
+              "ok": "ОК",
+              "unknownDate": "Неизвестно",
+              "accountStatus": "Статус аккаунта",
+              "verified": "Подтвержден",
+              "guestAccount": "Гостевой аккаунт",
+              "joinedDate": "Дата регистрации",
+              "membership": "Подписка",
+              "freeTier": "Бесплатно",
+              "daysCount": "{count} Дней",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "Не удалось загрузить данные.",
+                "totalScore": "Общий счет",
+                "quizzesPlayed": "Пройдено квизов",
+                "accuracyRate": "Точность",
+                "dailyStreak": "Ежедневная серия",
+                "enterPlayerNameError": "Пожалуйста, введите крутое имя игрока!",
+                  "welcomeToQuizAlyx": "Добро пожаловать в QuizAlyx!",
+                  "chooseAvatarName": "Выберите аватар и имя игрока.",
+                  "enterPlayerNameHint": "Введите имя игрока",
+                  "startJourney": "Начать путешествие",
+                  "quitQuizTitle": "Выйти из квиза?",
+                    "quitQuizDesc": "Ваш прогресс будет утерян. Вы уверены, что хотите вернуться на главную?",
+                    "quit": "Выйти",
+                    "no5050JokerWarning": "У вас нет подсказок 50/50!",
+                    "noTimeFreezeWarning": "У вас нет заморозки времени!",
+                    "quiz": "Квиз",
+                    "timeSeconds": "Время: {seconds} с",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "Вопрос {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "Квиз завершен!",
+                    "correct": "Верно",
+                    "wrong": "Неверно",
+                    "score": "Счет",
+                    "continueBtn": "Продолжить",
+                    "whatsNext": "Что дальше?",
+                    "playAgain": "Играть снова",
+                    "backToHome": "На главную",
+                    "timesUp": "Время вышло!",
+                    "language": "Язык",
+                      "settingsSaved": "Настройки успешно сохранены!",
+                      "resetHighScoresTitle": "Сбросить рекорды?",
+                      "resetHighScoresDesc": "Это удалит все ваши рекорды. Это действие нельзя отменить.",
+                      "reset": "Сбросить",
+                      "highScoresResetSuccess": "Рекорды успешно сброшены!",
+                      "appearance": "Внешний вид",
+                      "goldTheme": "Золотая тема",
+                      "premiumGoldLook": "Премиальный золотой вид",
+                      "unlockInStore": "Разблокировать в магазине",
+                      "diamondTheme": "Бриллиантовая тема",
+                      "legendaryDiamondLook": "Легендарный бриллиантовый вид",
+                      "unlockInStore1500": "Открыть в магазине (1500 монет)",
+                      "gameplay": "Игровой процесс",
+                      "numberOfQuestions": "Количество вопросов",
+                      "timedDurationSec": "Время таймера (сек)",
+                      "endlessDurationSec": "Бесконечное время (сек)",
+                      "display": "Отображение",
+                      "showDifficulty": "Показывать сложность",
+                      "showDifficultyDesc": "Отображать уровень сложности для каждого вопроса",
+                      "actions": "Действия",
+                      "saveSettings": "Сохранить настройки",
+                      "resetScores": "Сбросить очки",
+                      "visitStoreToUnlock": "Посетите магазин, чтобы разблокировать!",
+                      "storeTitle": "Магазин",
+                        "specialBundlePurchased": "Особый набор куплен! (Осталось: {remaining})",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "Недостаточно монет!",
+                        "exchangeSuccessful": "Обмен успешен!",
+                        "notEnoughPoints": "Недостаточно очков!",
+                        "themeUnlockedSettings": "Тема разблокирована! Включите ее в настройках.",
+                        "itemPurchased": "{itemName} куплено!",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "ОБМЕН ВАЛЮТЫ",
+                        "shopItems": "ТОВАРЫ В МАГАЗИНЕ",
+                        "limitedOffer": "ОГРАНИЧЕННОЕ ПРЕДЛОЖЕНИЕ",
+                        "endsInDays": "Заканчивается через {days} дн.",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "Мега Пак Бустеров",
+                        "boosterPackDesc": "1x Подсказка 50/50 + 1x Заморозка времени",
+                        "remainingLimit": "Осталось: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "Монеты",
+                        "convertBtn": "Обменять",
+                        "joker5050": "Подсказка 50/50",
+                        "joker5050Desc": "Убирает 2 неверных варианта",
+                        "timeFreeze": "Заморозка времени",
+                        "timeFreezeDesc": "Останавливает время на 10 сек",
+                        "premiumTheme": "Премиум тема",
+                        "unlockGoldTheme": "Разблокировать золотую тему",
+                        "unlockDiamondInterface": "Разблокировать бриллиантовый интерфейс",
+                        "themeUnlocked": "Тема разблокирована",
+                        "owned": "ПРИОБРЕТЕНО",
+                        "selectTopic": "Выберите тему",
+                          "topicDifficulty": "Сложность: {topic}",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "Новичок",
+                          "intermediate": "Средний",
+                          "advanced": "Продвинутый"
+}

@@ -1,0 +1,238 @@
+{
+  "@@locale": "pt",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "COMEÇAR",
+  "settings": "Configurações",
+  "offlineTitle": "Sem conexão com a Internet",
+  "offlineDesc": "Verifique sua conexão. Você ainda pode jogar offline, mas seu progresso será salvo localmente como convidado.",
+  "playAsGuest": "Jogar como Convidado",
+  "retry": "Tentar novamente",
+  "exitTitle": "Sair do QuizAlyx?",
+  "exitDesc": "Tem certeza de que deseja sair do jogo?",
+  "cancel": "Cancelar",
+  "exit": "Sair",
+  "dailyRewardTitle": "Recompensa Diária",
+  "dailyRewardDesc": "Você ganhou 5 moedas por entrar hoje!",
+  "plus5Coins": "+5 MOEDAS",
+  "collect": "Coletar",
+  "currentStreak": "Sequência atual: {days} dias!",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "Jogador Convidado",
+  "notLoggedIn": "Não conectado",
+  "myAccount": "Minha Conta",
+  "myStatistics": "Minhas Estatísticas",
+  "loginSignup": "Entrar / Cadastrar",
+  "logOut": "Sair",
+  "appSlogan": "Desafie seu conhecimento",
+  "missionCompleted": "MISSÃO CONCLUÍDA!",
+  "leaderboards": "Classificações",
+    "leaderboardsOfflineDesc": "As classificações exigem uma conexão com a Internet para sincronizar as pontuações globais.",
+    "unexpectedError": "Ocorreu um erro inesperado.",
+    "noOnePlayedYet": "Ninguém jogou ainda!",
+    "beTheFirstToPlay": "Resolva um quiz agora e seja o primeiro a entrar na lista.",
+    "topPlayers": "Melhores Jogadores",
+    "challengeThem": "Desafie-os para reivindicar seu lugar!",
+    "pts": "pts",
+    "signInWithGoogle": "Entrar com o Google",
+      "continueAsGuest": "Continuar como convidado",
+      "plusCoinsEarned": "+{coins} Moedas!",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "Mestre das Perguntas",
+        "mission_global_desc": "Resolva um total de X perguntas",
+        "mission_title_Math": "Matemática",
+        "mission_desc_Math": "Resolva perguntas de matemática",
+        "mission_title_Physics": "Física",
+        "mission_desc_Physics": "Resolva perguntas de física",
+        "mission_title_Chemistry": "Química",
+        "mission_desc_Chemistry": "Resolva perguntas de química",
+        "mission_title_Biology": "Biologia",
+        "mission_desc_Biology": "Resolva perguntas de biologia",
+        "mission_title_History": "História",
+        "mission_desc_History": "Resolva perguntas de história",
+        "mission_title_Geography": "Geografia",
+        "mission_desc_Geography": "Resolva perguntas de geografia",
+        "mission_title_Literature": "Literatura",
+        "mission_desc_Literature": "Resolva perguntas de literatura",
+        "mission_title_Art": "Arte",
+        "mission_desc_Art": "Resolva perguntas de arte",
+        "mission_title_Music": "Música",
+        "mission_desc_Music": "Resolva perguntas de música",
+        "mission_title_Sports": "Esportes",
+        "mission_desc_Sports": "Resolva perguntas de esportes",
+        "mission_title_Technology": "Tecnologia",
+        "mission_desc_Technology": "Resolva perguntas de tecnologia",
+        "mission_title_Software": "Software",
+        "mission_desc_Software": "Resolva perguntas de software",
+        "mission_title_Mechanic": "Mecânica",
+        "mission_desc_Mechanic": "Resolva perguntas de mecânica",
+        "mission_title_Religion": "Religião",
+        "mission_desc_Religion": "Resolva perguntas de religião",
+        "careerAchievements": "Carreira e Conquistas",
+          "totalAchievements": "Total de Conquistas",
+          "maxLevel": "MÁX",
+          "completed": "Concluído",
+          "levelProgress": "Nível {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "Selecionar Modo",
+            "modeClassic": "Clássico",
+            "modeClassicDesc": "Perguntas fixas, sem pressa",
+            "modeTimed": "Cronometrado",
+            "modeTimedDesc": "Corrida contra o tempo",
+            "modeEndless": "Infinito",
+            "modeEndlessDesc": "Responda o máximo que puder",
+            "defaultPlayerName": "Jogador QuizAlyx",
+              "editProfileName": "Editar Nome",
+              "enterNewName": "Digite seu novo nome",
+              "save": "Salvar",
+              "nameChangeLimitTitle": "Limite de Mudança de Nome",
+              "nameChangeLimitDesc": "Você só pode alterar seu nome 2 vezes a cada 14 dias. Tente novamente mais tarde.",
+              "ok": "OK",
+              "unknownDate": "Desconhecido",
+              "accountStatus": "Status da Conta",
+              "verified": "Verificado",
+              "guestAccount": "Conta de Convidado",
+              "joinedDate": "Data de inscrição",
+              "membership": "Assinatura",
+              "freeTier": "Gratuito",
+              "daysCount": "{count} Dias",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "Não foi possível carregar os dados.",
+                "totalScore": "Pontuação Total",
+                "quizzesPlayed": "Quizzes Jogados",
+                "accuracyRate": "Taxa de Precisão",
+                "dailyStreak": "Sequência Diária",
+                "enterPlayerNameError": "Por favor, insira um nome de jogador legal!",
+                  "welcomeToQuizAlyx": "Bem-vindo ao QuizAlyx!",
+                  "chooseAvatarName": "Escolha seu avatar e nome de jogador.",
+                  "enterPlayerNameHint": "Digite o Nome do Jogador",
+                  "startJourney": "Iniciar Jornada",
+                  "quitQuizTitle": "Sair do Quiz?",
+                    "quitQuizDesc": "Seu progresso será perdido. Tem certeza de que deseja voltar ao Início?",
+                    "quit": "Sair",
+                    "no5050JokerWarning": "Você não tem mais Joker 50/50!",
+                    "noTimeFreezeWarning": "Você não tem mais Congelar Tempo!",
+                    "quiz": "Quiz",
+                    "timeSeconds": "Tempo: {seconds} s",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "Pergunta {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "Quiz Concluído!",
+                    "correct": "Correto",
+                    "wrong": "Errado",
+                    "score": "Pontuação",
+                    "continueBtn": "Continuar",
+                    "whatsNext": "O que vem a seguir?",
+                    "playAgain": "Jogar Novamente",
+                    "backToHome": "Voltar ao Início",
+                    "timesUp": "Tempo Esgotado!",
+                    "language": "Idioma",
+                      "settingsSaved": "Configurações salvas com sucesso!",
+                      "resetHighScoresTitle": "Redefinir Pontuações?",
+                      "resetHighScoresDesc": "Isso excluirá todas as suas pontuações altas. Esta ação não pode ser desfeita.",
+                      "reset": "Redefinir",
+                      "highScoresResetSuccess": "Pontuações redefinidas com sucesso!",
+                      "appearance": "Aparência",
+                      "goldTheme": "Tema Ouro",
+                      "premiumGoldLook": "Aparência de ouro premium",
+                      "unlockInStore": "Desbloquear na Loja",
+                      "diamondTheme": "Tema Diamante",
+                      "legendaryDiamondLook": "Aparência de diamante lendário",
+                      "unlockInStore1500": "Desbloquear na Loja (1500 Moedas)",
+                      "gameplay": "Jogabilidade",
+                      "numberOfQuestions": "Número de Perguntas",
+                      "timedDurationSec": "Duração cronometrada (seg)",
+                      "endlessDurationSec": "Duração infinita (seg)",
+                      "display": "Exibição",
+                      "showDifficulty": "Mostrar Dificuldade",
+                      "showDifficultyDesc": "Mostrar nível de dificuldade para cada pergunta",
+                      "actions": "Ações",
+                      "saveSettings": "Salvar Configurações",
+                      "resetScores": "Zerar Pontuações",
+                      "visitStoreToUnlock": "Visite a Loja para desbloquear!",
+                      "storeTitle": "Loja",
+                        "specialBundlePurchased": "Pacote Especial Comprado! (Restantes: {remaining})",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "Moedas insuficientes!",
+                        "exchangeSuccessful": "Troca bem-sucedida!",
+                        "notEnoughPoints": "Pontos insuficientes!",
+                        "themeUnlockedSettings": "Tema Desbloqueado! Ative em Configurações.",
+                        "itemPurchased": "{itemName} comprado!",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "CÂMBIO DE MOEDAS",
+                        "shopItems": "ITENS DA LOJA",
+                        "limitedOffer": "OFERTA LIMITADA",
+                        "endsInDays": "Termina em {days} dias",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "Mega Pacote Booster",
+                        "boosterPackDesc": "1x Coringa 50/50 + 1x Congelar Tempo",
+                        "remainingLimit": "Restante: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "Moedas",
+                        "convertBtn": "Converter",
+                        "joker5050": "Coringa 50/50",
+                        "joker5050Desc": "Remove 2 opções erradas",
+                        "timeFreeze": "Congelar Tempo",
+                        "timeFreezeDesc": "Para o cronômetro por 10s",
+                        "premiumTheme": "Tema Premium",
+                        "unlockGoldTheme": "Desbloquear Tema Ouro",
+                        "unlockDiamondInterface": "Desbloquear Interface Diamante",
+                        "themeUnlocked": "Tema Desbloqueado",
+                        "owned": "ADQUIRIDO",
+                        "selectTopic": "Selecionar Tópico",
+                          "topicDifficulty": "Dificuldade: {topic}",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "Iniciante",
+                          "intermediate": "Intermediário",
+                          "advanced": "Avançado"
+}

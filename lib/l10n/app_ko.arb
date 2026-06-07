@@ -1,0 +1,238 @@
+{
+  "@@locale": "ko",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "퀴즈 시작",
+  "settings": "설정",
+  "offlineTitle": "인터넷 연결 없음",
+  "offlineDesc": "연결을 확인해주세요. 오프라인으로 플레이할 수 있지만 진행 상황은 게스트로 기기에 저장됩니다.",
+  "playAsGuest": "게스트로 플레이",
+  "retry": "재시도",
+  "exitTitle": "QuizAlyx를 종료하시겠습니까?",
+  "exitDesc": "게임을 종료하시겠습니까?",
+  "cancel": "취소",
+  "exit": "종료",
+  "dailyRewardTitle": "일일 보상",
+  "dailyRewardDesc": "오늘 로그인하여 5코인을 획득했습니다!",
+  "plus5Coins": "+5 코인",
+  "collect": "수령하기",
+  "currentStreak": "현재 연속 기록: {days}일!",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "게스트 플레이어",
+  "notLoggedIn": "로그인되지 않음",
+  "myAccount": "내 계정",
+  "myStatistics": "내 통계",
+  "loginSignup": "로그인 / 회원가입",
+  "logOut": "로그아웃",
+  "appSlogan": "당신의 지식에 도전하세요",
+  "missionCompleted": "임무 완료!",
+  "leaderboards": "순위표",
+    "leaderboardsOfflineDesc": "글로벌 점수를 동기화하려면 인터넷 연결이 필요합니다.",
+    "unexpectedError": "예상치 못한 오류가 발생했습니다.",
+    "noOnePlayedYet": "아직 아무도 플레이하지 않았습니다!",
+    "beTheFirstToPlay": "지금 퀴즈를 풀고 목록에 가장 먼저 이름을 올리세요.",
+    "topPlayers": "최고의 플레이어",
+    "challengeThem": "그들에게 도전하여 당신의 자리를 차지하세요!",
+    "pts": "점",
+    "signInWithGoogle": "Google로 로그인",
+      "continueAsGuest": "게스트로 계속하기",
+      "plusCoinsEarned": "+{coins} 코인!",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "질문 마스터",
+        "mission_global_desc": "총 X개의 질문을 해결하세요",
+        "mission_title_Math": "수학",
+        "mission_desc_Math": "수학 질문 해결",
+        "mission_title_Physics": "물리학",
+        "mission_desc_Physics": "물리학 질문 해결",
+        "mission_title_Chemistry": "화학",
+        "mission_desc_Chemistry": "화학 질문 해결",
+        "mission_title_Biology": "생물학",
+        "mission_desc_Biology": "생물학 질문 해결",
+        "mission_title_History": "역사",
+        "mission_desc_History": "역사 질문 해결",
+        "mission_title_Geography": "지리",
+        "mission_desc_Geography": "지리 질문 해결",
+        "mission_title_Literature": "문학",
+        "mission_desc_Literature": "문학 질문 해결",
+        "mission_title_Art": "예술",
+        "mission_desc_Art": "예술 질문 해결",
+        "mission_title_Music": "음악",
+        "mission_desc_Music": "음악 질문 해결",
+        "mission_title_Sports": "스포츠",
+        "mission_desc_Sports": "스포츠 질문 해결",
+        "mission_title_Technology": "기술",
+        "mission_desc_Technology": "기술 질문 해결",
+        "mission_title_Software": "소프트웨어",
+        "mission_desc_Software": "소프트웨어 질문 해결",
+        "mission_title_Mechanic": "기계학",
+        "mission_desc_Mechanic": "기계학 질문 해결",
+        "mission_title_Religion": "종교",
+        "mission_desc_Religion": "종교 질문 해결",
+        "careerAchievements": "경력 및 업적",
+          "totalAchievements": "총 업적",
+          "maxLevel": "최대",
+          "completed": "완료",
+          "levelProgress": "레벨 {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "게임 모드 선택",
+            "modeClassic": "클래식",
+            "modeClassicDesc": "고정된 질문, 천천히 푸세요",
+            "modeTimed": "시간 제한",
+            "modeTimedDesc": "시간과의 경주",
+            "modeEndless": "무한",
+            "modeEndlessDesc": "최대한 많이 대답하세요",
+            "defaultPlayerName": "QuizAlyx 플레이어",
+              "editProfileName": "프로필 이름 편집",
+              "enterNewName": "새 이름 입력",
+              "save": "저장",
+              "nameChangeLimitTitle": "이름 변경 제한",
+              "nameChangeLimitDesc": "이름은 14일마다 2번만 변경할 수 있습니다. 나중에 다시 시도해 주세요.",
+              "ok": "확인",
+              "unknownDate": "알 수 없음",
+              "accountStatus": "계정 상태",
+              "verified": "확인됨",
+              "guestAccount": "게스트 계정",
+              "joinedDate": "가입 날짜",
+              "membership": "멤버십",
+              "freeTier": "무료",
+              "daysCount": "{count} 일",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "데이터를 로드할 수 없습니다.",
+                "totalScore": "총 점수",
+                "quizzesPlayed": "플레이한 퀴즈",
+                "accuracyRate": "정확도",
+                "dailyStreak": "일일 연속 기록",
+                "enterPlayerNameError": "멋진 플레이어 이름을 입력해주세요!",
+                  "welcomeToQuizAlyx": "QuizAlyx에 오신 것을 환영합니다!",
+                  "chooseAvatarName": "플레이어 아바타와 이름을 선택하세요.",
+                  "enterPlayerNameHint": "플레이어 이름 입력",
+                  "startJourney": "여정 시작",
+                  "quitQuizTitle": "퀴즈를 종료하시겠습니까?",
+                    "quitQuizDesc": "진행 상황이 손실됩니다. 홈으로 돌아가시겠습니까?",
+                    "quit": "종료",
+                    "no5050JokerWarning": "50/50 조커가 없습니다!",
+                    "noTimeFreezeWarning": "시간 정지가 없습니다!",
+                    "quiz": "퀴즈",
+                    "timeSeconds": "시간: {seconds} 초",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "질문 {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "퀴즈 완료!",
+                    "correct": "정답",
+                    "wrong": "오답",
+                    "score": "점수",
+                    "continueBtn": "계속",
+                    "whatsNext": "다음은?",
+                    "playAgain": "다시 플레이",
+                    "backToHome": "홈으로 돌아가기",
+                    "timesUp": "시간 종료!",
+                    "language": "언어",
+                      "settingsSaved": "설정이 성공적으로 저장되었습니다!",
+                      "resetHighScoresTitle": "최고 점수를 초기화하시겠습니까?",
+                      "resetHighScoresDesc": "모든 최고 점수가 삭제됩니다. 이 작업은 실행 취소할 수 없습니다.",
+                      "reset": "초기화",
+                      "highScoresResetSuccess": "최고 점수가 성공적으로 초기화되었습니다!",
+                      "appearance": "외관",
+                      "goldTheme": "골드 테마",
+                      "premiumGoldLook": "프리미엄 골드 룩",
+                      "unlockInStore": "상점에서 잠금 해제",
+                      "diamondTheme": "다이아몬드 테마",
+                      "legendaryDiamondLook": "전설적인 다이아몬드 룩",
+                      "unlockInStore1500": "상점에서 잠금 해제 (1500 코인)",
+                      "gameplay": "게임 플레이",
+                      "numberOfQuestions": "질문 수",
+                      "timedDurationSec": "시간 제한 지속 시간 (초)",
+                      "endlessDurationSec": "무한 지속 시간 (초)",
+                      "display": "디스플레이",
+                      "showDifficulty": "난이도 표시",
+                      "showDifficultyDesc": "각 질문의 난이도 레벨 표시",
+                      "actions": "작업",
+                      "saveSettings": "설정 저장",
+                      "resetScores": "점수 초기화",
+                      "visitStoreToUnlock": "잠금 해제하려면 상점을 방문하세요!",
+                      "storeTitle": "상점",
+                        "specialBundlePurchased": "특별 번들 구매 완료! (남은 수량: {remaining})",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "코인이 부족합니다!",
+                        "exchangeSuccessful": "교환 성공!",
+                        "notEnoughPoints": "포인트가 부족합니다!",
+                        "themeUnlockedSettings": "테마 잠금 해제! 설정에서 활성화하세요.",
+                        "itemPurchased": "{itemName} 구매 완료!",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "통화 교환",
+                        "shopItems": "상점 아이템",
+                        "limitedOffer": "한정 혜택",
+                        "endsInDays": "{days}일 후 종료",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "메가 부스터 팩",
+                        "boosterPackDesc": "1x 50/50 조커 + 1x 시간 정지",
+                        "remainingLimit": "남은 수량: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "코인",
+                        "convertBtn": "변환",
+                        "joker5050": "50/50 조커",
+                        "joker5050Desc": "오답 2개 제거",
+                        "timeFreeze": "시간 정지",
+                        "timeFreezeDesc": "10초 동안 타이머 정지",
+                        "premiumTheme": "프리미엄 테마",
+                        "unlockGoldTheme": "골드 테마 잠금 해제",
+                        "unlockDiamondInterface": "다이아몬드 인터페이스 잠금 해제",
+                        "themeUnlocked": "테마 잠금 해제됨",
+                        "owned": "보유함",
+                        "selectTopic": "주제 선택",
+                          "topicDifficulty": "{topic} 난이도",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "초급",
+                          "intermediate": "중급",
+                          "advanced": "고급"
+}

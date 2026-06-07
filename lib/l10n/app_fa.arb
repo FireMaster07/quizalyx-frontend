@@ -1,0 +1,238 @@
+{
+  "@@locale": "fa",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "شروع آزمون",
+  "settings": "تنظیمات",
+  "offlineTitle": "بدون اینترنت",
+  "offlineDesc": "لطفاً اتصال اینترنت خود را بررسی کنید. شما هنوز می‌توانید آفلاین بازی کنید، اما پیشرفت شما به صورت محلی به عنوان مهمان ذخیره می‌شود.",
+  "playAsGuest": "بازی به عنوان مهمان",
+  "retry": "تلاش مجدد",
+  "exitTitle": "خروج از QuizAlyx؟",
+  "exitDesc": "آیا مطمئن هستید که می‌خواهید از بازی خارج شوید؟",
+  "cancel": "لغو",
+  "exit": "خروج",
+  "dailyRewardTitle": "جایزه روزانه",
+  "dailyRewardDesc": "شما 5 سکه برای ورود امروز خود دریافت کردید!",
+  "plus5Coins": "+5 سکه",
+  "collect": "دریافت",
+  "currentStreak": "روند فعلی: {days} روز!",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "بازیکن مهمان",
+  "notLoggedIn": "وارد نشده‌اید",
+  "myAccount": "حساب من",
+  "myStatistics": "آمار من",
+  "loginSignup": "ورود / ثبت‌نام",
+  "logOut": "خروج از حساب",
+  "appSlogan": "دانش خود را به چالش بکشید",
+  "missionCompleted": "ماموریت انجام شد!",
+  "leaderboards": "جدول امتیازات",
+    "leaderboardsOfflineDesc": "برای همگام‌سازی امتیازات جهانی به اینترنت نیاز است.",
+    "unexpectedError": "یک خطای غیرمنتظره رخ داد.",
+    "noOnePlayedYet": "هنوز کسی بازی نکرده است!",
+    "beTheFirstToPlay": "همین الان یک آزمون حل کن و اولین نفر در لیست باش.",
+    "topPlayers": "بهترین بازیکنان",
+    "challengeThem": "آنها را به چالش بکش تا جایگاهت را بگیری!",
+    "pts": "امتیاز",
+    "signInWithGoogle": "ورود با گوگل",
+      "continueAsGuest": "ادامه به عنوان مهمان",
+      "plusCoinsEarned": "+{coins} سکه!",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "استاد سوالات",
+        "mission_global_desc": "در مجموع X سوال را حل کنید",
+        "mission_title_Math": "ریاضیات",
+        "mission_desc_Math": "سوالات ریاضی را حل کنید",
+        "mission_title_Physics": "فیزیک",
+        "mission_desc_Physics": "سوالات فیزیک را حل کنید",
+        "mission_title_Chemistry": "شیمی",
+        "mission_desc_Chemistry": "سوالات شیمی را حل کنید",
+        "mission_title_Biology": "زیست‌شناسی",
+        "mission_desc_Biology": "سوالات زیست‌شناسی را حل کنید",
+        "mission_title_History": "تاریخ",
+        "mission_desc_History": "سوالات تاریخ را حل کنید",
+        "mission_title_Geography": "جغرافیا",
+        "mission_desc_Geography": "سوالات جغرافیا را حل کنید",
+        "mission_title_Literature": "ادبیات",
+        "mission_desc_Literature": "سوالات ادبیات را حل کنید",
+        "mission_title_Art": "هنر",
+        "mission_desc_Art": "سوالات هنر را حل کنید",
+        "mission_title_Music": "موسیقی",
+        "mission_desc_Music": "سوالات موسیقی را حل کنید",
+        "mission_title_Sports": "ورزش",
+        "mission_desc_Sports": "سوالات ورزشی را حل کنید",
+        "mission_title_Technology": "فناوری",
+        "mission_desc_Technology": "سوالات فناوری را حل کنید",
+        "mission_title_Software": "نرم‌افزار",
+        "mission_desc_Software": "سوالات نرم‌افزار را حل کنید",
+        "mission_title_Mechanic": "مکانیک",
+        "mission_desc_Mechanic": "سوالات مکانیک را حل کنید",
+        "mission_title_Religion": "دین",
+        "mission_desc_Religion": "سوالات دینی را حل کنید",
+        "careerAchievements": "حرفه و دستاوردها",
+          "totalAchievements": "کل دستاوردها",
+          "maxLevel": "حداکثر",
+          "completed": "تکمیل شد",
+          "levelProgress": "سطح {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "انتخاب حالت بازی",
+            "modeClassic": "کلاسیک",
+            "modeClassicDesc": "سوالات ثابت، عجله نکنید",
+            "modeTimed": "زمان‌دار",
+            "modeTimedDesc": "مسابقه با زمان",
+            "modeEndless": "بی‌پایان",
+            "modeEndlessDesc": "تا می‌توانی پاسخ بده",
+            "defaultPlayerName": "بازیکن QuizAlyx",
+              "editProfileName": "ویرایش نام پروفایل",
+              "enterNewName": "نام جدید خود را وارد کنید",
+              "save": "ذخیره",
+              "nameChangeLimitTitle": "محدودیت تغییر نام",
+              "nameChangeLimitDesc": "شما فقط ۲ بار در هر ۱۴ روز می‌توانید نام خود را تغییر دهید. لطفاً بعداً دوباره تلاش کنید.",
+              "ok": "باشه",
+              "unknownDate": "نامشخص",
+              "accountStatus": "وضعیت حساب",
+              "verified": "تأیید شده",
+              "guestAccount": "حساب مهمان",
+              "joinedDate": "تاریخ عضویت",
+              "membership": "عضویت",
+              "freeTier": "رایگان",
+              "daysCount": "{count} روز",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "داده‌ها بارگیری نشد.",
+                "totalScore": "امتیاز کل",
+                "quizzesPlayed": "آزمون‌های انجام شده",
+                "accuracyRate": "نرخ دقت",
+                "dailyStreak": "روند روزانه",
+                "enterPlayerNameError": "لطفاً یک نام کاربری جذاب وارد کنید!",
+                  "welcomeToQuizAlyx": "به QuizAlyx خوش آمدید!",
+                  "chooseAvatarName": "آواتار و نام بازیکن خود را انتخاب کنید.",
+                  "enterPlayerNameHint": "نام بازیکن را وارد کنید",
+                  "startJourney": "شروع ماجراجویی",
+                  "quitQuizTitle": "خروج از آزمون؟",
+                    "quitQuizDesc": "پیشرفت شما از دست خواهد رفت. مطمئن هستید که می‌خواهید به خانه برگردید؟",
+                    "quit": "خروج",
+                    "no5050JokerWarning": "شما هیچ جوکر ۵۰/۵۰ ندارید!",
+                    "noTimeFreezeWarning": "شما هیچ توقف زمانی ندارید!",
+                    "quiz": "آزمون",
+                    "timeSeconds": "زمان: {seconds} ثانیه",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "سوال {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "آزمون به پایان رسید!",
+                    "correct": "درست",
+                    "wrong": "نادرست",
+                    "score": "امتیاز",
+                    "continueBtn": "ادامه",
+                    "whatsNext": "بعدی چیست؟",
+                    "playAgain": "دوباره بازی کن",
+                    "backToHome": "بازگشت به خانه",
+                    "timesUp": "زمان تمام شد!",
+                    "language": "زبان",
+                      "settingsSaved": "تنظیمات با موفقیت ذخیره شد!",
+                      "resetHighScoresTitle": "بازنشانی رکوردهای بالا؟",
+                      "resetHighScoresDesc": "این کار تمام رکوردهای شما را حذف می‌کند. این عمل قابل بازگشت نیست.",
+                      "reset": "بازنشانی",
+                      "highScoresResetSuccess": "رکوردها با موفقیت بازنشانی شدند!",
+                      "appearance": "ظاهر",
+                      "goldTheme": "تم طلایی",
+                      "premiumGoldLook": "ظاهر طلایی پرمیوم",
+                      "unlockInStore": "باز کردن در فروشگاه",
+                      "diamondTheme": "تم الماسی",
+                      "legendaryDiamondLook": "ظاهر افسانه‌ای الماسی",
+                      "unlockInStore1500": "باز کردن در فروشگاه (۱۵۰۰ سکه)",
+                      "gameplay": "گیم‌پلی",
+                      "numberOfQuestions": "تعداد سوالات",
+                      "timedDurationSec": "مدت زمان‌دار (ثانیه)",
+                      "endlessDurationSec": "مدت بی‌پایان (ثانیه)",
+                      "display": "نمایش",
+                      "showDifficulty": "نمایش درجه سختی",
+                      "showDifficultyDesc": "نمایش سطح دشواری برای هر سوال",
+                      "actions": "اقدامات",
+                      "saveSettings": "ذخیره تنظیمات",
+                      "resetScores": "بازنشانی امتیازها",
+                      "visitStoreToUnlock": "برای باز کردن قفل از فروشگاه دیدن کنید!",
+                      "storeTitle": "فروشگاه",
+                        "specialBundlePurchased": "بسته ویژه خریداری شد! (باقیمانده: {remaining})",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "سکه کافی نیست!",
+                        "exchangeSuccessful": "تبدیل با موفقیت انجام شد!",
+                        "notEnoughPoints": "امتیاز کافی نیست!",
+                        "themeUnlockedSettings": "تم باز شد! آن را در تنظیمات فعال کنید.",
+                        "itemPurchased": "{itemName} خریداری شد!",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "تبدیل ارز",
+                        "shopItems": "آیتم‌های فروشگاه",
+                        "limitedOffer": "پیشنهاد ویژه",
+                        "endsInDays": "پایان در {days} روز",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "بسته تقویتی مگا",
+                        "boosterPackDesc": "1x جوکر ۵۰/۵۰ + 1x توقف زمان",
+                        "remainingLimit": "باقیمانده: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "سکه",
+                        "convertBtn": "تبدیل",
+                        "joker5050": "جوکر ۵۰/۵۰",
+                        "joker5050Desc": "حذف ۲ گزینه اشتباه",
+                        "timeFreeze": "توقف زمان",
+                        "timeFreezeDesc": "توقف زمان برای ۱۰ ثانیه",
+                        "premiumTheme": "تم پرمیوم",
+                        "unlockGoldTheme": "باز کردن تم طلایی",
+                        "unlockDiamondInterface": "باز کردن رابط کاربری الماسی",
+                        "themeUnlocked": "تم باز شد",
+                        "owned": "خریداری شده",
+                        "selectTopic": "انتخاب موضوع",
+                          "topicDifficulty": "سختی {topic}",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "مبتدی",
+                          "intermediate": "متوسط",
+                          "advanced": "پیشرفته"
+}

@@ -1,0 +1,238 @@
+{
+  "@@locale": "ja",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "クイズ開始",
+  "settings": "設定",
+  "offlineTitle": "インターネット接続なし",
+  "offlineDesc": "接続を確認してください。オフラインでもプレイ可能ですが、進行状況はゲストとしてローカルに保存されます。",
+  "playAsGuest": "ゲストとしてプレイ",
+  "retry": "再試行",
+  "exitTitle": "QuizAlyxを終了しますか？",
+  "exitDesc": "ゲームを終了してもよろしいですか？",
+  "cancel": "キャンセル",
+  "exit": "終了",
+  "dailyRewardTitle": "デイリー報酬",
+  "dailyRewardDesc": "今日のログインで5コインを獲得しました！",
+  "plus5Coins": "+5 コイン",
+  "collect": "受け取る",
+  "currentStreak": "現在の連続記録: {days} 日！",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "ゲストプレイヤー",
+  "notLoggedIn": "未ログイン",
+  "myAccount": "マイアカウント",
+  "myStatistics": "マイ統計",
+  "loginSignup": "ログイン / 登録",
+  "logOut": "ログアウト",
+  "appSlogan": "知識に挑戦しよう",
+  "missionCompleted": "ミッション達成！",
+  "leaderboards": "リーダーボード",
+    "leaderboardsOfflineDesc": "グローバルスコアを同期するにはインターネット接続が必要です。",
+    "unexpectedError": "予期せぬエラーが発生しました。",
+    "noOnePlayedYet": "まだ誰もプレイしていません！",
+    "beTheFirstToPlay": "今すぐクイズを解いて、リストの最初の人になりましょう。",
+    "topPlayers": "トッププレイヤー",
+    "challengeThem": "彼らに挑戦して、あなたの場所を手に入れましょう！",
+    "pts": "pt",
+    "signInWithGoogle": "Google でログイン",
+      "continueAsGuest": "ゲストとして続行",
+      "plusCoinsEarned": "+{coins} コイン！",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "クイズマスター",
+        "mission_global_desc": "合計X問解く",
+        "mission_title_Math": "数学",
+        "mission_desc_Math": "数学の質問を解く",
+        "mission_title_Physics": "物理",
+        "mission_desc_Physics": "物理の質問を解く",
+        "mission_title_Chemistry": "化学",
+        "mission_desc_Chemistry": "化学の質問を解く",
+        "mission_title_Biology": "生物",
+        "mission_desc_Biology": "生物の質問を解く",
+        "mission_title_History": "歴史",
+        "mission_desc_History": "歴史の質問を解く",
+        "mission_title_Geography": "地理",
+        "mission_desc_Geography": "地理の質問を解く",
+        "mission_title_Literature": "文学",
+        "mission_desc_Literature": "文学の質問を解く",
+        "mission_title_Art": "美術",
+        "mission_desc_Art": "美術の質問を解く",
+        "mission_title_Music": "音楽",
+        "mission_desc_Music": "音楽の質問を解く",
+        "mission_title_Sports": "スポーツ",
+        "mission_desc_Sports": "スポーツの質問を解く",
+        "mission_title_Technology": "テクノロジー",
+        "mission_desc_Technology": "テクノロジーの質問を解く",
+        "mission_title_Software": "ソフトウェア",
+        "mission_desc_Software": "ソフトウェアの質問を解く",
+        "mission_title_Mechanic": "機械工学",
+        "mission_desc_Mechanic": "機械工学の質問を解く",
+        "mission_title_Religion": "宗教",
+        "mission_desc_Religion": "宗教の質問を解く",
+        "careerAchievements": "キャリアと実績",
+          "totalAchievements": "合計実績",
+          "maxLevel": "最大",
+          "completed": "完了",
+          "levelProgress": "レベル {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "ゲームモードを選択",
+            "modeClassic": "クラシック",
+            "modeClassicDesc": "固定問題、自分のペースで",
+            "modeTimed": "タイムド",
+            "modeTimedDesc": "時間との戦い",
+            "modeEndless": "エンドレス",
+            "modeEndlessDesc": "できるだけ多く答える",
+            "defaultPlayerName": "QuizAlyx プレイヤー",
+              "editProfileName": "プロフィール名を編集",
+              "enterNewName": "新しい名前を入力",
+              "save": "保存",
+              "nameChangeLimitTitle": "名前変更の制限",
+              "nameChangeLimitDesc": "名前の変更は14日間に2回までです。後で再試行してください。",
+              "ok": "OK",
+              "unknownDate": "不明",
+              "accountStatus": "アカウント状況",
+              "verified": "認証済み",
+              "guestAccount": "ゲストアカウント",
+              "joinedDate": "登録日",
+              "membership": "メンバーシップ",
+              "freeTier": "無料プラン",
+              "daysCount": "{count} 日",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "データを読み込めませんでした。",
+                "totalScore": "合計スコア",
+                "quizzesPlayed": "プレイしたクイズ",
+                "accuracyRate": "正解率",
+                "dailyStreak": "連続ログイン",
+                "enterPlayerNameError": "クールなプレイヤー名を入力してください！",
+                  "welcomeToQuizAlyx": "QuizAlyxへようこそ！",
+                  "chooseAvatarName": "プレイヤーアバターと名前を選択してください。",
+                  "enterPlayerNameHint": "プレイヤー名を入力",
+                  "startJourney": "旅を始める",
+                  "quitQuizTitle": "クイズを終了しますか？",
+                    "quitQuizDesc": "進行状況は失われます。ホームに戻ってもよろしいですか？",
+                    "quit": "終了",
+                    "no5050JokerWarning": "50/50ジョーカーがありません！",
+                    "noTimeFreezeWarning": "タイムフリーズがありません！",
+                    "quiz": "クイズ",
+                    "timeSeconds": "残り時間: {seconds} 秒",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "問題 {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "クイズ完了！",
+                    "correct": "正解",
+                    "wrong": "不正解",
+                    "score": "スコア",
+                    "continueBtn": "続ける",
+                    "whatsNext": "次はどうする？",
+                    "playAgain": "もう一度プレイ",
+                    "backToHome": "ホームに戻る",
+                    "timesUp": "時間切れ！",
+                    "language": "言語",
+                      "settingsSaved": "設定が正常に保存されました！",
+                      "resetHighScoresTitle": "ハイスコアをリセットしますか？",
+                      "resetHighScoresDesc": "これによりすべてのハイスコアが削除されます。この操作は元に戻せません。",
+                      "reset": "リセット",
+                      "highScoresResetSuccess": "ハイスコアが正常にリセットされました！",
+                      "appearance": "外観",
+                      "goldTheme": "ゴールドテーマ",
+                      "premiumGoldLook": "プレミアムなゴールドルック",
+                      "unlockInStore": "ストアでロック解除",
+                      "diamondTheme": "ダイヤモンドテーマ",
+                      "legendaryDiamondLook": "伝説のダイヤモンドルック",
+                      "unlockInStore1500": "ストアでロック解除 (1500 コイン)",
+                      "gameplay": "ゲームプレイ",
+                      "numberOfQuestions": "問題数",
+                      "timedDurationSec": "制限時間 (秒)",
+                      "endlessDurationSec": "エンドレスの制限時間 (秒)",
+                      "display": "表示",
+                      "showDifficulty": "難易度を表示",
+                      "showDifficultyDesc": "各問題の難易度を表示する",
+                      "actions": "アクション",
+                      "saveSettings": "設定を保存",
+                      "resetScores": "スコアをリセット",
+                      "visitStoreToUnlock": "ストアにアクセスしてロック解除！",
+                      "storeTitle": "ストア",
+                        "specialBundlePurchased": "特別バンドルを購入しました！（残り：{remaining}）",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "コインが足りません！",
+                        "exchangeSuccessful": "交換成功！",
+                        "notEnoughPoints": "ポイントが足りません！",
+                        "themeUnlockedSettings": "テーマのロックを解除しました！設定で有効にしてください。",
+                        "itemPurchased": "{itemName} を購入しました！",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "通貨交換",
+                        "shopItems": "ショップアイテム",
+                        "limitedOffer": "期間限定オファー",
+                        "endsInDays": "残り {days} 日で終了",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "メガブースターパック",
+                        "boosterPackDesc": "1x 50/50 ジョーカー + 1x タイムフリーズ",
+                        "remainingLimit": "残り: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "コイン",
+                        "convertBtn": "変換",
+                        "joker5050": "50/50 ジョーカー",
+                        "joker5050Desc": "間違った選択肢を2つ削除",
+                        "timeFreeze": "タイムフリーズ",
+                        "timeFreezeDesc": "タイマーを10秒間停止",
+                        "premiumTheme": "プレミアムテーマ",
+                        "unlockGoldTheme": "ゴールドテーマをアンロック",
+                        "unlockDiamondInterface": "ダイヤモンドUIをアンロック",
+                        "themeUnlocked": "テーマをアンロック済み",
+                        "owned": "所有済み",
+                        "selectTopic": "トピックを選択",
+                          "topicDifficulty": "{topic} の難易度",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "初級",
+                          "intermediate": "中級",
+                          "advanced": "上級"
+}

@@ -1,0 +1,238 @@
+{
+  "@@locale": "zh",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "开始测试",
+  "settings": "设置",
+  "offlineTitle": "无网络连接",
+  "offlineDesc": "请检查您的网络连接。您仍然可以离线游玩，但进度将作为访客保存在本地。",
+  "playAsGuest": "作为访客游玩",
+  "retry": "重试",
+  "exitTitle": "退出 QuizAlyx？",
+  "exitDesc": "您确定要离开游戏吗？",
+  "cancel": "取消",
+  "exit": "退出",
+  "dailyRewardTitle": "每日奖励",
+  "dailyRewardDesc": "您今天登录获得了 5 个金币！",
+  "plus5Coins": "+5 金币",
+  "collect": "领取",
+  "currentStreak": "当前连续签到：{days} 天！",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "访客玩家",
+  "notLoggedIn": "未登录",
+  "myAccount": "我的账户",
+  "myStatistics": "我的统计",
+  "loginSignup": "登录 / 注册",
+  "logOut": "登出",
+  "appSlogan": "挑战你的知识",
+  "missionCompleted": "任务完成！",
+  "leaderboards": "排行榜",
+    "leaderboardsOfflineDesc": "排行榜需要互联网连接以同步全球分数。",
+    "unexpectedError": "发生意外错误。",
+    "noOnePlayedYet": "还没有人玩过！",
+    "beTheFirstToPlay": "现在完成测验，成为第一个进入列表的人。",
+    "topPlayers": "顶级玩家",
+    "challengeThem": "挑战他们，争夺你的名次！",
+    "pts": "分",
+    "signInWithGoogle": "通过 Google 登录",
+      "continueAsGuest": "以访客身份继续",
+      "plusCoinsEarned": "+{coins} 金币！",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "答题大师",
+        "mission_global_desc": "总共解决 X 个问题",
+        "mission_title_Math": "数学",
+        "mission_desc_Math": "解决数学问题",
+        "mission_title_Physics": "物理",
+        "mission_desc_Physics": "解决物理问题",
+        "mission_title_Chemistry": "化学",
+        "mission_desc_Chemistry": "解决化学问题",
+        "mission_title_Biology": "生物",
+        "mission_desc_Biology": "解决生物问题",
+        "mission_title_History": "历史",
+        "mission_desc_History": "解决历史问题",
+        "mission_title_Geography": "地理",
+        "mission_desc_Geography": "解决地理问题",
+        "mission_title_Literature": "文学",
+        "mission_desc_Literature": "解决文学问题",
+        "mission_title_Art": "艺术",
+        "mission_desc_Art": "解决艺术问题",
+        "mission_title_Music": "音乐",
+        "mission_desc_Music": "解决音乐问题",
+        "mission_title_Sports": "体育",
+        "mission_desc_Sports": "解决体育问题",
+        "mission_title_Technology": "技术",
+        "mission_desc_Technology": "解决技术问题",
+        "mission_title_Software": "软件",
+        "mission_desc_Software": "解决软件问题",
+        "mission_title_Mechanic": "机械",
+        "mission_desc_Mechanic": "解决机械问题",
+        "mission_title_Religion": "宗教",
+        "mission_desc_Religion": "解决宗教问题",
+        "careerAchievements": "职业与成就",
+          "totalAchievements": "总成就",
+          "maxLevel": "最大",
+          "completed": "已完成",
+          "levelProgress": "等级 {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "选择游戏模式",
+            "modeClassic": "经典模式",
+            "modeClassicDesc": "固定问题，不用着急",
+            "modeTimed": "限时模式",
+            "modeTimedDesc": "与时间赛跑",
+            "modeEndless": "无尽模式",
+            "modeEndlessDesc": "尽可能多回答",
+            "defaultPlayerName": "QuizAlyx 玩家",
+              "editProfileName": "编辑资料名称",
+              "enterNewName": "输入你的新名字",
+              "save": "保存",
+              "nameChangeLimitTitle": "改名限制",
+              "nameChangeLimitDesc": "每 14 天只能更改名字 2 次。请稍后再试。",
+              "ok": "确定",
+              "unknownDate": "未知",
+              "accountStatus": "账户状态",
+              "verified": "已验证",
+              "guestAccount": "访客账户",
+              "joinedDate": "加入日期",
+              "membership": "会员资格",
+              "freeTier": "免费方案",
+              "daysCount": "{count} 天",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "无法加载数据。",
+                "totalScore": "总分",
+                "quizzesPlayed": "已玩测验",
+                "accuracyRate": "准确率",
+                "dailyStreak": "每日连胜",
+                "enterPlayerNameError": "请输入一个酷炫的玩家名称！",
+                  "welcomeToQuizAlyx": "欢迎来到 QuizAlyx！",
+                  "chooseAvatarName": "选择你的玩家头像和名称。",
+                  "enterPlayerNameHint": "输入玩家名称",
+                  "startJourney": "开始旅程",
+                  "quitQuizTitle": "退出测验？",
+                    "quitQuizDesc": "您的进度将会丢失。确定要返回主页吗？",
+                    "quit": "退出",
+                    "no5050JokerWarning": "您没有 50/50 提示卡了！",
+                    "noTimeFreezeWarning": "您没有时间冻结卡了！",
+                    "quiz": "测验",
+                    "timeSeconds": "时间: {seconds} 秒",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "问题 {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "测验完成！",
+                    "correct": "正确",
+                    "wrong": "错误",
+                    "score": "得分",
+                    "continueBtn": "继续",
+                    "whatsNext": "下一步？",
+                    "playAgain": "再玩一次",
+                    "backToHome": "返回主页",
+                    "timesUp": "时间到！",
+                    "language": "语言",
+                      "settingsSaved": "设置已成功保存！",
+                      "resetHighScoresTitle": "重置最高分？",
+                      "resetHighScoresDesc": "这将删除您所有的最高分。此操作无法撤销。",
+                      "reset": "重置",
+                      "highScoresResetSuccess": "最高分已成功重置！",
+                      "appearance": "外观",
+                      "goldTheme": "黄金主题",
+                      "premiumGoldLook": "优质黄金外观",
+                      "unlockInStore": "在商店解锁",
+                      "diamondTheme": "钻石主题",
+                      "legendaryDiamondLook": "传说中的钻石外观",
+                      "unlockInStore1500": "在商店解锁（1500 金币）",
+                      "gameplay": "游戏设置",
+                      "numberOfQuestions": "问题数量",
+                      "timedDurationSec": "限时持续时间（秒）",
+                      "endlessDurationSec": "无尽持续时间（秒）",
+                      "display": "显示",
+                      "showDifficulty": "显示难度",
+                      "showDifficultyDesc": "显示每个问题的难度级别",
+                      "actions": "操作",
+                      "saveSettings": "保存设置",
+                      "resetScores": "重置分数",
+                      "visitStoreToUnlock": "访问商店以解锁！",
+                      "storeTitle": "商店",
+                        "specialBundlePurchased": "已购买特别捆绑包！（剩余：{remaining}）",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "金币不足！",
+                        "exchangeSuccessful": "兑换成功！",
+                        "notEnoughPoints": "积分不足！",
+                        "themeUnlockedSettings": "主题已解锁！请在设置中启用。",
+                        "itemPurchased": "已购买 {itemName}！",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "货币兑换",
+                        "shopItems": "商店物品",
+                        "limitedOffer": "限时优惠",
+                        "endsInDays": "{days} 天后结束",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "超级加速包",
+                        "boosterPackDesc": "1x 50/50 提示 + 1x 时间冻结",
+                        "remainingLimit": "剩余: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "金币",
+                        "convertBtn": "兑换",
+                        "joker5050": "50/50 提示",
+                        "joker5050Desc": "移除 2 个错误选项",
+                        "timeFreeze": "时间冻结",
+                        "timeFreezeDesc": "停止计时 10 秒",
+                        "premiumTheme": "高级主题",
+                        "unlockGoldTheme": "解锁黄金主题",
+                        "unlockDiamondInterface": "解锁钻石界面",
+                        "themeUnlocked": "主题已解锁",
+                        "owned": "已拥有",
+                        "selectTopic": "选择主题",
+                          "topicDifficulty": "{topic} 难度",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "初级",
+                          "intermediate": "中级",
+                          "advanced": "高级"
+}

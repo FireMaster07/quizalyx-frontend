@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "54437009004",
+    "project_id": "quizalyx",
+    "storage_bucket": "quizalyx.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54437009004:android:079a6e0fd78ec55ab06a49",
+        "android_client_info": {
+          "package_name": "com.quizalyx.quizalyx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54437009004-lo014a89sb0m5u984m696fc7rismrgdb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quizalyx.quizalyx",
+            "certificate_hash": "c2baa332628db5a385e6e3d57a20c723423c94cd"
+          }
+        },
+        {
+          "client_id": "54437009004-lqhg15tg9t9kcbq97mn5ql45tec7ln3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAReB9qVNQa6G1xneWmMWP4fUsqoPNQKb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54437009004-lqhg15tg9t9kcbq97mn5ql45tec7ln3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

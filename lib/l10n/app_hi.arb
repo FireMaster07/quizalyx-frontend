@@ -1,0 +1,238 @@
+{
+  "@@locale": "hi",
+  "appTitle": "QuizAlyx",
+  "startQuiz": "क्विज़ शुरू करें",
+  "settings": "सेटिंग्स",
+  "offlineTitle": "कोई इंटरनेट नहीं",
+  "offlineDesc": "कृपया अपना कनेक्शन जांचें। आप अभी भी खेल सकते हैं, लेकिन आपकी प्रगति स्थानीय रूप से अतिथि के रूप में सहेजी जाएगी।",
+  "playAsGuest": "अतिथि के रूप में खेलें",
+  "retry": "पुनः प्रयास करें",
+  "exitTitle": "QuizAlyx से बाहर निकलें?",
+  "exitDesc": "क्या आप वाकई गेम छोड़ना चाहते हैं?",
+  "cancel": "रद्द करें",
+  "exit": "बाहर निकलें",
+  "dailyRewardTitle": "दैनिक इनाम",
+  "dailyRewardDesc": "आज लॉग इन करने के लिए आपने 5 सिक्के अर्जित किए!",
+  "plus5Coins": "+5 सिक्के",
+  "collect": "प्राप्त करें",
+  "currentStreak": "वर्तमान स्ट्रीक: {days} दिन!",
+  "@currentStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "guestPlayer": "अतिथि खिलाड़ी",
+  "notLoggedIn": "लॉग इन नहीं है",
+  "myAccount": "मेरा खाता",
+  "myStatistics": "मेरे आँकड़े",
+  "loginSignup": "लॉग इन / साइन अप",
+  "logOut": "लॉग आउट",
+  "appSlogan": "अपने ज्ञान को चुनौती दें",
+  "missionCompleted": "मिशन पूरा हुआ!",
+  "leaderboards": "लीडरबोर्ड",
+    "leaderboardsOfflineDesc": "वैश्विक स्कोर को सिंक करने के लिए लीडरबोर्ड को इंटरनेट कनेक्शन की आवश्यकता होती है।",
+    "unexpectedError": "एक अप्रत्याशित त्रुटि हुई।",
+    "noOnePlayedYet": "अभी तक किसी ने नहीं खेला है!",
+    "beTheFirstToPlay": "अभी एक क्विज़ हल करें और सूची में आने वाले पहले व्यक्ति बनें।",
+    "topPlayers": "शीर्ष खिलाड़ी",
+    "challengeThem": "अपनी जगह का दावा करने के लिए उन्हें चुनौती दें!",
+    "pts": "अंक",
+    "signInWithGoogle": "Google के साथ साइन इन करें",
+      "continueAsGuest": "अतिथि के रूप में जारी रखें",
+      "plusCoinsEarned": "+{coins} सिक्के!",
+        "@plusCoinsEarned": {
+          "placeholders": {
+            "coins": {
+              "type": "int"
+            }
+          }
+        },
+        "mission_global_title": "प्रश्नों का मास्टर",
+        "mission_global_desc": "कुल X प्रश्न हल करें",
+        "mission_title_Math": "गणित",
+        "mission_desc_Math": "गणित के प्रश्न हल करें",
+        "mission_title_Physics": "भौतिकी",
+        "mission_desc_Physics": "भौतिकी के प्रश्न हल करें",
+        "mission_title_Chemistry": "रसायन विज्ञान",
+        "mission_desc_Chemistry": "रसायन विज्ञान के प्रश्न हल करें",
+        "mission_title_Biology": "जीव विज्ञान",
+        "mission_desc_Biology": "जीव विज्ञान के प्रश्न हल करें",
+        "mission_title_History": "इतिहास",
+        "mission_desc_History": "इतिहास के प्रश्न हल करें",
+        "mission_title_Geography": "भूगोल",
+        "mission_desc_Geography": "भूगोल के प्रश्न हल करें",
+        "mission_title_Literature": "साहित्य",
+        "mission_desc_Literature": "साहित्य के प्रश्न हल करें",
+        "mission_title_Art": "कला",
+        "mission_desc_Art": "कला के प्रश्न हल करें",
+        "mission_title_Music": "संगीत",
+        "mission_desc_Music": "संगीत के प्रश्न हल करें",
+        "mission_title_Sports": "खेल",
+        "mission_desc_Sports": "खेल के प्रश्न हल करें",
+        "mission_title_Technology": "प्रौद्योगिकी",
+        "mission_desc_Technology": "प्रौद्योगिकी के प्रश्न हल करें",
+        "mission_title_Software": "सॉफ्टवेयर",
+        "mission_desc_Software": "सॉफ्टवेयर के प्रश्न हल करें",
+        "mission_title_Mechanic": "यांत्रिकी",
+        "mission_desc_Mechanic": "यांत्रिकी के प्रश्न हल करें",
+        "mission_title_Religion": "धर्म",
+        "mission_desc_Religion": "धर्म के प्रश्न हल करें",
+        "careerAchievements": "कैरियर और उपलब्धियां",
+          "totalAchievements": "कुल उपलब्धियां",
+          "maxLevel": "अधिकतम",
+          "completed": "पूरा हुआ",
+          "levelProgress": "स्तर {current} / {total}",
+          "@levelProgress": {
+            "placeholders": {
+              "current": {"type": "int"},
+              "total": {"type": "int"}
+            }
+          },
+          "selectGameMode": "गेम मोड चुनें",
+            "modeClassic": "क्लासिक",
+            "modeClassicDesc": "निश्चित प्रश्न, अपना समय लें",
+            "modeTimed": "समयबद्ध",
+            "modeTimedDesc": "समय के खिलाफ दौड़",
+            "modeEndless": "अंतहीन",
+            "modeEndlessDesc": "जितने हो सके उतने उत्तर दें",
+            "defaultPlayerName": "QuizAlyx खिलाड़ी",
+              "editProfileName": "प्रोफ़ाइल नाम बदलें",
+              "enterNewName": "अपना नया नाम दर्ज करें",
+              "save": "सहेजें",
+              "nameChangeLimitTitle": "नाम बदलने की सीमा",
+              "nameChangeLimitDesc": "आप 14 दिनों में केवल 2 बार अपना नाम बदल सकते हैं। कृपया बाद में पुनः प्रयास करें।",
+              "ok": "ठीक है",
+              "unknownDate": "अज्ञात",
+              "accountStatus": "खाता स्थिति",
+              "verified": "सत्यापित",
+              "guestAccount": "अतिथि खाता",
+              "joinedDate": "शामिल होने की तिथि",
+              "membership": "सदस्यता",
+              "freeTier": "निःशुल्क",
+              "daysCount": "{count} दिन",
+                "@daysCount": {
+                  "placeholders": {
+                    "count": {"type": "int"}
+                  }
+                },
+                "dataLoadError": "डेटा लोड नहीं किया जा सका।",
+                "totalScore": "कुल स्कोर",
+                "quizzesPlayed": "खेले गए क्विज़",
+                "accuracyRate": "सटीकता दर",
+                "dailyStreak": "दैनिक स्ट्रीक",
+                "enterPlayerNameError": "कृपया एक शानदार खिलाड़ी नाम दर्ज करें!",
+                  "welcomeToQuizAlyx": "QuizAlyx में आपका स्वागत है!",
+                  "chooseAvatarName": "अपना खिलाड़ी अवतार और नाम चुनें।",
+                  "enterPlayerNameHint": "खिलाड़ी का नाम दर्ज करें",
+                  "startJourney": "यात्रा शुरू करें",
+                  "quitQuizTitle": "क्विज़ छोड़ें?",
+                    "quitQuizDesc": "आपकी प्रगति खो जाएगी। क्या आप वाकई होम पर वापस जाना चाहते हैं?",
+                    "quit": "छोड़ें",
+                    "no5050JokerWarning": "आपके पास कोई 50/50 जोकर नहीं है!",
+                    "noTimeFreezeWarning": "आपके पास कोई टाइम फ़्रीज़ नहीं है!",
+                    "quiz": "क्विज़",
+                    "timeSeconds": "समय: {seconds} सेकंड",
+                    "@timeSeconds": {
+                      "placeholders": {
+                        "seconds": {"type": "int"}
+                      }
+                    },
+                    "questionCounter": "प्रश्न {current} / {total}",
+                    "@questionCounter": {
+                      "placeholders": {
+                        "current": {"type": "int"},
+                        "total": {"type": "int"}
+                      }
+                    },
+                    "quizCompleted": "क्विज़ पूरा हुआ!",
+                    "correct": "सही",
+                    "wrong": "गलत",
+                    "score": "स्कोर",
+                    "continueBtn": "जारी रखें",
+                    "whatsNext": "आगे क्या?",
+                    "playAgain": "फिर से खेलें",
+                    "backToHome": "होम पर वापस जाएँ",
+                    "timesUp": "समय समाप्त!",
+                    "language": "भाषा",
+                      "settingsSaved": "सेटिंग्स सफलतापूर्वक सहेजी गईं!",
+                      "resetHighScoresTitle": "उच्च स्कोर रीसेट करें?",
+                      "resetHighScoresDesc": "इससे आपके सभी उच्च स्कोर हटा दिए जाएंगे। इस कार्रवाई को पूर्ववत नहीं किया जा सकता।",
+                      "reset": "रीसेट",
+                      "highScoresResetSuccess": "उच्च स्कोर सफलतापूर्वक रीसेट किए गए!",
+                      "appearance": "दिखावट",
+                      "goldTheme": "गोल्ड थीम",
+                      "premiumGoldLook": "प्रीमियम गोल्ड लुक",
+                      "unlockInStore": "स्टोर में अनलॉक करें",
+                      "diamondTheme": "डायमंड थीम",
+                      "legendaryDiamondLook": "पौराणिक डायमंड लुक",
+                      "unlockInStore1500": "स्टोर में अनलॉक करें (1500 सिक्के)",
+                      "gameplay": "गेमप्ले",
+                      "numberOfQuestions": "प्रश्नों की संख्या",
+                      "timedDurationSec": "समयबद्ध अवधि (सेकंड)",
+                      "endlessDurationSec": "अंतहीन अवधि (सेकंड)",
+                      "display": "प्रदर्शन",
+                      "showDifficulty": "कठिनाई दिखाएं",
+                      "showDifficultyDesc": "प्रत्येक प्रश्न के लिए कठिनाई स्तर प्रदर्शित करें",
+                      "actions": "कार्रवाइयां",
+                      "saveSettings": "सेटिंग्स सहेजें",
+                      "resetScores": "स्कोर रीसेट करें",
+                      "visitStoreToUnlock": "अनलॉक करने के लिए स्टोर पर जाएँ!",
+                      "storeTitle": "स्टोर",
+                        "specialBundlePurchased": "विशेष बंडल खरीदा गया! (शेष: {remaining})",
+                        "@specialBundlePurchased": {
+                          "placeholders": {
+                            "remaining": {"type": "int"}
+                          }
+                        },
+                        "notEnoughCoins": "पर्याप्त सिक्के नहीं!",
+                        "exchangeSuccessful": "विनिमय सफल!",
+                        "notEnoughPoints": "पर्याप्त अंक नहीं!",
+                        "themeUnlockedSettings": "थीम अनलॉक की गई! इसे सेटिंग्स में सक्षम करें।",
+                        "itemPurchased": "{itemName} खरीदा गया!",
+                        "@itemPurchased": {
+                          "placeholders": {
+                            "itemName": {"type": "String"}
+                          }
+                        },
+                        "currencyExchange": "मुद्रा विनिमय",
+                        "shopItems": "स्टोर के आइटम",
+                        "limitedOffer": "सीमित प्रस्ताव",
+                        "endsInDays": "{days} दिनों में समाप्त",
+                        "@endsInDays": {
+                          "placeholders": {
+                            "days": {"type": "int"}
+                          }
+                        },
+                        "megaBoosterPack": "मेगा बूस्टर पैक",
+                        "boosterPackDesc": "1x 50/50 जोकर + 1x टाइम फ़्रीज़",
+                        "remainingLimit": "शेष: {current} / {max}",
+                        "@remainingLimit": {
+                          "placeholders": {
+                            "current": {"type": "int"},
+                            "max": {"type": "int"}
+                          }
+                        },
+                        "coinsText": "सिक्के",
+                        "convertBtn": "बदलें",
+                        "joker5050": "50/50 जोकर",
+                        "joker5050Desc": "2 गलत विकल्प हटाता है",
+                        "timeFreeze": "टाइम फ़्रीज़",
+                        "timeFreezeDesc": "टाइमर को 10s के लिए रोकता है",
+                        "premiumTheme": "प्रीमियम थीम",
+                        "unlockGoldTheme": "गोल्ड थीम अनलॉक करें",
+                        "unlockDiamondInterface": "डायमंड इंटरफ़ेस अनलॉक करें",
+                        "themeUnlocked": "थीम अनलॉक की गई",
+                        "owned": "स्वामित्व",
+                        "selectTopic": "विषय चुनें",
+                          "topicDifficulty": "{topic} कठिनाई",
+                          "@topicDifficulty": {
+                            "placeholders": {
+                              "topic": {"type": "String"}
+                            }
+                          },
+                          "beginner": "शुरुआती",
+                          "intermediate": "मध्यम",
+                          "advanced": "उन्नत"
+}

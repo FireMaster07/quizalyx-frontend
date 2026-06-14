@@ -1,6 +1,7 @@
 import 'dart:async';
 // import 'dart:convert'; // Unused
 import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart' show rootBundle; // Unused
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,6 +11,7 @@ import 'main.dart';
 import 'mission_manager.dart'; // Don’t forget the task manager
 import 'question_service.dart'; // To fetch questions
 import 'currency_manager.dart';
+import 'audio_manager.dart';
 import 'l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
@@ -81,7 +83,6 @@ class _QuestionScreenState extends State<QuestionScreen>
   int _globalRemaining = 180;
 
   // Music and Sound Management
-  late AudioPlayer _audioPlayer;
   bool _isGamePaused = false; // To track whether the game is paused
 
   static const String _kEndlessHighScoreKey = 'endless_highscore';
@@ -113,7 +114,6 @@ class _QuestionScreenState extends State<QuestionScreen>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    _audioPlayer = AudioPlayer();
 
     _slideController = AnimationController(
       vsync: this,
@@ -151,11 +151,20 @@ class _QuestionScreenState extends State<QuestionScreen>
     int correctAnswers = prefs.getInt('${prefix}correct_answers') ?? 0;
     int totalAnswers = prefs.getInt('${prefix}total_answers') ?? 0;
 
+    int newTotalXp = totalXp + xpEarned; // Calculate the new total score
+
     // Add new data on top and save
-    await prefs.setInt('${prefix}total_xp', totalXp + xpEarned);
+    await prefs.setInt('${prefix}total_xp', newTotalXp + xpEarned);
     await prefs.setInt('${prefix}quizzes_played', quizzesPlayed + 1);
     await prefs.setInt('${prefix}correct_answers', correctAnswers + answeredCorrectly);
     await prefs.setInt('${prefix}total_answers', totalAnswers + answeredTotal);
+
+    // CLOUD UPDATE (Synchronize leaderboard data)
+    if (user != null) {
+      await FirebaseFirestore.instance.collection('leaderboard').doc(user.uid).set({
+        'score': newTotalXp, // Updates the score in the leaderboard in real time
+      }, SetOptions(merge: true));
+    }
   }
 
   Future<void> _loadJokerCounts() async {
@@ -258,7 +267,7 @@ class _QuestionScreenState extends State<QuestionScreen>
     _isExitDialogVisible = false;
 
     if (shouldQuit) {
-      _stopQuestionMusic(); // Stop the music absolutely
+      AudioManager.instance.playHomeMusic();
       _perQuestionTimer?.cancel(); // Clean the timers
       _globalTimer?.cancel();
 
@@ -273,7 +282,6 @@ class _QuestionScreenState extends State<QuestionScreen>
     if (state == AppLifecycleState.paused) {
       // Application minimized or returned to the home screen:
       // 1. PAUSE the music (not Stop)
-      _audioPlayer.pause();
 
       // 2. Freeze the timer (to keep it fair)
       _pauseTimers();
@@ -285,7 +293,6 @@ class _QuestionScreenState extends State<QuestionScreen>
       // Application reopened:
       if (_revealed && !_showResult) {
         // If the game is not over, resume the music from where it left off
-        _audioPlayer.resume();
 
         // Continue the timer
         _resumeTimers();
@@ -311,25 +318,6 @@ class _QuestionScreenState extends State<QuestionScreen>
     } else if (widget.mode == 'endless') {
       _startGlobalTimer(resume: true);
     }
-  }
-
-  Future<void> _playQuestionMusic() async {
-    /*
-    try {
-      if (_audioPlayer.state == PlayerState.playing) return;
-
-      await _audioPlayer.setReleaseMode(ReleaseMode.loop);
-      await _audioPlayer.play(
-        AssetSource('audio/quiz-background-loop-thinking-news-275636.mp3'),
-      );
-    } catch (e) {
-      debugPrint('Error playing question music: $e');
-    }
-    */
-  }
-
-  Future<void> _stopQuestionMusic() async {
-    await _audioPlayer.stop();
   }
 
   // --------------------------------------------------
@@ -446,8 +434,8 @@ class _QuestionScreenState extends State<QuestionScreen>
 
     // 3. ACTIVATE UI AND START THE GAME
     if (mounted) {
+      AudioManager.instance.playQuestionMusic(); // NOW CALLED FROM CENTRAL MANAGER
       setState(() {
-        _playQuestionMusic();
         _slideController.forward();
 
         if (widget.mode == 'timed') {
@@ -513,7 +501,7 @@ class _QuestionScreenState extends State<QuestionScreen>
 
   void _finishEndlessMode() {
     _cancelGlobalTimer();
-    _stopQuestionMusic();
+    AudioManager.instance.stopMusic();
 
     // If the current correct count beats the high score, save it
     if (_correctCount > _endlessHighScore) {
@@ -547,7 +535,7 @@ class _QuestionScreenState extends State<QuestionScreen>
       _cancelPerQuestionTimer();
     }
     // In endless mode, it’s also good to stop the global timer if it exists
-    // if (widget.mode == 'endless') _globalTimer?.cancel();
+    if (widget.mode == 'endless') _globalTimer?.cancel();
 
     final q = _activeQuestions[_currentIndex];
     final correct = index == q.answerIndex;
@@ -625,7 +613,7 @@ class _QuestionScreenState extends State<QuestionScreen>
         if (widget.mode == 'timed') _startPerQuestionTimer();
       } else {
         if (widget.mode == 'timed') _cancelPerQuestionTimer();
-        _stopQuestionMusic();
+        AudioManager.instance.stopMusic();
 
         // Mission recording (Classic/Timed)
         MissionManager.incrementProgress(context, widget.category, _correctCount);
@@ -699,8 +687,6 @@ class _QuestionScreenState extends State<QuestionScreen>
 
   @override
   void dispose() {
-    _audioPlayer.stop();
-    _audioPlayer.dispose();
     _perQuestionTimer?.cancel();
     _globalTimer?.cancel();
     _slideController.dispose();
@@ -1534,6 +1520,7 @@ class _QuestionScreenState extends State<QuestionScreen>
                 OutlinedButton(
                   onPressed: () {
                     Navigator.of(context).pop(); // Close the dialog
+                    AudioManager.instance.playHomeMusic(); // HOME MUSIC STARTS ONLY HERE!
                     // --- FIX HERE ---
                     // Instead of just going back one step (pop),
                     // go all the way back to the Home Screen.

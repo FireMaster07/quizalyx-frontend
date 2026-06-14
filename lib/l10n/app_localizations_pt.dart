@@ -557,4 +557,43 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get advanced => 'Avançado';
+
+  @override
+  String get dangerZone => 'Zona de Perigo';
+
+  @override
+  String get deleteAccountTitle => 'Excluir Conta e Apagar Dados';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Excluir permanentemente seu perfil e registros locais/nuvem';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Excluir Conta e Dados?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'Isso excluirá permanentemente seu perfil, pontuações altas, inventário e dados da tabela de classificação. Esta ação NÃO pode ser desfeita.';
+
+  @override
+  String get deletePermanently => 'Excluir Permanentemente';
+
+  @override
+  String get accountDeletedSuccess =>
+      'Conta e todos os dados associados apagados com sucesso!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Erro: $error. Você pode precisar se autenticar novamente para excluir sua conta.';
+  }
+
+  @override
+  String get securityCheckTitle => 'Verificação de Segurança';
+
+  @override
+  String get securityCheckDesc =>
+      'A exclusão da sua conta é uma operação sensível. Para sua segurança, saia e faça o login novamente antes de tentar excluir sua conta.';
+
+  @override
+  String get logOutAndReLogin => 'Sair e Entrar Novamente';
 }

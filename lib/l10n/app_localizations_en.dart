@@ -554,4 +554,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get advanced => 'Advanced';
+
+  @override
+  String get dangerZone => 'Danger Zone';
+
+  @override
+  String get deleteAccountTitle => 'Delete Account & Wipe Data';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Permanently delete your profile and cloud/local records';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Delete Account & Data?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'This will permanently delete your profile, high scores, inventory, and leaderboard data. This action CANNOT be undone.';
+
+  @override
+  String get deletePermanently => 'Delete Permanently';
+
+  @override
+  String get accountDeletedSuccess =>
+      'Account and all associated data successfully wiped!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Error: $error. You might need to re-authenticate to delete your account.';
+  }
+
+  @override
+  String get securityCheckTitle => 'Security Check';
+
+  @override
+  String get securityCheckDesc =>
+      'Deleting your account is a sensitive operation. For your security, please log out and log in again before trying to delete your account.';
+
+  @override
+  String get logOutAndReLogin => 'Log Out & Re-Login';
 }

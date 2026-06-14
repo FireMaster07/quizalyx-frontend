@@ -234,5 +234,21 @@
                           },
                           "beginner": "Başlangıç",
                           "intermediate": "Orta",
-                          "advanced": "İleri"
+                          "advanced": "İleri",
+                          "dangerZone": "Tehlikeli Bölge",
+                            "deleteAccountTitle": "Hesabı ve Verileri Sil",
+                            "deleteAccountSubtitle": "Profilini ve tüm yerel/bulut kayıtlarını kalıcı olarak sil",
+                            "deleteAccountConfirmTitle": "Hesap ve Veriler Silinsin mi?",
+                            "deleteAccountConfirmDesc": "Bu işlem profilini, yüksek skorlarını, envanterini ve liderlik tablosu verilerini kalıcı olarak siler. Bu işlem GERİ ALINAMAZ.",
+                            "deletePermanently": "Kalıcı Olarak Sil",
+                            "accountDeletedSuccess": "Hesap ve ilişkili tüm veriler başarıyla silindi!",
+                            "deleteAccountError": "Hata: {error}. Hesabınızı silmek için yeniden giriş yapmanız gerekebilir.",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "Güvenlik Kontrolü",
+                                "securityCheckDesc": "Hesabınızı silmek kritik bir işlemdir. Güvenliğiniz için, hesabınızı silmeyi denemeden önce lütfen çıkış yapıp tekrar giriş yapın.",
+                                "logOutAndReLogin": "Çıkış Yap & Tekrar Gir"
 }

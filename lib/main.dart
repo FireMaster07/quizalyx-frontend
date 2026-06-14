@@ -1,21 +1,26 @@
 import 'package:QuizAlyx/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:firebase_core/firebase_core.dart'; // ADDED LINE
-import 'package:firebase_auth/firebase_auth.dart'; // To recognize FirebaseAuth
-import 'login_screen.dart'; // To recognize the newly created login screen
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart'; // ADDED: For Firestore checks
+import 'login_screen.dart';
 import 'package:flutter/services.dart';
 import 'intro_screen.dart';
+import 'onboarding_screen.dart'; // ADDED: We’ll redirect unfinished users here
 import 'question_service.dart';
-import 'currency_manager.dart'; // <--- 1. ADDED: Required to load theme
+import 'currency_manager.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'l10n/app_localizations.dart';
+import 'audio_manager.dart'; // ADDED
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // ADDED LINE: We start the Firebase engine right here
   await Firebase.initializeApp();
+
+  AudioManager.instance.init(); // ADDED: We initialize the music manager
 
   await AppLanguage.loadLanguage();
 
@@ -98,38 +103,74 @@ class QuizAlyxApp extends StatelessWidget {
               bodyLarge: TextStyle(fontSize: 16, color: Colors.white70),
               bodyMedium: TextStyle(fontSize: 14, color: Colors.white60),
             ),
-            appBarTheme: AppBarTheme(
+            appBarTheme: const AppBarTheme(
               backgroundColor: AppColors.surface,
               elevation: 0,
               centerTitle: true,
-              titleTextStyle: const TextStyle(
+              titleTextStyle: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
           ),
-          // home: const IntroScreen(),
-          home: StreamBuilder(
-            stream: FirebaseAuth.instance.authStateChanges(),
-            builder: (context, snapshot) {
-              // If the connection is still ongoing, show a loading screen
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Scaffold(body: Center(child: CircularProgressIndicator()));
-              }
-              // If user data exists, the user is logged in, show the main screen
-              if (snapshot.hasData) {
-                return const IntroScreen(); // Replace with your main entry/menu screen
-              }
-              // If no data, the user is not logged in, show the login screen
-              return const LoginScreen();
-            },
-          ),
+
+          // ADDED: Now AppRootRouter fully manages the initial launch
+          home: const AppRootRouter(),
         );
       },
     );
   }
 }
+
+// --- NEWLY ADDED ROOT ROUTER ---
+class AppRootRouter extends StatelessWidget {
+  const AppRootRouter({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        // 1. If waiting for connection, show loading
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Scaffold(body: Center(child: CircularProgressIndicator()));
+        }
+
+        // 2. If there IS a logged-in user
+        if (snapshot.hasData && snapshot.data != null) {
+          final uid = snapshot.data!.uid;
+
+          // INDUSTRY STANDARD: Check if profile is completed in Firestore
+          return FutureBuilder<DocumentSnapshot>(
+            future: FirebaseFirestore.instance.collection('users').doc(uid).get(),
+            builder: (context, userSnapshot) {
+              if (userSnapshot.connectionState == ConnectionState.waiting) {
+                return const Scaffold(body: Center(child: CircularProgressIndicator()));
+              }
+
+              // Does the user document exist AND contain a defined name?
+              if (userSnapshot.hasData && userSnapshot.data!.exists) {
+                final data = userSnapshot.data!.data() as Map<String, dynamic>?;
+                if (data != null && data.containsKey('playerName')) {
+                  // Profile complete, can proceed to main flow (Intro)
+                  return const IntroScreen();
+                }
+              }
+
+              // User is authenticated but skipped creating a profile! Force onboarding
+              return const OnboardingScreen();
+            },
+          );
+        }
+
+        // 3. If not logged in, go directly to Login screen
+        return const LoginScreen();
+      },
+    );
+  }
+}
+
 
 // Design System - Colors (Same as your original code - preserved)
 // At the bottom of main.dart

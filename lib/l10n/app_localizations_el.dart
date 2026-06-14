@@ -560,4 +560,43 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get advanced => 'Προχωρημένος';
+
+  @override
+  String get dangerZone => 'Επικίνδυνη Ζώνη';
+
+  @override
+  String get deleteAccountTitle => 'Διαγραφή Λογαριασμού & Δεδομένων';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Οριστική διαγραφή του προφίλ σας και των τοπικών/cloud αρχείων';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Διαγραφή Λογαριασμού & Δεδομένων;';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'Αυτό θα διαγράψει οριστικά το προφίλ σας, τις υψηλές βαθμολογίες, το απόθεμα και τα δεδομένα του πίνακα κατάταξης. Αυτή η ενέργεια ΔΕΝ μπορεί να αναιρεθεί.';
+
+  @override
+  String get deletePermanently => 'Οριστική Διαγραφή';
+
+  @override
+  String get accountDeletedSuccess =>
+      'Ο λογαριασμός και όλα τα σχετικά δεδομένα διαγράφηκαν επιτυχώς!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Σφάλμα: $error. Ίσως χρειαστεί να συνδεθείτε ξανά για να διαγράψετε τον λογαριασμό σας.';
+  }
+
+  @override
+  String get securityCheckTitle => 'Έλεγχος Ασφαλείας';
+
+  @override
+  String get securityCheckDesc =>
+      'Η διαγραφή του λογαριασμού σας είναι μια ευαίσθητη διαδικασία. Για την ασφάλειά σας, αποσυνδεθείτε και συνδεθείτε ξανά πριν προσπαθήσετε να διαγράψετε τον λογαριασμό σας.';
+
+  @override
+  String get logOutAndReLogin => 'Αποσύνδεση & Επανασύνδεση';
 }

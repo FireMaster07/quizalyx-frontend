@@ -24,7 +24,7 @@ class MyStatisticsScreen extends StatelessWidget {
     int quizzesPlayed = prefs.getInt('${prefix}quizzes_played') ?? 0;
     int correctAnswers = prefs.getInt('${prefix}correct_answers') ?? 0;
     int totalAnswers = prefs.getInt('${prefix}total_answers') ?? 0;
-    int dailyStreak = prefs.getInt('${prefix}daily_streak') ?? 0;
+    int dailyStreak = prefs.getInt('daily_streak') ?? 0; // We removed the ${prefix} part!
 
     // Accuracy calculation (with division by zero protection)
     String currentLanguage = Localizations.localeOf(context).languageCode;

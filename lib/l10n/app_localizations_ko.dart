@@ -549,4 +549,41 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get advanced => '고급';
+
+  @override
+  String get dangerZone => '위험 구역';
+
+  @override
+  String get deleteAccountTitle => '계정 삭제 및 데이터 지우기';
+
+  @override
+  String get deleteAccountSubtitle => '프로필 및 클라우드/로컬 기록을 영구적으로 삭제';
+
+  @override
+  String get deleteAccountConfirmTitle => '계정 및 데이터를 삭제하시겠습니까?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      '이 작업은 프로필, 최고 점수, 인벤토리 및 순위표 데이터를 영구적으로 삭제합니다. 이 작업은 실행 취소할 수 없습니다.';
+
+  @override
+  String get deletePermanently => '영구 삭제';
+
+  @override
+  String get accountDeletedSuccess => '계정 및 모든 관련 데이터가 성공적으로 삭제되었습니다!';
+
+  @override
+  String deleteAccountError(String error) {
+    return '오류: $error. 계정을 삭제하려면 다시 로그인해야 할 수 있습니다.';
+  }
+
+  @override
+  String get securityCheckTitle => '보안 확인';
+
+  @override
+  String get securityCheckDesc =>
+      '계정 삭제는 민감한 작업입니다. 보안을 위해 계정을 삭제하기 전에 로그아웃한 후 다시 로그인해 주세요.';
+
+  @override
+  String get logOutAndReLogin => '로그아웃 및 재로그인';
 }

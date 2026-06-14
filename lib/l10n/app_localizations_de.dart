@@ -558,4 +558,43 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get advanced => 'Fortgeschritten';
+
+  @override
+  String get dangerZone => 'Gefahrenzone';
+
+  @override
+  String get deleteAccountTitle => 'Konto & Daten löschen';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Dein Profil und alle Cloud/lokalen Datensätze dauerhaft löschen';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Konto & Daten löschen?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'Dies wird dein Profil, deine Highscores, dein Inventar und deine Bestenlisten-Daten dauerhaft löschen. Diese Aktion KANN NICHT rückgängig gemacht werden.';
+
+  @override
+  String get deletePermanently => 'Dauerhaft löschen';
+
+  @override
+  String get accountDeletedSuccess =>
+      'Konto und alle zugehörigen Daten erfolgreich gelöscht!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Fehler: $error. Möglicherweise musst du dich erneut anmelden, um dein Konto zu löschen.';
+  }
+
+  @override
+  String get securityCheckTitle => 'Sicherheitsprüfung';
+
+  @override
+  String get securityCheckDesc =>
+      'Das Löschen Ihres Kontos ist ein sensibler Vorgang. Zu Ihrer Sicherheit melden Sie sich bitte ab und wieder an, bevor Sie versuchen, Ihr Konto zu löschen.';
+
+  @override
+  String get logOutAndReLogin => 'Abmelden & Neu anmelden';
 }

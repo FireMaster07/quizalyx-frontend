@@ -559,4 +559,44 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get advanced => 'Avancé';
+
+  @override
+  String get dangerZone => 'Zone de danger';
+
+  @override
+  String get deleteAccountTitle => 'Supprimer le compte et les données';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Supprimer définitivement votre profil et vos enregistrements locaux/cloud';
+
+  @override
+  String get deleteAccountConfirmTitle =>
+      'Supprimer le compte et les données ?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'Cela supprimera définitivement votre profil, vos meilleurs scores, votre inventaire et vos données de classement. Cette action est IRRÉVERSIBLE.';
+
+  @override
+  String get deletePermanently => 'Supprimer définitivement';
+
+  @override
+  String get accountDeletedSuccess =>
+      'Compte et toutes les données associées supprimés avec succès !';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Erreur : $error. Vous devrez peut-être vous reconnecter pour supprimer votre compte.';
+  }
+
+  @override
+  String get securityCheckTitle => 'Contrôle de sécurité';
+
+  @override
+  String get securityCheckDesc =>
+      'La suppression de votre compte est une opération sensible. Pour votre sécurité, veuillez vous déconnecter et vous reconnecter avant d\'essayer de supprimer votre compte.';
+
+  @override
+  String get logOutAndReLogin => 'Se déconnecter et se reconnecter';
 }

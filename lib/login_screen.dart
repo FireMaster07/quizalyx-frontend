@@ -346,7 +346,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             // 2. INDUSTRY STANDARD: Check if the user already exists in Firestore
                             final userDoc = await FirebaseFirestore.instance.collection('users').doc(uid).get();
 
-                            if (userDoc.exists) {
+                            // Is there a document AND does it contain a defined name?
+                            if (userDoc.exists && (userDoc.data() as Map<String, dynamic>).containsKey('playerName')) {
                               // SCENARIO A: Returning User (Has profile)
                               await FirestoreService().loadUserDataFromCloud(); // Pull existing XP/Coins
                               if (mounted) {

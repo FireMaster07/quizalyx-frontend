@@ -548,4 +548,39 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get advanced => '高级';
+
+  @override
+  String get dangerZone => '危险区域';
+
+  @override
+  String get deleteAccountTitle => '删除帐户并清除数据';
+
+  @override
+  String get deleteAccountSubtitle => '永久删除您的个人资料以及云端/本地记录';
+
+  @override
+  String get deleteAccountConfirmTitle => '删除帐户和数据？';
+
+  @override
+  String get deleteAccountConfirmDesc => '这将永久删除您的个人资料、最高分、物品栏和排行榜数据。此操作无法撤销。';
+
+  @override
+  String get deletePermanently => '永久删除';
+
+  @override
+  String get accountDeletedSuccess => '帐户及所有相关数据已成功清除！';
+
+  @override
+  String deleteAccountError(String error) {
+    return '错误：$error。您可能需要重新验证才能删除帐户。';
+  }
+
+  @override
+  String get securityCheckTitle => '安全检查';
+
+  @override
+  String get securityCheckDesc => '删除您的帐户是一项敏感操作。为了您的安全，请在尝试删除帐户之前先注销并重新登录。';
+
+  @override
+  String get logOutAndReLogin => '注销并重新登录';
 }

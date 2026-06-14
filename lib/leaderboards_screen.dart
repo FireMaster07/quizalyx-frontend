@@ -19,6 +19,7 @@ class LeaderboardsScreen extends StatelessWidget {
       // 2. Fetch scores from Firestore, order by descending (highest first), and limit to top 10 players
       final snapshot = await FirebaseFirestore.instance
           .collection('leaderboard')
+          .where('score', isGreaterThan: 0) // MAGIC TOUCH: Fetch only those with score greater than 0!
           .orderBy('score', descending: true)
           .limit(10)
           .get();
@@ -70,13 +71,13 @@ class LeaderboardsScreen extends StatelessWidget {
                       const SizedBox(height: 16),
                       Text(
                         AppLocalizations.of(context)!.offlineTitle,
-                        style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                        style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 12),
                       Text(
                         AppLocalizations.of(context)!.leaderboardsOfflineDesc,
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: AppColors.textSecondary, fontSize: 16, height: 1.4),
+                        style: const TextStyle(color: AppColors.textSecondary, fontSize: 16, height: 1.4),
                       ),
                     ],
                   ),
@@ -95,12 +96,11 @@ class LeaderboardsScreen extends StatelessWidget {
           if (leaderboardData.isEmpty) {
             return Center(
               child: Padding(
-                // A safety margin of 32 pixels has been added to the right and left sides of the screen
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.emoji_events_outlined,
                       size: 80,
                       color: AppColors.textSecondary,
@@ -108,8 +108,8 @@ class LeaderboardsScreen extends StatelessWidget {
                     const SizedBox(height: 16),
                     Text(
                       AppLocalizations.of(context)!.noOnePlayedYet,
-                      textAlign: TextAlign.center, // The text has been centered
-                      style: TextStyle(
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -118,8 +118,8 @@ class LeaderboardsScreen extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       AppLocalizations.of(context)!.beTheFirstToPlay,
-                      textAlign: TextAlign.center, // The text has been centered
-                      style: TextStyle(
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
                         color: AppColors.textSecondary,
                         fontSize: 16,
                       ),
@@ -130,7 +130,7 @@ class LeaderboardsScreen extends StatelessWidget {
             );
           }
 
-          // 4. IF DATA EXISTS, DRAW THE SCREEN (Your original code)
+          // 4. IF DATA EXISTS, DRAW THE SCREEN
           return Column(
             children: [
               // Top Trophy Section
@@ -152,7 +152,7 @@ class LeaderboardsScreen extends StatelessWidget {
                       width: 80,
                       height: 80,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [AppColors.warning, AppColors.accentOrange],
                         ),
                         shape: BoxShape.circle,
@@ -182,7 +182,7 @@ class LeaderboardsScreen extends StatelessWidget {
                     const SizedBox(height: AppSpacing.xs),
                     Text(
                       AppLocalizations.of(context)!.challengeThem,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppColors.textSecondary,
                         fontSize: 14,
                       ),
@@ -203,8 +203,8 @@ class LeaderboardsScreen extends StatelessWidget {
                       _buildPodiumCard(
                         context,
                         rank: 2,
-                        name: leaderboardData[1]['name'],
-                        score: leaderboardData[1]['score'],
+                        name: leaderboardData[1]['displayName'] ?? 'Player', // FIXED
+                        score: leaderboardData[1]['score'] ?? 0, // FIXED
                         height: 100,
                         color: const Color(0xFFC0C0C0),
                       ),
@@ -213,8 +213,8 @@ class LeaderboardsScreen extends StatelessWidget {
                       _buildPodiumCard(
                         context,
                         rank: 1,
-                        name: leaderboardData[0]['name'],
-                        score: leaderboardData[0]['score'],
+                        name: leaderboardData[0]['displayName'] ?? 'Player', // FIXED
+                        score: leaderboardData[0]['score'] ?? 0, // FIXED
                         height: 130,
                         color: const Color(0xFFFFD700),
                       ),
@@ -223,8 +223,8 @@ class LeaderboardsScreen extends StatelessWidget {
                       _buildPodiumCard(
                         context,
                         rank: 3,
-                        name: leaderboardData[2]['name'],
-                        score: leaderboardData[2]['score'],
+                        name: leaderboardData[2]['displayName'] ?? 'Player', // FIXED
+                        score: leaderboardData[2]['score'] ?? 0, // FIXED
                         height: 80,
                         color: const Color(0xFFCD7F32),
                       ),
@@ -246,8 +246,8 @@ class LeaderboardsScreen extends StatelessWidget {
                     final item = leaderboardData[actualIndex];
                     return _buildLeaderboardItem(
                       rank: actualIndex + 1,
-                      name: item['name'],
-                      score: item['score'],
+                      name: item['displayName'] ?? 'Player', // FIXED
+                      score: item['score'] ?? 0, // FIXED
                     );
                   },
                 ),
@@ -261,13 +261,13 @@ class LeaderboardsScreen extends StatelessWidget {
 }
 
 Widget _buildPodiumCard(
-  BuildContext context, {
-  required int rank,
-  required String name,
-  required int score,
-  required double height,
-  required Color color,
-}) {
+    BuildContext context, {
+      required int rank,
+      required String name,
+      required int score,
+      required double height,
+      required Color color,
+    }) {
   IconData medal;
   switch (rank) {
     case 1:
@@ -303,7 +303,6 @@ Widget _buildPodiumCard(
         child: Icon(medal, color: Colors.white, size: 35),
       ),
       const SizedBox(height: AppSpacing.sm),
-      // Names are proper nouns, they are not translated.
       Text(
         name,
         style: const TextStyle(
@@ -313,7 +312,6 @@ Widget _buildPodiumCard(
         ),
       ),
       const SizedBox(height: AppSpacing.xs),
-      // CORRECTION 4: The score number remains, the word "pts" is translated.
       Text(
         '$score ${AppLocalizations.of(context)!.pts}',
         style: TextStyle(
@@ -357,6 +355,9 @@ Widget _buildLeaderboardItem({
   required String name,
   required int score,
 }) {
+  // FIXED: Added first-letter check to prevent crash when name is empty
+  String initial = name.isNotEmpty ? name[0].toUpperCase() : '?';
+
   return Container(
     margin: const EdgeInsets.only(bottom: AppSpacing.md),
     padding: const EdgeInsets.all(AppSpacing.md),
@@ -380,10 +381,9 @@ Widget _buildLeaderboardItem({
             ),
             borderRadius: BorderRadius.circular(AppRadius.sm),
           ),
-          // CORRECTION 5: The rank number is dynamic, it is not translated.
           child: Center(
             child: Text(
-              '#$rank', // AppLocalizations.get() REMOVED
+              '#$rank',
               style: TextStyle(
                 color: AppColors.primary,
                 fontWeight: FontWeight.bold,
@@ -394,7 +394,7 @@ Widget _buildLeaderboardItem({
         ),
         const SizedBox(width: AppSpacing.md),
 
-        // Avatar (First letter of the name)
+        // Avatar (First letter of the name safely extracted)
         Container(
           width: 45,
           height: 45,
@@ -404,10 +404,9 @@ Widget _buildLeaderboardItem({
             ),
             shape: BoxShape.circle,
           ),
-          // CORRECTION 6: The initial letter is dynamic, it is not translated.
           child: Center(
             child: Text(
-              name[0], // AppLocalizations.get() REMOVED
+              initial, // FIXED
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -420,9 +419,8 @@ Widget _buildLeaderboardItem({
 
         // Name
         Expanded(
-          // CORRECTION 7: The name is dynamic, it is not translated.
           child: Text(
-            name, // AppLocalizations.get() REMOVED
+            name,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 16,
@@ -448,12 +446,11 @@ Widget _buildLeaderboardItem({
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.stars_rounded, color: AppColors.success, size: 16),
+              const Icon(Icons.stars_rounded, color: AppColors.success, size: 16),
               const SizedBox(width: 4),
-              // CORRECTION 8: The score number is dynamic, it is not translated.
               Text(
-                '$score', // AppLocalizations.get() REMOVED
-                style: TextStyle(
+                '$score',
+                style: const TextStyle(
                   color: AppColors.success,
                   fontWeight: FontWeight.bold,
                   fontSize: 15,

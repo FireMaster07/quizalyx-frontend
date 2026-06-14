@@ -553,4 +553,43 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get advanced => 'متقدم';
+
+  @override
+  String get dangerZone => 'منطقة الخطر';
+
+  @override
+  String get deleteAccountTitle => 'حذف الحساب ومسح البيانات';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'حذف ملفك الشخصي وسجلاتك السحابية/المحلية بشكل دائم';
+
+  @override
+  String get deleteAccountConfirmTitle => 'حذف الحساب والبيانات؟';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'سيؤدي هذا إلى حذف ملفك الشخصي وأعلى الدرجات والمخزون وبيانات لوحة المتصدرين بشكل دائم. هذا الإجراء لا يمكن التراجع عنه.';
+
+  @override
+  String get deletePermanently => 'حذف نهائي';
+
+  @override
+  String get accountDeletedSuccess =>
+      'تم مسح الحساب وجميع البيانات المرتبطة به بنجاح!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'خطأ: $error. قد تحتاج إلى تسجيل الدخول مرة أخرى لحذف حسابك.';
+  }
+
+  @override
+  String get securityCheckTitle => 'فحص أمني';
+
+  @override
+  String get securityCheckDesc =>
+      'حذف حسابك عملية حساسة. من أجل أمانك، يرجى تسجيل الخروج وتسجيل الدخول مرة أخرى قبل محاولة حذف حسابك.';
+
+  @override
+  String get logOutAndReLogin => 'تسجيل الخروج وإعادة الدخول';
 }

@@ -555,4 +555,43 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get advanced => 'İleri';
+
+  @override
+  String get dangerZone => 'Tehlikeli Bölge';
+
+  @override
+  String get deleteAccountTitle => 'Hesabı ve Verileri Sil';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Profilini ve tüm yerel/bulut kayıtlarını kalıcı olarak sil';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Hesap ve Veriler Silinsin mi?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'Bu işlem profilini, yüksek skorlarını, envanterini ve liderlik tablosu verilerini kalıcı olarak siler. Bu işlem GERİ ALINAMAZ.';
+
+  @override
+  String get deletePermanently => 'Kalıcı Olarak Sil';
+
+  @override
+  String get accountDeletedSuccess =>
+      'Hesap ve ilişkili tüm veriler başarıyla silindi!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Hata: $error. Hesabınızı silmek için yeniden giriş yapmanız gerekebilir.';
+  }
+
+  @override
+  String get securityCheckTitle => 'Güvenlik Kontrolü';
+
+  @override
+  String get securityCheckDesc =>
+      'Hesabınızı silmek kritik bir işlemdir. Güvenliğiniz için, hesabınızı silmeyi denemeden önce lütfen çıkış yapıp tekrar giriş yapın.';
+
+  @override
+  String get logOutAndReLogin => 'Çıkış Yap & Tekrar Gir';
 }

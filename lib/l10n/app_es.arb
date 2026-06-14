@@ -234,5 +234,21 @@
                           },
                           "beginner": "Principiante",
                           "intermediate": "Intermedio",
-                          "advanced": "Avanzado"
+                          "advanced": "Avanzado",
+                          "dangerZone": "Zona de Peligro",
+                            "deleteAccountTitle": "Eliminar cuenta y borrar datos",
+                            "deleteAccountSubtitle": "Eliminar permanentemente tu perfil y registros locales/en la nube",
+                            "deleteAccountConfirmTitle": "¿Eliminar cuenta y datos?",
+                            "deleteAccountConfirmDesc": "Esto eliminará permanentemente tu perfil, puntuaciones altas, inventario y datos de la tabla de clasificación. Esta acción NO se puede deshacer.",
+                            "deletePermanently": "Eliminar permanentemente",
+                            "accountDeletedSuccess": "¡Cuenta y todos los datos asociados borrados con éxito!",
+                            "deleteAccountError": "Error: {error}. Es posible que debas volver a iniciar sesión para eliminar tu cuenta.",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "Control de seguridad",
+                                "securityCheckDesc": "Eliminar tu cuenta es una operación sensible. Por tu seguridad, cierra sesión y vuelve a iniciarla antes de intentar eliminar tu cuenta.",
+                                "logOutAndReLogin": "Cerrar sesión y volver a entrar"
 }

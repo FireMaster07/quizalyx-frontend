@@ -554,4 +554,43 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get advanced => 'پیشرفته';
+
+  @override
+  String get dangerZone => 'منطقه خطر';
+
+  @override
+  String get deleteAccountTitle => 'حذف حساب و پاک کردن داده‌ها';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'پروفایل و سوابق ابری/محلی خود را برای همیشه حذف کنید';
+
+  @override
+  String get deleteAccountConfirmTitle => 'حذف حساب و داده‌ها؟';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'این کار پروفایل، رکوردهای بالا، موجودی و داده‌های جدول امتیازات شما را برای همیشه حذف می‌کند. این عمل قابل بازگشت نیست.';
+
+  @override
+  String get deletePermanently => 'حذف برای همیشه';
+
+  @override
+  String get accountDeletedSuccess =>
+      'حساب و تمام داده‌های مرتبط با آن با موفقیت پاک شدند!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'خطا: $error. ممکن است لازم باشد برای حذف حساب کاربری خود دوباره وارد شوید.';
+  }
+
+  @override
+  String get securityCheckTitle => 'بررسی امنیتی';
+
+  @override
+  String get securityCheckDesc =>
+      'حذف حساب کاربری شما یک عملیات حساس است. برای امنیت خود، لطفاً قبل از تلاش برای حذف حساب، از سیستم خارج شوید و دوباره وارد شوید.';
+
+  @override
+  String get logOutAndReLogin => 'خروج و ورود مجدد';
 }

@@ -234,5 +234,21 @@
                           },
                           "beginner": "Beginner",
                           "intermediate": "Intermediate",
-                          "advanced": "Advanced"
+                          "advanced": "Advanced",
+                          "dangerZone": "Danger Zone",
+                            "deleteAccountTitle": "Delete Account & Wipe Data",
+                            "deleteAccountSubtitle": "Permanently delete your profile and cloud/local records",
+                            "deleteAccountConfirmTitle": "Delete Account & Data?",
+                            "deleteAccountConfirmDesc": "This will permanently delete your profile, high scores, inventory, and leaderboard data. This action CANNOT be undone.",
+                            "deletePermanently": "Delete Permanently",
+                            "accountDeletedSuccess": "Account and all associated data successfully wiped!",
+                            "deleteAccountError": "Error: {error}. You might need to re-authenticate to delete your account.",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "Security Check",
+                                "securityCheckDesc": "Deleting your account is a sensitive operation. For your security, please log out and log in again before trying to delete your account.",
+                                "logOutAndReLogin": "Log Out & Re-Login"
 }

@@ -234,5 +234,21 @@
                           },
                           "beginner": "初級",
                           "intermediate": "中級",
-                          "advanced": "上級"
+                          "advanced": "上級",
+                          "dangerZone": "デンジャーゾーン",
+                            "deleteAccountTitle": "アカウントとデータを削除",
+                            "deleteAccountSubtitle": "プロフィールとクラウド/ローカルの記録を完全に削除する",
+                            "deleteAccountConfirmTitle": "アカウントとデータを削除しますか？",
+                            "deleteAccountConfirmDesc": "これにより、プロフィール、ハイスコア、インベントリ、リーダーボードのデータが完全に削除されます。この操作は元に戻せません。",
+                            "deletePermanently": "完全に削除",
+                            "accountDeletedSuccess": "アカウントとすべての関連データが正常に消去されました！",
+                            "deleteAccountError": "エラー：{error}。アカウントを削除するには、再度ログインする必要がある場合があります。",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "セキュリティチェック",
+                                "securityCheckDesc": "アカウントの削除は重要な操作です。セキュリティのため、アカウントを削除する前に一度ログアウトし、再度ログインしてください。",
+                                "logOutAndReLogin": "ログアウトして再ログイン"
 }

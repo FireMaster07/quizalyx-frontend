@@ -556,4 +556,43 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get advanced => 'Продвинутый';
+
+  @override
+  String get dangerZone => 'Опасная зона';
+
+  @override
+  String get deleteAccountTitle => 'Удалить аккаунт и стереть данные';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Навсегда удалить ваш профиль и локальные/облачные записи';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Удалить аккаунт и данные?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'Это навсегда удалит ваш профиль, рекорды, инвентарь и данные таблицы лидеров. Это действие НЕЛЬЗЯ отменить.';
+
+  @override
+  String get deletePermanently => 'Удалить навсегда';
+
+  @override
+  String get accountDeletedSuccess =>
+      'Аккаунт и все связанные с ним данные успешно удалены!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Ошибка: $error. Возможно, вам придется войти снова, чтобы удалить аккаунт.';
+  }
+
+  @override
+  String get securityCheckTitle => 'Проверка безопасности';
+
+  @override
+  String get securityCheckDesc =>
+      'Удаление учетной записи — это конфиденциальная операция. В целях безопасности выйдите из системы и войдите снова, прежде чем пытаться удалить свою учетную запись.';
+
+  @override
+  String get logOutAndReLogin => 'Выйти и войти снова';
 }

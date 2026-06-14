@@ -557,4 +557,43 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get advanced => 'Avanzato';
+
+  @override
+  String get dangerZone => 'Zona di pericolo';
+
+  @override
+  String get deleteAccountTitle => 'Elimina account e cancella i dati';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Elimina in modo permanente il tuo profilo e i record locali/cloud';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Eliminare account e dati?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'Questo eliminerà in modo permanente il tuo profilo, i record, l\'inventario e i dati della classifica. Questa azione NON può essere annullata.';
+
+  @override
+  String get deletePermanently => 'Elimina definitivamente';
+
+  @override
+  String get accountDeletedSuccess =>
+      'Account e tutti i dati associati cancellati con successo!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Errore: $error. Potrebbe essere necessario autenticarsi di nuovo per eliminare l\'account.';
+  }
+
+  @override
+  String get securityCheckTitle => 'Controllo di sicurezza';
+
+  @override
+  String get securityCheckDesc =>
+      'L\'eliminazione del tuo account è un\'operazione delicata. Per la tua sicurezza, disconnettiti e accedi nuovamente prima di tentare di eliminare il tuo account.';
+
+  @override
+  String get logOutAndReLogin => 'Disconnetti e accedi di nuovo';
 }

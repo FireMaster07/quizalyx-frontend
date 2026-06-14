@@ -557,4 +557,43 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get advanced => 'Avanzado';
+
+  @override
+  String get dangerZone => 'Zona de Peligro';
+
+  @override
+  String get deleteAccountTitle => 'Eliminar cuenta y borrar datos';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'Eliminar permanentemente tu perfil y registros locales/en la nube';
+
+  @override
+  String get deleteAccountConfirmTitle => '¿Eliminar cuenta y datos?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'Esto eliminará permanentemente tu perfil, puntuaciones altas, inventario y datos de la tabla de clasificación. Esta acción NO se puede deshacer.';
+
+  @override
+  String get deletePermanently => 'Eliminar permanentemente';
+
+  @override
+  String get accountDeletedSuccess =>
+      '¡Cuenta y todos los datos asociados borrados con éxito!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'Error: $error. Es posible que debas volver a iniciar sesión para eliminar tu cuenta.';
+  }
+
+  @override
+  String get securityCheckTitle => 'Control de seguridad';
+
+  @override
+  String get securityCheckDesc =>
+      'Eliminar tu cuenta es una operación sensible. Por tu seguridad, cierra sesión y vuelve a iniciarla antes de intentar eliminar tu cuenta.';
+
+  @override
+  String get logOutAndReLogin => 'Cerrar sesión y volver a entrar';
 }

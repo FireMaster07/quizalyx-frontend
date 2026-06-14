@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+// First, import the Google Sign-In library at the top:
+import 'package:google_sign_in/google_sign_in.dart';
 import 'main.dart';
 import 'currency_manager.dart';
+import 'login_screen.dart'; // ADDED FOR NAVIGATION
 import 'l10n/app_localizations.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -12,7 +17,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-
   // --- Theme Variables ---
   bool _hasGoldTheme = false;
   bool _hasDiamondTheme = false;
@@ -23,6 +27,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool showDifficulty = true;
   int timedQuestionDuration = 30;
   int endlessDuration = 180;
+
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -93,11 +99,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
         title: Text(
           AppLocalizations.of(context)!.resetHighScoresTitle,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
         content: Text(
           AppLocalizations.of(context)!.resetHighScoresDesc,
-          style: TextStyle(color: AppColors.textSecondary),
+          style: const TextStyle(color: AppColors.textSecondary),
         ),
         actions: [
           TextButton(
@@ -118,7 +124,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     if (confirmed == true) {
       final prefs = await SharedPreferences.getInstance();
+      final user = FirebaseAuth.instance.currentUser;
+      final String prefix = user != null ? '${user.uid}_' : 'guest_';
+
+      // 1. DELETE ALL LOCAL SCORES
       await prefs.remove('endless_highscore');
+      await prefs.remove('${prefix}total_xp');
+      await prefs.remove('${prefix}quizzes_played');
+      await prefs.remove('${prefix}correct_answers');
+      await prefs.remove('${prefix}total_answers');
+
+      // Reset streak as well
+      await prefs.remove('daily_streak');
+      await prefs.remove('last_reward_date');
+
+      // 2. RESET CLOUD (FIRESTORE) SCORE
+      if (user != null) {
+        await FirebaseFirestore.instance.collection('leaderboard').doc(user.uid).set({
+          'score': 0
+        }, SetOptions(merge: true));
+      }
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -131,6 +156,123 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ),
         );
+      }
+    }
+  }
+
+  // --- FUNCTION TO DELETE ACCOUNT AND WIPE DATA ---
+  Future<void> _deleteAccountAndWipeData() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: AppColors.surface,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.xl)),
+        title: Text(AppLocalizations.of(context)!.deleteAccountConfirmTitle, style: const TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold)),
+        content: Text(
+          AppLocalizations.of(context)!.deleteAccountConfirmDesc,
+          style: const TextStyle(color: AppColors.textSecondary),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(AppLocalizations.of(context)!.cancel, style: const TextStyle(color: Colors.grey)),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, true),
+            style: ElevatedButton.styleFrom(backgroundColor: AppColors.error, foregroundColor: Colors.white),
+            child: Text(AppLocalizations.of(context)!.deletePermanently),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed == true) {
+      setState(() => _isLoading = true);
+
+      try {
+        final user = FirebaseAuth.instance.currentUser;
+        if (user != null) {
+          final uid = user.uid;
+
+          // 1. CLOUD: Delete leaderboard record
+          await FirebaseFirestore.instance.collection('leaderboard').doc(uid).delete();
+
+          // 2. CLOUD: Delete user information
+          await FirebaseFirestore.instance.collection('users').doc(uid).delete();
+
+          // 3. LOCAL: Delete all local data
+          final prefs = await SharedPreferences.getInstance();
+          final allKeys = prefs.getKeys();
+          for (String key in allKeys) {
+            if (key.startsWith('${uid}_')) {
+              await prefs.remove(key);
+            }
+          }
+
+          // MANUALLY DELETE OVERLOOKED GLOBAL DATA (Streak etc.)
+          await prefs.remove('daily_streak');
+          await prefs.remove('last_reward_date');
+
+          // 4. AUTH: Completely delete account
+          await user.delete();
+
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(AppLocalizations.of(context)!.accountDeletedSuccess), backgroundColor: Colors.green),
+            );
+            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const LoginScreen()), (route) => false);
+          }
+        }
+      } on FirebaseAuthException catch (e) {
+        setState(() => _isLoading = false);
+
+        // SECURITY CHECK - NOW TRANSLATION SUPPORTED!
+        if (e.code == 'requires-recent-login') {
+          if (mounted) {
+            showDialog(
+              context: context,
+              barrierDismissible: false,
+              builder: (context) => AlertDialog(
+                backgroundColor: AppColors.surface,
+                title: Row(
+                  children: [
+                    const Icon(Icons.security_rounded, color: AppColors.warning),
+                    const SizedBox(width: 8),
+                    Text(AppLocalizations.of(context)!.securityCheckTitle, style: const TextStyle(color: AppColors.warning, fontWeight: FontWeight.bold, fontSize: 18)),
+                  ],
+                ),
+                content: Text(
+                  AppLocalizations.of(context)!.securityCheckDesc,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                actions: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
+                    onPressed: () async {
+                      await FirebaseAuth.instance.signOut();
+                      if (context.mounted) {
+                        Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
+                              (route) => false,
+                        );
+                      }
+                    },
+                    child: Text(AppLocalizations.of(context)!.logOutAndReLogin, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  )
+                ],
+              ),
+            );
+          }
+        } else {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: ${e.message}"), backgroundColor: Colors.red));
+          }
+        }
+      } catch (e) {
+        setState(() => _isLoading = false);
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e"), backgroundColor: Colors.red));
+        }
       }
     }
   }
@@ -153,12 +295,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
           const SizedBox(height: AppSpacing.md),
 
           // --- LANGUAGE SECTION ---
-          _buildSectionHeader(AppLocalizations.of(context)!.language, Icons.language_rounded),
+          _buildSectionHeader(
+            AppLocalizations.of(context)!.language,
+            Icons.language_rounded,
+          ),
           const SizedBox(height: AppSpacing.md),
           _buildSettingCard(
             child: Row(
               children: [
-                Icon(Icons.translate_rounded, color: AppColors.primary, size: 20),
+                Icon(
+                  Icons.translate_rounded,
+                  color: AppColors.primary,
+                  size: 20,
+                ),
                 const SizedBox(width: AppSpacing.md),
                 Expanded(
                   child: Text(
@@ -226,17 +375,35 @@ class _SettingsScreenState extends State<SettingsScreen> {
           const SizedBox(height: AppSpacing.xl),
 
           // --- APPEARANCE SECTION ---
-          _buildSectionHeader(AppLocalizations.of(context)!.appearance, Icons.palette_rounded),
+          _buildSectionHeader(
+            AppLocalizations.of(context)!.appearance,
+            Icons.palette_rounded,
+          ),
           const SizedBox(height: AppSpacing.md),
           _buildSettingCard(
             child: Column(
               children: [
                 if (_hasGoldTheme)
                   SwitchListTile(
-                    title: Text(AppLocalizations.of(context)!.goldTheme, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                    subtitle: Text(AppLocalizations.of(context)!.premiumGoldLook, style: const TextStyle(color: Colors.white54, fontSize: 12)),
+                    title: Text(
+                      AppLocalizations.of(context)!.goldTheme,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      AppLocalizations.of(context)!.premiumGoldLook,
+                      style: const TextStyle(
+                        color: Colors.white54,
+                        fontSize: 12,
+                      ),
+                    ),
                     activeColor: const Color(0xFFFFD700),
-                    secondary: const Icon(Icons.palette_rounded, color: Color(0xFFFFD700)),
+                    secondary: const Icon(
+                      Icons.palette_rounded,
+                      color: Color(0xFFFFD700),
+                    ),
                     value: _activeTheme == 'gold',
                     onChanged: (val) {
                       _setTheme(val ? 'gold' : 'default');
@@ -244,16 +411,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     contentPadding: EdgeInsets.zero,
                   )
                 else
-                  _buildLockedThemeTile(AppLocalizations.of(context)!.goldTheme, AppLocalizations.of(context)!.unlockInStore),
+                  _buildLockedThemeTile(
+                    AppLocalizations.of(context)!.goldTheme,
+                    AppLocalizations.of(context)!.unlockInStore,
+                  ),
 
                 const Divider(color: Colors.white10),
 
                 if (_hasDiamondTheme)
                   SwitchListTile(
-                    title: Text(AppLocalizations.of(context)!.diamondTheme, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                    subtitle: Text(AppLocalizations.of(context)!.legendaryDiamondLook, style: const TextStyle(color: Colors.white54, fontSize: 12)),
+                    title: Text(
+                      AppLocalizations.of(context)!.diamondTheme,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      AppLocalizations.of(context)!.legendaryDiamondLook,
+                      style: const TextStyle(
+                        color: Colors.white54,
+                        fontSize: 12,
+                      ),
+                    ),
                     activeColor: const Color(0xFF00E5FF),
-                    secondary: const Icon(Icons.diamond_rounded, color: Color(0xFF00E5FF)),
+                    secondary: const Icon(
+                      Icons.diamond_rounded,
+                      color: Color(0xFF00E5FF),
+                    ),
                     value: _activeTheme == 'diamond',
                     onChanged: (val) {
                       _setTheme(val ? 'diamond' : 'default');
@@ -261,14 +446,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     contentPadding: EdgeInsets.zero,
                   )
                 else
-                  _buildLockedThemeTile(AppLocalizations.of(context)!.diamondTheme, AppLocalizations.of(context)!.unlockInStore1500),
+                  _buildLockedThemeTile(
+                    AppLocalizations.of(context)!.diamondTheme,
+                    AppLocalizations.of(context)!.unlockInStore1500,
+                  ),
               ],
             ),
           ),
           const SizedBox(height: AppSpacing.xl),
 
           // --- GAMEPLAY SECTION ---
-          _buildSectionHeader(AppLocalizations.of(context)!.gameplay, Icons.gamepad_rounded),
+          _buildSectionHeader(
+            AppLocalizations.of(context)!.gameplay,
+            Icons.gamepad_rounded,
+          ),
           const SizedBox(height: AppSpacing.md),
           _buildSettingCard(
             child: Column(
@@ -286,7 +477,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   icon: Icons.timer_rounded,
                   value: timedQuestionDuration,
                   items: [15, 30, 45, 60],
-                  onChanged: (val) => setState(() => timedQuestionDuration = val!),
+                  onChanged: (val) =>
+                      setState(() => timedQuestionDuration = val!),
                 ),
                 const Divider(color: AppColors.surfaceLight, height: 32),
                 _buildDropdownRow(
@@ -302,12 +494,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
           const SizedBox(height: AppSpacing.xl),
 
           // --- DISPLAY SECTION ---
-          _buildSectionHeader(AppLocalizations.of(context)!.display, Icons.visibility_rounded),
+          _buildSectionHeader(
+            AppLocalizations.of(context)!.display,
+            Icons.visibility_rounded,
+          ),
           const SizedBox(height: AppSpacing.md),
           _buildSettingCard(
             child: SwitchListTile(
-              title: Text(AppLocalizations.of(context)!.showDifficulty, style: TextStyle(color: Colors.white)),
-              subtitle: Text(AppLocalizations.of(context)!.showDifficultyDesc, style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
+              title: Text(
+                AppLocalizations.of(context)!.showDifficulty,
+                style: TextStyle(color: Colors.white),
+              ),
+              subtitle: Text(
+                AppLocalizations.of(context)!.showDifficultyDesc,
+                style: TextStyle(color: AppColors.textSecondary, fontSize: 12),
+              ),
               value: showDifficulty,
               onChanged: (val) => setState(() => showDifficulty = val),
               activeColor: AppColors.primary,
@@ -317,7 +518,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
           const SizedBox(height: AppSpacing.xl),
 
           // --- ACTIONS SECTION ---
-          _buildSectionHeader(AppLocalizations.of(context)!.actions, Icons.settings_rounded),
+          _buildSectionHeader(
+            AppLocalizations.of(context)!.actions,
+            Icons.settings_rounded,
+          ),
           const SizedBox(height: AppSpacing.md),
           Row(
             children: [
@@ -341,6 +545,41 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ],
           ),
           const SizedBox(height: AppSpacing.xxl),
+
+          // --- DANGER ZONE SECTION (Only shown to logged-in users) ---
+          if (FirebaseAuth.instance.currentUser != null) ...[
+            const SizedBox(height: AppSpacing.xl),
+            _buildSectionHeader(
+              AppLocalizations.of(context)!.dangerZone,
+              Icons.warning_amber_rounded,
+            ), // Or Icons.warning
+            const SizedBox(height: AppSpacing.md),
+            _buildSettingCard(
+              child: ListTile(
+                leading: const Icon(
+                  Icons.delete_forever_rounded,
+                  color: AppColors.error,
+                ),
+                title: Text(
+                  AppLocalizations.of(context)!.deleteAccountTitle,
+                  style: const TextStyle(
+                    color: AppColors.error,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: Text(
+                  AppLocalizations.of(context)!.deleteAccountSubtitle,
+                  style: const TextStyle(color: Colors.white38, fontSize: 12),
+                ),
+                trailing: const Icon(
+                  Icons.chevron_right,
+                  color: Colors.white24,
+                ),
+                contentPadding: EdgeInsets.zero,
+                onTap: _deleteAccountAndWipeData,
+              ),
+            ),
+          ],
         ],
       ),
     );
@@ -380,10 +619,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(
-          color: AppColors.surfaceLight,
-          width: 1,
-        ),
+        border: Border.all(color: AppColors.surfaceLight, width: 1),
       ),
       child: child,
     );
@@ -392,13 +628,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget _buildLockedThemeTile(String title, String subtitle) {
     return ListTile(
       leading: const Icon(Icons.lock_outline, color: AppColors.textSecondary),
-      title: Text(title, style: const TextStyle(color: AppColors.textSecondary)),
-      subtitle: Text(subtitle, style: const TextStyle(color: AppColors.textTertiary, fontSize: 12)),
+      title: Text(
+        title,
+        style: const TextStyle(color: AppColors.textSecondary),
+      ),
+      subtitle: Text(
+        subtitle,
+        style: const TextStyle(color: AppColors.textTertiary, fontSize: 12),
+      ),
       trailing: const Icon(Icons.chevron_right, color: Colors.white24),
       contentPadding: EdgeInsets.zero,
       onTap: () {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(AppLocalizations.of(context)!.visitStoreToUnlock), duration: Duration(seconds: 1)),
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.visitStoreToUnlock),
+            duration: Duration(seconds: 1),
+          ),
         );
       },
     );
@@ -442,20 +687,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
             value: value,
             dropdownColor: AppColors.surfaceLight,
             underline: const SizedBox.shrink(),
-            icon: Icon(
-              Icons.arrow_drop_down_rounded,
-              color: AppColors.primary,
-            ),
+            icon: Icon(Icons.arrow_drop_down_rounded, color: AppColors.primary),
             style: TextStyle(
               color: AppColors.primary,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
             items: items.map((e) {
-              return DropdownMenuItem<int>(
-                value: e,
-                child: Text('$e'),
-              );
+              return DropdownMenuItem<int>(value: e, child: Text('$e'));
             }).toList(),
             onChanged: onChanged,
           ),
@@ -477,9 +716,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       style: ElevatedButton.styleFrom(
         backgroundColor: isPrimary ? AppColors.primary : AppColors.error,
         foregroundColor: Colors.white,
-        padding: const EdgeInsets.symmetric(
-          vertical: AppSpacing.md,
-        ),
+        padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppRadius.md),
         ),

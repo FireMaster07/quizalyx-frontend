@@ -234,5 +234,21 @@
                           },
                           "beginner": "Principiante",
                           "intermediate": "Intermedio",
-                          "advanced": "Avanzato"
+                          "advanced": "Avanzato",
+                          "dangerZone": "Zona di pericolo",
+                            "deleteAccountTitle": "Elimina account e cancella i dati",
+                            "deleteAccountSubtitle": "Elimina in modo permanente il tuo profilo e i record locali/cloud",
+                            "deleteAccountConfirmTitle": "Eliminare account e dati?",
+                            "deleteAccountConfirmDesc": "Questo eliminerà in modo permanente il tuo profilo, i record, l'inventario e i dati della classifica. Questa azione NON può essere annullata.",
+                            "deletePermanently": "Elimina definitivamente",
+                            "accountDeletedSuccess": "Account e tutti i dati associati cancellati con successo!",
+                            "deleteAccountError": "Errore: {error}. Potrebbe essere necessario autenticarsi di nuovo per eliminare l'account.",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "Controllo di sicurezza",
+                                "securityCheckDesc": "L'eliminazione del tuo account è un'operazione delicata. Per la tua sicurezza, disconnettiti e accedi nuovamente prima di tentare di eliminare il tuo account.",
+                                "logOutAndReLogin": "Disconnetti e accedi di nuovo"
 }

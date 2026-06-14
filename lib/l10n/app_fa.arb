@@ -234,5 +234,21 @@
                           },
                           "beginner": "مبتدی",
                           "intermediate": "متوسط",
-                          "advanced": "پیشرفته"
+                          "advanced": "پیشرفته",
+                          "dangerZone": "منطقه خطر",
+                            "deleteAccountTitle": "حذف حساب و پاک کردن داده‌ها",
+                            "deleteAccountSubtitle": "پروفایل و سوابق ابری/محلی خود را برای همیشه حذف کنید",
+                            "deleteAccountConfirmTitle": "حذف حساب و داده‌ها؟",
+                            "deleteAccountConfirmDesc": "این کار پروفایل، رکوردهای بالا، موجودی و داده‌های جدول امتیازات شما را برای همیشه حذف می‌کند. این عمل قابل بازگشت نیست.",
+                            "deletePermanently": "حذف برای همیشه",
+                            "accountDeletedSuccess": "حساب و تمام داده‌های مرتبط با آن با موفقیت پاک شدند!",
+                            "deleteAccountError": "خطا: {error}. ممکن است لازم باشد برای حذف حساب کاربری خود دوباره وارد شوید.",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "بررسی امنیتی",
+                                "securityCheckDesc": "حذف حساب کاربری شما یک عملیات حساس است. برای امنیت خود، لطفاً قبل از تلاش برای حذف حساب، از سیستم خارج شوید و دوباره وارد شوید.",
+                                "logOutAndReLogin": "خروج و ورود مجدد"
 }

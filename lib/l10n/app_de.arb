@@ -234,5 +234,21 @@
                           },
                           "beginner": "Anfänger",
                           "intermediate": "Mittel",
-                          "advanced": "Fortgeschritten"
+                          "advanced": "Fortgeschritten",
+                          "dangerZone": "Gefahrenzone",
+                            "deleteAccountTitle": "Konto & Daten löschen",
+                            "deleteAccountSubtitle": "Dein Profil und alle Cloud/lokalen Datensätze dauerhaft löschen",
+                            "deleteAccountConfirmTitle": "Konto & Daten löschen?",
+                            "deleteAccountConfirmDesc": "Dies wird dein Profil, deine Highscores, dein Inventar und deine Bestenlisten-Daten dauerhaft löschen. Diese Aktion KANN NICHT rückgängig gemacht werden.",
+                            "deletePermanently": "Dauerhaft löschen",
+                            "accountDeletedSuccess": "Konto und alle zugehörigen Daten erfolgreich gelöscht!",
+                            "deleteAccountError": "Fehler: {error}. Möglicherweise musst du dich erneut anmelden, um dein Konto zu löschen.",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "Sicherheitsprüfung",
+                                "securityCheckDesc": "Das Löschen Ihres Kontos ist ein sensibler Vorgang. Zu Ihrer Sicherheit melden Sie sich bitte ab und wieder an, bevor Sie versuchen, Ihr Konto zu löschen.",
+                                "logOutAndReLogin": "Abmelden & Neu anmelden"
 }

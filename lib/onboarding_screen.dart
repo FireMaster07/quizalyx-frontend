@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'avatar_helper.dart'; // Our avatar repository we just wrote
+import 'intro_screen.dart';
 import 'main.dart'; // For AppColors
 import 'l10n/app_localizations.dart';
 
@@ -35,37 +36,49 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         await user.updateDisplayName(name);
 
         // 2. Insert initial records into Users and Leaderboard collections!
-        // NOTE: Now we also save the "avatarIndex" value to the cloud along with the name
         Map<String, dynamic> userData = {
-          'displayName': name,
+          'playerName': name, // CRITICAL FIX: We used playerName instead of displayName!
           'avatarIndex': _selectedAvatarIndex, // Which visual did they choose?
           'nameChangeCount': 0, // Since it's the first login, full rights
           'lastNameChangeDate': FieldValue.serverTimestamp(),
           'createdAt': FieldValue.serverTimestamp(),
         };
 
-        await FirebaseFirestore.instance.collection('users').doc(user.uid).set(userData);
+        // Save the user into the users collection (safe write with merge: true)
+        await FirebaseFirestore.instance.collection('users').doc(user.uid).set(userData, SetOptions(merge: true));
 
+        // Save into the leaderboard
         await FirebaseFirestore.instance.collection('leaderboard').doc(user.uid).set({
-          'displayName': name,
+          'displayName': name, // Leaderboard screen usually uses displayName, this can stay
           'avatarIndex': _selectedAvatarIndex,
           'score': 0, // Starts the game with zero points
         }, SetOptions(merge: true));
 
-        // After the process, redirect to the main menu
+        // 3. CORRECT ROUTING (Fixes the routing bug)
         if (mounted) {
-          Navigator.pushReplacementNamed(context, '/home'); // Replace with your main screen route
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const IntroScreen()), // Go directly to IntroScreen
+          );
         }
       }
     } catch (e) {
       print("Onboarding Error: $e");
-      setState(() => _isLoading = false);
+      if (mounted) {
+        setState(() => _isLoading = false); // If error occurs, button returns to normal
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Error: $e"), backgroundColor: Colors.red),
+        );
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // ADDED SINGLE-LINE MAGIC CODE:
+      resizeToAvoidBottomInset: false,
+
       backgroundColor: AppColors.background,
       body: SafeArea(
         child: Column(

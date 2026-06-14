@@ -549,4 +549,41 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get advanced => '上級';
+
+  @override
+  String get dangerZone => 'デンジャーゾーン';
+
+  @override
+  String get deleteAccountTitle => 'アカウントとデータを削除';
+
+  @override
+  String get deleteAccountSubtitle => 'プロフィールとクラウド/ローカルの記録を完全に削除する';
+
+  @override
+  String get deleteAccountConfirmTitle => 'アカウントとデータを削除しますか？';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'これにより、プロフィール、ハイスコア、インベントリ、リーダーボードのデータが完全に削除されます。この操作は元に戻せません。';
+
+  @override
+  String get deletePermanently => '完全に削除';
+
+  @override
+  String get accountDeletedSuccess => 'アカウントとすべての関連データが正常に消去されました！';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'エラー：$error。アカウントを削除するには、再度ログインする必要がある場合があります。';
+  }
+
+  @override
+  String get securityCheckTitle => 'セキュリティチェック';
+
+  @override
+  String get securityCheckDesc =>
+      'アカウントの削除は重要な操作です。セキュリティのため、アカウントを削除する前に一度ログアウトし、再度ログインしてください。';
+
+  @override
+  String get logOutAndReLogin => 'ログアウトして再ログイン';
 }

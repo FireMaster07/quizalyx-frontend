@@ -1161,6 +1161,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Advanced'**
   String get advanced;
+
+  /// No description provided for @dangerZone.
+  ///
+  /// In en, this message translates to:
+  /// **'Danger Zone'**
+  String get dangerZone;
+
+  /// No description provided for @deleteAccountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account & Wipe Data'**
+  String get deleteAccountTitle;
+
+  /// No description provided for @deleteAccountSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Permanently delete your profile and cloud/local records'**
+  String get deleteAccountSubtitle;
+
+  /// No description provided for @deleteAccountConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account & Data?'**
+  String get deleteAccountConfirmTitle;
+
+  /// No description provided for @deleteAccountConfirmDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'This will permanently delete your profile, high scores, inventory, and leaderboard data. This action CANNOT be undone.'**
+  String get deleteAccountConfirmDesc;
+
+  /// No description provided for @deletePermanently.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Permanently'**
+  String get deletePermanently;
+
+  /// No description provided for @accountDeletedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Account and all associated data successfully wiped!'**
+  String get accountDeletedSuccess;
+
+  /// No description provided for @deleteAccountError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error: {error}. You might need to re-authenticate to delete your account.'**
+  String deleteAccountError(String error);
+
+  /// No description provided for @securityCheckTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Security Check'**
+  String get securityCheckTitle;
+
+  /// No description provided for @securityCheckDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleting your account is a sensitive operation. For your security, please log out and log in again before trying to delete your account.'**
+  String get securityCheckDesc;
+
+  /// No description provided for @logOutAndReLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Log Out & Re-Login'**
+  String get logOutAndReLogin;
 }
 
 class _AppLocalizationsDelegate

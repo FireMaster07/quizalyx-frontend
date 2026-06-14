@@ -234,5 +234,21 @@
                           },
                           "beginner": "Débutant",
                           "intermediate": "Intermédiaire",
-                          "advanced": "Avancé"
+                          "advanced": "Avancé",
+                          "dangerZone": "Zone de danger",
+                            "deleteAccountTitle": "Supprimer le compte et les données",
+                            "deleteAccountSubtitle": "Supprimer définitivement votre profil et vos enregistrements locaux/cloud",
+                            "deleteAccountConfirmTitle": "Supprimer le compte et les données ?",
+                            "deleteAccountConfirmDesc": "Cela supprimera définitivement votre profil, vos meilleurs scores, votre inventaire et vos données de classement. Cette action est IRRÉVERSIBLE.",
+                            "deletePermanently": "Supprimer définitivement",
+                            "accountDeletedSuccess": "Compte et toutes les données associées supprimés avec succès !",
+                            "deleteAccountError": "Erreur : {error}. Vous devrez peut-être vous reconnecter pour supprimer votre compte.",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "Contrôle de sécurité",
+                                "securityCheckDesc": "La suppression de votre compte est une opération sensible. Pour votre sécurité, veuillez vous déconnecter et vous reconnecter avant d'essayer de supprimer votre compte.",
+                                "logOutAndReLogin": "Se déconnecter et se reconnecter"
 }

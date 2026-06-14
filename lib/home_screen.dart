@@ -19,6 +19,9 @@ import 'my_account_screen.dart';
 import 'my_statistics_screen.dart';
 import 'login_screen.dart';
 import 'l10n/app_localizations.dart';
+import 'audio_manager.dart'; // ADDED
+import 'avatar_helper.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -27,14 +30,10 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
-    with TickerProviderStateMixin, WidgetsBindingObserver {
-  bool isSoundOn = true;
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   bool _hasInternet = true;
   List<Mission> activeNotifications = [];
 
-  // late AudioPlayer _audioPlayer;
-  AudioPlayer? _audioPlayer;
   late AnimationController _fadeController;
   late AnimationController _pulseController;
   late Animation<double> _fadeAnimation;
@@ -44,8 +43,6 @@ class _HomeScreenState extends State<HomeScreen>
   void initState() {
     super.initState();
     _checkConnection();
-    WidgetsBinding.instance.addObserver(this);
-    // _audioPlayer = AudioPlayer();
 
     _fadeController = AnimationController(
       vsync: this,
@@ -59,28 +56,23 @@ class _HomeScreenState extends State<HomeScreen>
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1500),
-    )..forward(); // For testing, we use forward() instead of repeat()
+    )..repeat();
 
     _pulseAnimation = Tween<double>(begin: 1.0, end: 1.05).animate(
       CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
     );
 
-    /*
-    // TIME-CONTROLLED BRAKE FOR TEST ROBOT:
-    // After 4 seconds, the breathing effect on the button will stop and the screen will become static.
     Future.delayed(const Duration(seconds: 4), () {
       if (mounted) {
         _pulseController.stop();
       }
     });
-    */
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      // FOR TESTING, WE TEMPORARILY MUTE THE MUSIC:
-      // if (!kIsWeb) {
-      //  await _playBackgroundMusic();
-      // }
-      // checkDailyReward(); // Start daily reward check
+      if (!kIsWeb) {
+        AudioManager.instance.playHomeMusic(); // CALLED FROM CENTRAL
+      }
+      _checkDailyReward(); // Start daily reward check
     });
   }
 
@@ -107,95 +99,123 @@ class _HomeScreenState extends State<HomeScreen>
 
   void _showOfflineDialog() {
     showDialog(
-        context: context,
-        barrierDismissible: false, // Prevents dismissing by tapping outside, user must choose
-        builder: (BuildContext context) {
-          return Align(
-            // HERE’S THAT FINE-TUNING YOU WANTED: Horizontally centered (0), vertically slightly above center (-0.2)
-            alignment: const Alignment(0, -0.2),
-            child: Material(
-              color: Colors.transparent,
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 32),
-                padding: const EdgeInsets.all(24),
-                decoration: BoxDecoration(
-                  color: AppColors.surface,
-                  borderRadius: BorderRadius.circular(24),
-                  border: Border.all(color: AppColors.surfaceLight, width: 2),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.5),
-                      blurRadius: 20,
-                      spreadRadius: 5,
+      context: context,
+      barrierDismissible:
+          false, // Prevents dismissing by tapping outside, user must choose
+      builder: (BuildContext context) {
+        return Align(
+          // HERE’S THAT FINE-TUNING YOU WANTED: Horizontally centered (0), vertically slightly above center (-0.2)
+          alignment: const Alignment(0, -0.2),
+          child: Material(
+            color: Colors.transparent,
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 32),
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                color: AppColors.surface,
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(color: AppColors.surfaceLight, width: 2),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.5),
+                    blurRadius: 20,
+                    spreadRadius: 5,
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Warning Icon
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: AppColors.error.withOpacity(0.2),
+                      shape: BoxShape.circle,
                     ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Warning Icon
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: AppColors.error.withOpacity(0.2),
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(Icons.wifi_off_rounded, color: AppColors.error, size: 40),
+                    child: const Icon(
+                      Icons.wifi_off_rounded,
+                      color: AppColors.error,
+                      size: 40,
                     ),
-                    const SizedBox(height: 20),
+                  ),
+                  const SizedBox(height: 20),
 
-                    // Title
-                    Text(
-                      AppLocalizations.of(context)!.offlineTitle,
-                      style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
+                  // Title
+                  Text(
+                    AppLocalizations.of(context)!.offlineTitle,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const SizedBox(height: 12),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 12),
 
-                    // Description (As you wanted, in English)
-                    Text(
-                      AppLocalizations.of(context)!.offlineDesc,
-                      style: TextStyle(color: AppColors.textSecondary, fontSize: 14, height: 1.5),
-                      textAlign: TextAlign.center,
+                  // Description (As you wanted, in English)
+                  Text(
+                    AppLocalizations.of(context)!.offlineDesc,
+                    style: TextStyle(
+                      color: AppColors.textSecondary,
+                      fontSize: 14,
+                      height: 1.5,
                     ),
-                    const SizedBox(height: 32),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 32),
 
-                    // Play as Guest Button
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primary,
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  // Play as Guest Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.primary,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        onPressed: () {
-                          // Closes the dialog; in the background we already masked as guest, game continues normally
-                          Navigator.of(context).pop();
-                        },
-                        child: Text(AppLocalizations.of(context)!.playAsGuest, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                      ),
+                      onPressed: () {
+                        // Closes the dialog; in the background we already masked as guest, game continues normally
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        AppLocalizations.of(context)!.playAsGuest,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 12),
+                  ),
+                  const SizedBox(height: 12),
 
-                    // Retry Button (Extra industry standard: maybe user wants to enable Wi-Fi and try again)
-                    SizedBox(
-                      width: double.infinity,
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop(); // Close
-                          _checkConnection(); // Check connection again
-                        },
-                        child: Text(AppLocalizations.of(context)!.retry, style: TextStyle(color: AppColors.textSecondary, fontSize: 16, fontWeight: FontWeight.bold)),
+                  // Retry Button (Extra industry standard: maybe user wants to enable Wi-Fi and try again)
+                  SizedBox(
+                    width: double.infinity,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop(); // Close
+                        _checkConnection(); // Check connection again
+                      },
+                      child: Text(
+                        AppLocalizations.of(context)!.retry,
+                        style: TextStyle(
+                          color: AppColors.textSecondary,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          );
-        }
+          ),
+        );
+      },
     );
   }
 
@@ -277,47 +297,6 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ) ??
         false;
-  }
-
-  Future<void> _playBackgroundMusic() async {
-    if (!isSoundOn) return;
-    try {
-      if (_audioPlayer?.state == PlayerState.playing) return;
-      await _audioPlayer?.setReleaseMode(ReleaseMode.loop);
-      await _audioPlayer?.play(AssetSource('audio/life_of_riley.mp3'));
-    } catch (e) {
-      debugPrint('Error playing music: $e');
-    }
-  }
-
-  Future<void> _stopBackgroundMusic() async {
-    await _audioPlayer?.stop();
-  }
-
-  Future<void> _pauseBackgroundMusic() async {
-    await _audioPlayer?.pause();
-  }
-
-  Future<void> _resumeBackgroundMusic() async {
-    if (!isSoundOn) return;
-    if (_audioPlayer?.state == PlayerState.paused) {
-      await _audioPlayer?.resume();
-    } else if (_audioPlayer?.state == PlayerState.stopped ||
-        _audioPlayer?.state == PlayerState.completed) {
-      await _playBackgroundMusic();
-    }
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    final isTopScreen = ModalRoute.of(context)?.isCurrent ?? false;
-    if (!isTopScreen) return;
-
-    if (state == AppLifecycleState.paused) {
-      _audioPlayer?.pause();
-    } else if (state == AppLifecycleState.resumed) {
-      _resumeBackgroundMusic();
-    }
   }
 
   void _checkCompletedMissions() {
@@ -492,7 +471,9 @@ class _HomeScreenState extends State<HomeScreen>
                                 const SizedBox(width: 12),
                                 Text(
                                   // (Since this is a variable, we will send it as a function, I’ll adjust the ARB accordingly)
-                                AppLocalizations.of(context)!.currentStreak(currentStreak),
+                                  AppLocalizations.of(
+                                    context,
+                                  )!.currentStreak(currentStreak),
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -535,8 +516,6 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    _audioPlayer?.dispose();
     _fadeController.dispose();
     _pulseController.dispose();
     super.dispose();
@@ -578,19 +557,41 @@ class _HomeScreenState extends State<HomeScreen>
                 return Padding(
                   padding: const EdgeInsets.only(right: 16.0),
                   child: GestureDetector(
-                    onTap: () {
-                      Scaffold.of(context).openEndDrawer();
-                    },
-                    child: CircleAvatar(
-                      radius: 18,
-                      backgroundColor: AppColors.primary,
-                      backgroundImage: user?.photoURL != null
-                          ? NetworkImage(user!.photoURL!)
-                          : null,
-                      child: user?.photoURL == null
-                          ? const Icon(Icons.person, color: Colors.white)
-                          : null,
-                    ),
+                    onTap: () => Scaffold.of(context).openEndDrawer(),
+                    child: user == null
+                        ? CircleAvatar(
+                            radius: 18,
+                            backgroundColor: AppColors.primary,
+                            child: Icon(Icons.person, color: Colors.white),
+                          )
+                        : FutureBuilder<DocumentSnapshot>(
+                            future: FirebaseFirestore.instance
+                                .collection('users')
+                                .doc(user.uid)
+                                .get(),
+                            builder: (context, snapshot) {
+                              if (snapshot.hasData && snapshot.data!.exists) {
+                                int avatarIndex =
+                                    (snapshot.data!.data()
+                                        as Map<
+                                          String,
+                                          dynamic
+                                        >)['avatarIndex'] ??
+                                    0;
+                                return AvatarHelper.buildAvatar(
+                                  avatarIndex,
+                                  radius: 18,
+                                );
+                              }
+                              return CircleAvatar(
+                                radius: 18,
+                                backgroundColor: AppColors.primary,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                ),
+                              );
+                            },
+                          ),
                   ),
                 );
               },
@@ -687,7 +688,9 @@ class _HomeScreenState extends State<HomeScreen>
                                     // If you haven’t added a key for "MISSION COMPLETED!", you can write it directly here
                                     // Or you can add 'mission_completed' to the dictionary.
                                     // For now, keep "MISSION COMPLETED!" as is, or use a translation if available.
-                                    AppLocalizations.of(context)!.missionCompleted,
+                                    AppLocalizations.of(
+                                      context,
+                                    )!.missionCompleted,
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 10,
@@ -757,22 +760,46 @@ class _HomeScreenState extends State<HomeScreen>
               ),
             ),
             accountName: Text(
-              user?.displayName ?? AppLocalizations.of(context)!.guestPlayer, // Updated for guest
+              user?.displayName ??
+                  AppLocalizations.of(
+                    context,
+                  )!.guestPlayer, // Updated for guest
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             accountEmail: Text(
-              user?.email ?? AppLocalizations.of(context)!.notLoggedIn, // Updated for guest
+              user?.email ??
+                  AppLocalizations.of(
+                    context,
+                  )!.notLoggedIn, // Updated for guest
               style: TextStyle(color: AppColors.textSecondary),
             ),
-            currentAccountPicture: CircleAvatar(
-              backgroundColor: AppColors.primary,
-              backgroundImage: user?.photoURL != null
-                  ? NetworkImage(user!.photoURL!)
-                  : null,
-              child: user?.photoURL == null
-                  ? const Icon(Icons.person, size: 40, color: Colors.white)
-                  : null,
-            ),
+            currentAccountPicture: isGuest
+                ? CircleAvatar(
+                    backgroundColor: AppColors.primary,
+                    child: Icon(Icons.person, size: 40, color: Colors.white),
+                  )
+                : FutureBuilder<DocumentSnapshot>(
+                    future: FirebaseFirestore.instance
+                        .collection('users')
+                        .doc(user.uid)
+                        .get(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData && snapshot.data!.exists) {
+                        int avatarIndex =
+                            (snapshot.data!.data()
+                                as Map<String, dynamic>)['avatarIndex'] ??
+                            0;
+                        return AvatarHelper.buildAvatar(
+                          avatarIndex,
+                          radius: 35,
+                        );
+                      }
+                      return CircleAvatar(
+                        backgroundColor: AppColors.primary,
+                        child: CircularProgressIndicator(),
+                      );
+                    },
+                  ),
           ),
 
           // 2. Menu Options
@@ -841,7 +868,9 @@ class _HomeScreenState extends State<HomeScreen>
               icon: Icon(isGuest ? Icons.login_rounded : Icons.logout_rounded),
               // Text set dynamically
               label: Text(
-                isGuest ? AppLocalizations.of(context)!.loginSignup : AppLocalizations.of(context)!.logOut,
+                isGuest
+                    ? AppLocalizations.of(context)!.loginSignup
+                    : AppLocalizations.of(context)!.logOut,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               onPressed: () async {
@@ -941,8 +970,6 @@ class _HomeScreenState extends State<HomeScreen>
             // Start Button inside HomeScreen
             key: const ValueKey('start_quiz_button'), // ADDED
             onTap: () {
-              if (isSoundOn) _playBackgroundMusic();
-
               // The showDialog function opens a layer on top of the screen (Popup)
               showDialog(
                 context: context,
@@ -952,15 +979,16 @@ class _HomeScreenState extends State<HomeScreen>
                   0.7,
                 ), // How much should we darken the background?
                 builder: (BuildContext context) {
-                  // We call the Dialog widget we just wrote
-                  return ModeSelectionDialog(onStopMusic: _stopBackgroundMusic);
+                  // We now delegate the job of stopping music to our central manager (AudioManager)
+                  return ModeSelectionDialog(
+                    onStopMusic: () => AudioManager.instance.stopMusic(),
+                  );
                 },
               ).then((_) {
                 // This runs when the window is closed (after returning from quiz or canceling)
                 _checkCompletedMissions();
-                if (isSoundOn) {
-                  _resumeBackgroundMusic(); // resume is more logical than play here
-                }
+                AudioManager.instance
+                    .playHomeMusic(); // AFTER QUIZ, CONTINUE MAIN MUSIC
               });
             },
             child: Container(
@@ -1029,16 +1057,16 @@ class _HomeScreenState extends State<HomeScreen>
         children: [
           _buildNavButton(
             keyName: 'nav_sound_button', // ADDED
-            icon: isSoundOn
+            icon:
+                AudioManager
+                    .instance
+                    .isSoundOn // READ FROM CENTRAL VARIABLE
                 ? Icons.volume_up_rounded
                 : Icons.volume_off_rounded,
             onTap: () async {
-              setState(() => isSoundOn = !isSoundOn);
-              if (isSoundOn) {
-                await _playBackgroundMusic();
-              } else {
-                await _stopBackgroundMusic();
-              }
+              await AudioManager.instance
+                  .toggleSound(); // TRIGGER CENTRAL FUNCTION
+              setState(() {}); // Refresh screen so the icon updates
             },
           ),
           _buildNavButton(

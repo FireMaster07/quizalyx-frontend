@@ -234,5 +234,21 @@
                           },
                           "beginner": "Iniciante",
                           "intermediate": "Intermediário",
-                          "advanced": "Avançado"
+                          "advanced": "Avançado",
+                          "dangerZone": "Zona de Perigo",
+                            "deleteAccountTitle": "Excluir Conta e Apagar Dados",
+                            "deleteAccountSubtitle": "Excluir permanentemente seu perfil e registros locais/nuvem",
+                            "deleteAccountConfirmTitle": "Excluir Conta e Dados?",
+                            "deleteAccountConfirmDesc": "Isso excluirá permanentemente seu perfil, pontuações altas, inventário e dados da tabela de classificação. Esta ação NÃO pode ser desfeita.",
+                            "deletePermanently": "Excluir Permanentemente",
+                            "accountDeletedSuccess": "Conta e todos os dados associados apagados com sucesso!",
+                            "deleteAccountError": "Erro: {error}. Você pode precisar se autenticar novamente para excluir sua conta.",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "Verificação de Segurança",
+                                "securityCheckDesc": "A exclusão da sua conta é uma operação sensível. Para sua segurança, saia e faça o login novamente antes de tentar excluir sua conta.",
+                                "logOutAndReLogin": "Sair e Entrar Novamente"
 }

@@ -234,5 +234,21 @@
                           },
                           "beginner": "शुरुआती",
                           "intermediate": "मध्यम",
-                          "advanced": "उन्नत"
+                          "advanced": "उन्नत",
+                          "dangerZone": "खतरे का क्षेत्र",
+                            "deleteAccountTitle": "खाता और डेटा हटाएं",
+                            "deleteAccountSubtitle": "अपनी प्रोफ़ाइल और क्लाउड/स्थानीय रिकॉर्ड को स्थायी रूप से हटाएं",
+                            "deleteAccountConfirmTitle": "खाता और डेटा हटाएं?",
+                            "deleteAccountConfirmDesc": "यह आपकी प्रोफ़ाइल, उच्च स्कोर, इन्वेंट्री और लीडरबोर्ड डेटा को स्थायी रूप से हटा देगा। इस कार्रवाई को पूर्ववत नहीं किया जा सकता।",
+                            "deletePermanently": "स्थायी रूप से हटाएं",
+                            "accountDeletedSuccess": "खाता और सभी संबद्ध डेटा सफलतापूर्वक मिटा दिए गए!",
+                            "deleteAccountError": "त्रुटि: {error}। अपना खाता हटाने के लिए आपको फिर से लॉग इन करना पड़ सकता है।",
+                              "@deleteAccountError": {
+                                "placeholders": {
+                                  "error": {"type": "String"}
+                                }
+                              },
+                              "securityCheckTitle": "सुरक्षा जाँच",
+                                "securityCheckDesc": "अपना खाता हटाना एक संवेदनशील कार्य है। अपनी सुरक्षा के लिए, कृपया अपना खाता हटाने का प्रयास करने से पहले लॉग आउट करें और फिर से लॉग इन करें।",
+                                "logOutAndReLogin": "लॉग आउट और री-लॉगिन करें"
 }

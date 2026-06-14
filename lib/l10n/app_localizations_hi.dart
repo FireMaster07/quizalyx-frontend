@@ -557,4 +557,43 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get advanced => 'उन्नत';
+
+  @override
+  String get dangerZone => 'खतरे का क्षेत्र';
+
+  @override
+  String get deleteAccountTitle => 'खाता और डेटा हटाएं';
+
+  @override
+  String get deleteAccountSubtitle =>
+      'अपनी प्रोफ़ाइल और क्लाउड/स्थानीय रिकॉर्ड को स्थायी रूप से हटाएं';
+
+  @override
+  String get deleteAccountConfirmTitle => 'खाता और डेटा हटाएं?';
+
+  @override
+  String get deleteAccountConfirmDesc =>
+      'यह आपकी प्रोफ़ाइल, उच्च स्कोर, इन्वेंट्री और लीडरबोर्ड डेटा को स्थायी रूप से हटा देगा। इस कार्रवाई को पूर्ववत नहीं किया जा सकता।';
+
+  @override
+  String get deletePermanently => 'स्थायी रूप से हटाएं';
+
+  @override
+  String get accountDeletedSuccess =>
+      'खाता और सभी संबद्ध डेटा सफलतापूर्वक मिटा दिए गए!';
+
+  @override
+  String deleteAccountError(String error) {
+    return 'त्रुटि: $error। अपना खाता हटाने के लिए आपको फिर से लॉग इन करना पड़ सकता है।';
+  }
+
+  @override
+  String get securityCheckTitle => 'सुरक्षा जाँच';
+
+  @override
+  String get securityCheckDesc =>
+      'अपना खाता हटाना एक संवेदनशील कार्य है। अपनी सुरक्षा के लिए, कृपया अपना खाता हटाने का प्रयास करने से पहले लॉग आउट करें और फिर से लॉग इन करें।';
+
+  @override
+  String get logOutAndReLogin => 'लॉग आउट और री-लॉगिन करें';
 }

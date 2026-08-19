@@ -568,7 +568,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get deletePermanently => '永久删除';
 
   @override
-  String get accountDeletedSuccess => '帐户及所有相关数据已成功清除！';
+  String get accountDeletedSuccess => '账号已成功删除！';
 
   @override
   String deleteAccountError(String error) {
@@ -583,4 +583,144 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => '注销并重新登录';
+
+  @override
+  String get adNotReady => '广告还未准备好，请稍等片刻。';
+
+  @override
+  String get rewardEarned => '恭喜！你获得了免费金币。';
+
+  @override
+  String get freeRewards => '免费奖励';
+
+  @override
+  String get watchAd => '观看视频';
+
+  @override
+  String get watchAdDesc => '赚取免费金币';
+
+  @override
+  String get videoCannotBePlayed => '视频无法播放！';
+
+  @override
+  String get noInternetMessage => '您未连接到互联网。请检查您的连接并重试。';
+
+  @override
+  String get okButton => '确定';
+
+  @override
+  String get continueOffline => '离线继续';
+
+  @override
+  String get unknownUser => '未知用户';
+
+  @override
+  String get noEmail => '无电子邮件';
+
+  @override
+  String get offlineModeDataFromDevice => '离线模式：从设备读取数据。';
+
+  @override
+  String get questionsLoadError => '无法加载问题。请检查您的网络连接。';
+
+  @override
+  String get points => '分数';
+
+  @override
+  String get createWord => '创建单词...';
+
+  @override
+  String get clear => '清除';
+
+  @override
+  String get submit => '提交';
+
+  @override
+  String get checking => '正在检查...';
+
+  @override
+  String get chooseYourGame => '选择你的游戏';
+
+  @override
+  String get wordTooShort => '单词至少需要3个字母！';
+
+  @override
+  String get wordAlreadyFound => '你已经找到这个单词了！';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points 分！';
+  }
+
+  @override
+  String get invalidWord => '无效单词！';
+
+  @override
+  String get startFindingWords => '开始找单词吧！';
+
+  @override
+  String get gameOver => '游戏结束';
+
+  @override
+  String get yourScore => '你的得分：';
+
+  @override
+  String get exitWordAlyxTitle => '退出 WordAlyx？';
+
+  @override
+  String get exitWordAlyxDesc => '您确定要离开游戏吗？您的进度将会丢失。';
+
+  @override
+  String get legal => '法律';
+
+  @override
+  String get privacyPolicy => '隐私政策';
+
+  @override
+  String get privacyWelcomeTitle => '欢迎来到 QuizAlyx！';
+
+  @override
+  String get privacyWelcomeDesc => '在开始之前，请阅读并接受我们的隐私政策，以了解我们如何保护您的数据。';
+
+  @override
+  String get readPrivacyPolicy => '阅读隐私政策';
+
+  @override
+  String get acceptAndContinue => '接受并继续';
+
+  @override
+  String get creditsPlayStorePublisher => 'Play 商店发布者';
+
+  @override
+  String get creditsAppStorePublisher => 'App Store 发布者';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => '数据库';
+
+  @override
+  String get creditsFrontend => '前端开发';
+
+  @override
+  String get creditsBackend => '后端';
+
+  @override
+  String get creditsProduction => '制作与更新';
+
+  @override
+  String get creditsWordAlyxUpdate => 'WordAlyx 更新 (2026)';
+
+  @override
+  String get creditsProducer => '制作人';
+
+  @override
+  String get tapToSkip => '点击任意位置跳过';
+
+  @override
+  String get selectCurrentAccountError => '请选择您当前要删除的账号！';
 }

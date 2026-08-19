@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "删除帐户和数据？",
                             "deleteAccountConfirmDesc": "这将永久删除您的个人资料、最高分、物品栏和排行榜数据。此操作无法撤销。",
                             "deletePermanently": "永久删除",
-                            "accountDeletedSuccess": "帐户及所有相关数据已成功清除！",
+                            "accountDeletedSuccess": "账号已成功删除！",
                             "deleteAccountError": "错误：{error}。您可能需要重新验证才能删除帐户。",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "安全检查",
                                 "securityCheckDesc": "删除您的帐户是一项敏感操作。为了您的安全，请在尝试删除帐户之前先注销并重新登录。",
-                                "logOutAndReLogin": "注销并重新登录"
+                                "logOutAndReLogin": "注销并重新登录",
+                                "adNotReady": "广告还未准备好，请稍等片刻。",
+                                  "rewardEarned": "恭喜！你获得了免费金币。",
+                                  "freeRewards": "免费奖励",
+                                  "watchAd": "观看视频",
+                                  "watchAdDesc": "赚取免费金币",
+                                  "videoCannotBePlayed": "视频无法播放！",
+                                    "noInternetMessage": "您未连接到互联网。请检查您的连接并重试。",
+                                    "okButton": "确定",
+                                    "continueOffline": "离线继续",
+                                      "unknownUser": "未知用户",
+                                      "noEmail": "无电子邮件",
+                                      "offlineModeDataFromDevice": "离线模式：从设备读取数据。",
+                                      "questionsLoadError": "无法加载问题。请检查您的网络连接。",
+                                      "points": "分数",
+                                      "createWord": "创建单词...",
+                                      "clear": "清除",
+                                      "submit": "提交",
+                                      "checking": "正在检查...",
+                                      "chooseYourGame": "选择你的游戏",
+                                      "wordTooShort": "单词至少需要3个字母！",
+                                      "wordAlreadyFound": "你已经找到这个单词了！",
+                                      "pointsEarned": "+{points} 分！",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "无效单词！",
+                                      "startFindingWords": "开始找单词吧！",
+                                      "gameOver": "游戏结束",
+                                      "yourScore": "你的得分：",
+                                      "exitWordAlyxTitle": "退出 WordAlyx？",
+                                      "exitWordAlyxDesc": "您确定要离开游戏吗？您的进度将会丢失。",
+                                      "legal": "法律",
+                                      "privacyPolicy": "隐私政策",
+                                      "privacyWelcomeTitle": "欢迎来到 QuizAlyx！",
+                                      "privacyWelcomeDesc": "在开始之前，请阅读并接受我们的隐私政策，以了解我们如何保护您的数据。",
+                                      "readPrivacyPolicy": "阅读隐私政策",
+                                      "acceptAndContinue": "接受并继续",
+                                      "creditsPlayStorePublisher": "Play 商店发布者",
+                                      "creditsAppStorePublisher": "App Store 发布者",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "数据库",
+                                      "creditsFrontend": "前端开发",
+                                      "creditsBackend": "后端",
+                                      "creditsProduction": "制作与更新",
+                                      "creditsWordAlyxUpdate": "WordAlyx 更新 (2026)",
+                                      "creditsProducer": "制作人",
+                                      "tapToSkip": "点击任意位置跳过",
+                                      "selectCurrentAccountError": "请选择您当前要删除的账号！"
 }

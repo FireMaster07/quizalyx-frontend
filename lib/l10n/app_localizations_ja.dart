@@ -570,7 +570,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get deletePermanently => '完全に削除';
 
   @override
-  String get accountDeletedSuccess => 'アカウントとすべての関連データが正常に消去されました！';
+  String get accountDeletedSuccess => 'アカウントが正常に削除されました！';
 
   @override
   String deleteAccountError(String error) {
@@ -586,4 +586,145 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'ログアウトして再ログイン';
+
+  @override
+  String get adNotReady => '広告の準備がまだできていません。少々お待ちください。';
+
+  @override
+  String get rewardEarned => 'おめでとうございます！無料のコインを獲得しました。';
+
+  @override
+  String get freeRewards => '無料報酬';
+
+  @override
+  String get watchAd => '動画を見る';
+
+  @override
+  String get watchAdDesc => '無料コインを稼ぐ';
+
+  @override
+  String get videoCannotBePlayed => '動画を再生できません！';
+
+  @override
+  String get noInternetMessage => 'インターネットに接続されていません。接続を確認して、もう一度お試しください。';
+
+  @override
+  String get okButton => 'OK';
+
+  @override
+  String get continueOffline => 'オフラインで続行';
+
+  @override
+  String get unknownUser => '不明なユーザー';
+
+  @override
+  String get noEmail => 'メールなし';
+
+  @override
+  String get offlineModeDataFromDevice => 'オフラインモード：デバイスからデータを読み取ります。';
+
+  @override
+  String get questionsLoadError => '問題が読み込めませんでした。インターネット接続を確認してください。';
+
+  @override
+  String get points => 'スコア';
+
+  @override
+  String get createWord => '単語を作成...';
+
+  @override
+  String get clear => 'クリア';
+
+  @override
+  String get submit => '送信';
+
+  @override
+  String get checking => '確認中...';
+
+  @override
+  String get chooseYourGame => 'ゲームを選択';
+
+  @override
+  String get wordTooShort => '単語は3文字以上である必要があります！';
+
+  @override
+  String get wordAlreadyFound => 'この単語はすでに見つけました！';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points ポイント！';
+  }
+
+  @override
+  String get invalidWord => '無効な単語です！';
+
+  @override
+  String get startFindingWords => '単語を見つけ始めましょう！';
+
+  @override
+  String get gameOver => 'ゲームオーバー';
+
+  @override
+  String get yourScore => 'あなたのスコア：';
+
+  @override
+  String get exitWordAlyxTitle => 'WordAlyxを終了しますか？';
+
+  @override
+  String get exitWordAlyxDesc => '本当にゲームを終了しますか？進行状況は失われます。';
+
+  @override
+  String get legal => '法的情報';
+
+  @override
+  String get privacyPolicy => 'プライバシーポリシー';
+
+  @override
+  String get privacyWelcomeTitle => 'QuizAlyxへようこそ！';
+
+  @override
+  String get privacyWelcomeDesc =>
+      '始める前に、データの保護方法をご理解いただくため、プライバシーポリシーを読み、同意してください。';
+
+  @override
+  String get readPrivacyPolicy => 'プライバシーポリシーを読む';
+
+  @override
+  String get acceptAndContinue => '同意して続ける';
+
+  @override
+  String get creditsPlayStorePublisher => 'Play ストア パブリッシャー';
+
+  @override
+  String get creditsAppStorePublisher => 'App Store パブリッシャー';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'データベース';
+
+  @override
+  String get creditsFrontend => 'フロントエンド開発';
+
+  @override
+  String get creditsBackend => 'バックエンド';
+
+  @override
+  String get creditsProduction => '制作とアップデート';
+
+  @override
+  String get creditsWordAlyxUpdate => 'WordAlyx アップデート (2026)';
+
+  @override
+  String get creditsProducer => 'プロデューサー';
+
+  @override
+  String get tapToSkip => 'どこでもタップしてスキップ';
+
+  @override
+  String get selectCurrentAccountError => '削除する現在のアカウントを選択してください！';
 }

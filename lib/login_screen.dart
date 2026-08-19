@@ -1,13 +1,14 @@
 import 'dart:io'; // For internet connectivity check
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:shared_preferences/shared_preferences.dart'; // EKLENDİ: Hafıza kontrolü için
+import 'package:shared_preferences/shared_preferences.dart'; // ADDED: For memory check
 import 'auth_service.dart';
 import 'firestore_service.dart';
 import 'intro_screen.dart';
 import 'main.dart';
 import 'onboarding_screen.dart';
 import 'l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -24,26 +25,125 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     _checkConnection(); // Check internet as soon as the screen opens
 
-    // EKLENDİ: Ekran çizildikten hemen sonra dil seçimi yapılmış mı diye kontrol et
+    // ADDED: Right after the screen is drawn, check if the language has been selected and privacy policy accepted
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _checkFirstTimeLanguage();
     });
   }
 
-  // --- İLK GİRİŞ DİL KONTROLÜ ---
+  // --- FIRST LOGIN LANGUAGE CHECK ---
   Future<void> _checkFirstTimeLanguage() async {
     final prefs = await SharedPreferences.getInstance();
     bool hasSelectedLanguage = prefs.getBool('has_selected_language') ?? false;
 
-    // Eğer dil daha önce seçilmemişse pencereyi göster
+    // If the language hasn't been selected before, show the dialog
     if (!hasSelectedLanguage && mounted) {
       _showFirstTimeLanguageDialog();
+    } else {
+      // If language is already selected, check Privacy Policy acceptance next
+      _checkPrivacyPolicyOnStartup();
     }
   }
 
-  // --- İLK GİRİŞ DİL SEÇİM PENCERESİ (DIALOG) ---
+  // --- PRIVACY POLICY STARTUP CHECK ---
+  Future<void> _checkPrivacyPolicyOnStartup() async {
+    final prefs = await SharedPreferences.getInstance();
+    bool hasAcceptedPrivacy = prefs.getBool('hasAcceptedPrivacy') ?? false;
+
+    if (!hasAcceptedPrivacy && mounted) {
+      _showPrivacyPolicyDialog();
+    }
+  }
+
+  // --- PRIVACY POLICY MANDATORY DIALOG ---
+  void _showPrivacyPolicyDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false, // User cannot click outside to dismiss
+      builder: (BuildContext context) {
+        return PopScope(
+          canPop: false, // Locks the back button
+          child: Dialog(
+            backgroundColor: AppColors.surface,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.shield_rounded, color: AppColors.primary, size: 56),
+                  const SizedBox(height: 16),
+                  Text(
+                    AppLocalizations.of(context)!.privacyWelcomeTitle,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    AppLocalizations.of(context)!.privacyWelcomeDesc,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: AppColors.textSecondary, fontSize: 14, height: 1.5),
+                  ),
+                  const SizedBox(height: 24),
+
+                  // Read Privacy Policy Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      icon: const Icon(Icons.open_in_new_rounded, size: 18),
+                      label: Text(AppLocalizations.of(context)!.readPrivacyPolicy),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: AppColors.primary,
+                        side: BorderSide(color: AppColors.primary),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      ),
+                      onPressed: () async {
+                        final Uri url = Uri.parse('https://quizalyx.web.app/privacy-policy.html');
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url, mode: LaunchMode.externalApplication);
+                        }
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Accept and Continue Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.primary,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      ),
+                      onPressed: () async {
+                        final prefs = await SharedPreferences.getInstance();
+                        await prefs.setBool('hasAcceptedPrivacy', true);
+
+                        if (context.mounted) {
+                          Navigator.of(context).pop(); // Close the privacy dialog
+                        }
+                      },
+                      child: Text(
+                        AppLocalizations.of(context)!.acceptAndContinue,
+                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  // --- FIRST LOGIN LANGUAGE SELECTION WINDOW (DIALOG) ---
   void _showFirstTimeLanguageDialog() {
-    // Toplam 15 dilimiz
+    // 15 languages in total
     final Map<String, String> languages = {
       'en': 'English', 'tr': 'Türkçe', 'de': 'Deutsch', 'fr': 'Français',
       'it': 'Italiano', 'es': 'Español', 'pt': 'Português', 'ar': 'العربية',
@@ -51,11 +151,11 @@ class _LoginScreenState extends State<LoginScreen> {
       'el': 'Ελληνικά', 'fa': 'فارسی', 'ko': '한국어'
     };
 
-    String selectedLang = 'en'; // Senin istediğin gibi varsayılan İngilizce
+    String selectedLang = 'en'; // Default English
 
     showDialog(
         context: context,
-        barrierDismissible: false, // Kullanıcı boşluğa tıklayıp kapatamasın, seçmek zorunda kalsın
+        barrierDismissible: false, // The user cannot click on the space to close it, they must select it
         builder: (BuildContext context) {
           return StatefulBuilder(
               builder: (context, setDialogState) {
@@ -77,7 +177,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Icon(Icons.language_rounded, color: AppColors.primary, size: 48),
                         const SizedBox(height: 16),
                         const Text(
-                          "Select Language", // İngilizce sabit bırakıyoruz çünkü henüz dil seçmedi
+                          "Select Language", // We leave English constant because the user hasn't selected a language yet
                           style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 8),
@@ -88,9 +188,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 24),
 
-                        // Kaydırılabilir Dil Listesi
+                        // Scrollable Language List
                         ConstrainedBox(
-                          constraints: const BoxConstraints(maxHeight: 250), // Çok uzamasın diye limit
+                          constraints: const BoxConstraints(maxHeight: 250), // Limit so it doesn't get too long
                           child: ListView.builder(
                             shrinkWrap: true,
                             itemCount: languages.length,
@@ -127,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           fontSize: 16,
                                         ),
                                       ),
-                                      // Siyah/Dolu yuvarlak görünümü
+                                      // Black/Full round view
                                       Icon(
                                         isSelected ? Icons.radio_button_checked : Icons.radio_button_off,
                                         color: isSelected ? AppColors.primary : AppColors.textSecondary,
@@ -141,7 +241,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 24),
 
-                        // Devam Butonu
+                        // Continue Button
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -153,14 +253,16 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             onPressed: () async {
                               final prefs = await SharedPreferences.getInstance();
-                              // Hafızaya "bu adam dilini seçti" diye not düşüyoruz
+                              // We make a note in memory saying "this man chose his language"
                               await prefs.setBool('has_selected_language', true);
 
-                              // Sistemi seçilen dile anında geçiriyoruz
+                              // We instantly switch the system to the selected language
                               AppLanguage.changeLanguage(selectedLang);
 
                               if (context.mounted) {
-                                Navigator.of(context).pop(); // Pencereyi kapat
+                                Navigator.of(context).pop(); // Close the language window
+                                // After language selection, trigger Privacy Policy dialog check
+                                _checkPrivacyPolicyOnStartup();
                               }
                             },
                             child: const Text("Continue", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
@@ -233,28 +335,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 32),
-
-                    // PLAY AS GUEST BUTTON
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primary,
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                        ),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(builder: (context) => const IntroScreen()),
-                          );
-                        },
-                        child: Text(AppLocalizations.of(context)!.playAsGuest, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                      ),
-                    ),
-                    const SizedBox(height: 12),
 
                     // RETRY BUTTON
                     SizedBox(
@@ -371,25 +451,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         }
                       },
-                    ),
-                    const SizedBox(height: 24),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => const IntroScreen()),
-                        );
-                      },
-                      child: Text(
-                        AppLocalizations.of(context)!.continueAsGuest,
-                        style: const TextStyle(
-                          color: AppColors.textSecondary,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          decoration: TextDecoration.underline,
-                          decorationColor: AppColors.textSecondary,
-                        ),
-                      ),
                     ),
                   ],
                 ),

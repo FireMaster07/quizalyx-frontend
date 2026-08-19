@@ -1201,7 +1201,7 @@ abstract class AppLocalizations {
   /// No description provided for @accountDeletedSuccess.
   ///
   /// In en, this message translates to:
-  /// **'Account and all associated data successfully wiped!'**
+  /// **'Account successfully deleted!'**
   String get accountDeletedSuccess;
 
   /// No description provided for @deleteAccountError.
@@ -1227,6 +1227,282 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Log Out & Re-Login'**
   String get logOutAndReLogin;
+
+  /// No description provided for @adNotReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ad is not ready yet, please wait a moment.'**
+  String get adNotReady;
+
+  /// No description provided for @rewardEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'Congratulations! You earned free coins.'**
+  String get rewardEarned;
+
+  /// No description provided for @freeRewards.
+  ///
+  /// In en, this message translates to:
+  /// **'FREE REWARDS'**
+  String get freeRewards;
+
+  /// No description provided for @watchAd.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch Video'**
+  String get watchAd;
+
+  /// No description provided for @watchAdDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn free coins'**
+  String get watchAdDesc;
+
+  /// No description provided for @videoCannotBePlayed.
+  ///
+  /// In en, this message translates to:
+  /// **'Video cannot be played!'**
+  String get videoCannotBePlayed;
+
+  /// No description provided for @noInternetMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You are not connected to the internet. Please check your connection and try again.'**
+  String get noInternetMessage;
+
+  /// No description provided for @okButton.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get okButton;
+
+  /// No description provided for @continueOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue Offline'**
+  String get continueOffline;
+
+  /// No description provided for @unknownUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown User'**
+  String get unknownUser;
+
+  /// No description provided for @noEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'No Email'**
+  String get noEmail;
+
+  /// No description provided for @offlineModeDataFromDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline Mode: Data read from device.'**
+  String get offlineModeDataFromDevice;
+
+  /// No description provided for @questionsLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions could not be loaded. Please check your internet connection.'**
+  String get questionsLoadError;
+
+  /// No description provided for @points.
+  ///
+  /// In en, this message translates to:
+  /// **'Points'**
+  String get points;
+
+  /// No description provided for @createWord.
+  ///
+  /// In en, this message translates to:
+  /// **'Create word...'**
+  String get createWord;
+
+  /// No description provided for @clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clear;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'SUBMIT'**
+  String get submit;
+
+  /// No description provided for @checking.
+  ///
+  /// In en, this message translates to:
+  /// **'is being checked...'**
+  String get checking;
+
+  /// No description provided for @chooseYourGame.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Your Game'**
+  String get chooseYourGame;
+
+  /// No description provided for @wordTooShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Word must be at least 3 letters!'**
+  String get wordTooShort;
+
+  /// No description provided for @wordAlreadyFound.
+  ///
+  /// In en, this message translates to:
+  /// **'You already found this word!'**
+  String get wordAlreadyFound;
+
+  /// No description provided for @pointsEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'+{points} Points!'**
+  String pointsEarned(int points);
+
+  /// No description provided for @invalidWord.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid word!'**
+  String get invalidWord;
+
+  /// No description provided for @startFindingWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Start finding words!'**
+  String get startFindingWords;
+
+  /// No description provided for @gameOver.
+  ///
+  /// In en, this message translates to:
+  /// **'Game Over'**
+  String get gameOver;
+
+  /// No description provided for @yourScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Your score:'**
+  String get yourScore;
+
+  /// No description provided for @exitWordAlyxTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quit WordAlyx?'**
+  String get exitWordAlyxTitle;
+
+  /// No description provided for @exitWordAlyxDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to leave? Your progress will be lost.'**
+  String get exitWordAlyxDesc;
+
+  /// No description provided for @legal.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal'**
+  String get legal;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @privacyWelcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to QuizAlyx!'**
+  String get privacyWelcomeTitle;
+
+  /// No description provided for @privacyWelcomeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you start your journey, please read and accept our Privacy Policy to understand how we protect your data.'**
+  String get privacyWelcomeDesc;
+
+  /// No description provided for @readPrivacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Read Privacy Policy'**
+  String get readPrivacyPolicy;
+
+  /// No description provided for @acceptAndContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept & Continue'**
+  String get acceptAndContinue;
+
+  /// No description provided for @creditsPlayStorePublisher.
+  ///
+  /// In en, this message translates to:
+  /// **'Play Store Publisher'**
+  String get creditsPlayStorePublisher;
+
+  /// No description provided for @creditsAppStorePublisher.
+  ///
+  /// In en, this message translates to:
+  /// **'App Store Publisher'**
+  String get creditsAppStorePublisher;
+
+  /// No description provided for @creditsIDEAndroid.
+  ///
+  /// In en, this message translates to:
+  /// **'IDE (Android)'**
+  String get creditsIDEAndroid;
+
+  /// No description provided for @creditsIDEiOS.
+  ///
+  /// In en, this message translates to:
+  /// **'IDE (iOS)'**
+  String get creditsIDEiOS;
+
+  /// No description provided for @creditsDatabase.
+  ///
+  /// In en, this message translates to:
+  /// **'Database'**
+  String get creditsDatabase;
+
+  /// No description provided for @creditsFrontend.
+  ///
+  /// In en, this message translates to:
+  /// **'Frontend Development'**
+  String get creditsFrontend;
+
+  /// No description provided for @creditsBackend.
+  ///
+  /// In en, this message translates to:
+  /// **'Backend'**
+  String get creditsBackend;
+
+  /// No description provided for @creditsProduction.
+  ///
+  /// In en, this message translates to:
+  /// **'Production & Updates'**
+  String get creditsProduction;
+
+  /// No description provided for @creditsWordAlyxUpdate.
+  ///
+  /// In en, this message translates to:
+  /// **'WordAlyx Update (2026)'**
+  String get creditsWordAlyxUpdate;
+
+  /// No description provided for @creditsProducer.
+  ///
+  /// In en, this message translates to:
+  /// **'Producer'**
+  String get creditsProducer;
+
+  /// No description provided for @tapToSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap anywhere to skip'**
+  String get tapToSkip;
+
+  /// No description provided for @selectCurrentAccountError.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select your current account to delete it!'**
+  String get selectCurrentAccountError;
 }
 
 class _AppLocalizationsDelegate

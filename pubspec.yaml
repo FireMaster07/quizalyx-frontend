@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.1+16
+version: 1.1.0+17
 
 environment:
   sdk: ^3.9.2
@@ -36,7 +36,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  audioplayers: ^6.5.1
+  audioplayers: ^5.2.1
   firebase_core: ^4.9.0
   firebase_auth: ^6.5.1
   google_sign_in: ^7.2.0
@@ -44,14 +44,16 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.20.2
+  google_mobile_ads: ^5.1.0 # ADDED
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-  espresso: ^0.3.0+3
-  flutter_launcher_icons: ^0.13.1
+  # espresso: ^0.4.0+25
+  flutter_launcher_icons: ^0.14.4
 
 flutter_launcher_icons:
   android: true
@@ -82,6 +84,8 @@ flutter:
     - assets/questions.json
     - assets/audio/life_of_riley.mp3
     - assets/audio/quiz-background-loop-thinking-news-275636.mp3
+    - assets/audio/melodigne-quiz-music-209350.mp3
+    - assets/texts/dictionary.txt
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "Hesap ve Veriler Silinsin mi?",
                             "deleteAccountConfirmDesc": "Bu işlem profilini, yüksek skorlarını, envanterini ve liderlik tablosu verilerini kalıcı olarak siler. Bu işlem GERİ ALINAMAZ.",
                             "deletePermanently": "Kalıcı Olarak Sil",
-                            "accountDeletedSuccess": "Hesap ve ilişkili tüm veriler başarıyla silindi!",
+                            "accountDeletedSuccess": "Hesabınız başarıyla silindi!",
                             "deleteAccountError": "Hata: {error}. Hesabınızı silmek için yeniden giriş yapmanız gerekebilir.",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "Güvenlik Kontrolü",
                                 "securityCheckDesc": "Hesabınızı silmek kritik bir işlemdir. Güvenliğiniz için, hesabınızı silmeyi denemeden önce lütfen çıkış yapıp tekrar giriş yapın.",
-                                "logOutAndReLogin": "Çıkış Yap & Tekrar Gir"
+                                "logOutAndReLogin": "Çıkış Yap & Tekrar Gir",
+                                "adNotReady": "Reklam henüz hazır değil, lütfen biraz bekle.",
+                                  "rewardEarned": "Tebrikler! Ücretsiz altın kazandın.",
+                                  "freeRewards": "ÜCRETSİZ ÖDÜLLER",
+                                  "watchAd": "Video İzle",
+                                  "watchAdDesc": "Ücretsiz altın kazan",
+                                  "videoCannotBePlayed": "Video oynatılamıyor!",
+                                    "noInternetMessage": "İnternete bağlı değilsiniz. Lütfen bağlantınızı kontrol edin ve tekrar deneyin.",
+                                    "okButton": "Tamam",
+                                    "continueOffline": "Çevrimdışı Devam Et",
+                                      "unknownUser": "Bilinmeyen Kullanıcı",
+                                      "noEmail": "E-posta Yok",
+                                      "offlineModeDataFromDevice": "Çevrimdışı Mod: Veriler cihazdan okunuyor.",
+                                      "questionsLoadError": "Sorular yüklenemedi. Lütfen internet bağlantınızı kontrol edin.",
+                                      "points": "Puan",
+                                      "createWord": "Kelime oluştur...",
+                                      "clear": "Sil",
+                                      "submit": "GÖNDER",
+                                      "checking": "kontrol ediliyor...",
+                                      "chooseYourGame": "Oyununu Seç",
+                                      "wordTooShort": "Kelime en az 3 harfli olmalı!",
+                                      "wordAlreadyFound": "Bu kelimeyi zaten buldun!",
+                                      "pointsEarned": "+{points} Puan!",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "Geçersiz kelime!",
+                                      "startFindingWords": "Kelime bulmaya başla!",
+                                      "gameOver": "Oyun Bitti",
+                                      "yourScore": "Puanın:",
+                                      "exitWordAlyxTitle": "WordAlyx'ten Çık?",
+                                      "exitWordAlyxDesc": "Oyundan ayrılmak istediğine emin misin? İlerlemen kaybolacak.",
+                                      "legal": "Yasal",
+                                      "privacyPolicy": "Gizlilik Politikası",
+                                      "privacyWelcomeTitle": "QuizAlyx'e Hoş Geldin!",
+                                      "privacyWelcomeDesc": "Maceraya başlamadan önce, verilerini nasıl koruduğumuzu anlamak için lütfen Gizlilik Politikamızı okuyun ve kabul edin.",
+                                      "readPrivacyPolicy": "Gizlilik Politikasını Oku",
+                                      "acceptAndContinue": "Kabul Et ve Devam Et",
+                                      "creditsPlayStorePublisher": "Play Store Yayıncısı",
+                                      "creditsAppStorePublisher": "App Store Yayıncısı",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "Veritabanı",
+                                      "creditsFrontend": "Frontend Geliştirme",
+                                      "creditsBackend": "Backend",
+                                      "creditsProduction": "Prodüksiyon ve Güncellemeler",
+                                      "creditsWordAlyxUpdate": "WordAlyx Güncellemesi (2026)",
+                                      "creditsProducer": "Yapımcı",
+                                      "tapToSkip": "Geçmek için ekrana dokunun",
+                                      "selectCurrentAccountError": "Lütfen silmek istediğiniz mevcut hesabınızı seçin!"
 }

@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "खाता और डेटा हटाएं?",
                             "deleteAccountConfirmDesc": "यह आपकी प्रोफ़ाइल, उच्च स्कोर, इन्वेंट्री और लीडरबोर्ड डेटा को स्थायी रूप से हटा देगा। इस कार्रवाई को पूर्ववत नहीं किया जा सकता।",
                             "deletePermanently": "स्थायी रूप से हटाएं",
-                            "accountDeletedSuccess": "खाता और सभी संबद्ध डेटा सफलतापूर्वक मिटा दिए गए!",
+                            "accountDeletedSuccess": "खाता सफलतापूर्वक हटा दिया गया!",
                             "deleteAccountError": "त्रुटि: {error}। अपना खाता हटाने के लिए आपको फिर से लॉग इन करना पड़ सकता है।",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "सुरक्षा जाँच",
                                 "securityCheckDesc": "अपना खाता हटाना एक संवेदनशील कार्य है। अपनी सुरक्षा के लिए, कृपया अपना खाता हटाने का प्रयास करने से पहले लॉग आउट करें और फिर से लॉग इन करें।",
-                                "logOutAndReLogin": "लॉग आउट और री-लॉगिन करें"
+                                "logOutAndReLogin": "लॉग आउट और री-लॉगिन करें",
+                                "adNotReady": "विज्ञापन अभी तैयार नहीं है, कृपया एक पल प्रतीक्षा करें।",
+                                  "rewardEarned": "बधाई हो! आपने मुफ़्त सिक्के कमाए हैं।",
+                                  "freeRewards": "मुफ़्त इनाम",
+                                  "watchAd": "वीडियो देखें",
+                                  "watchAdDesc": "मुफ़्त सिक्के कमाएं",
+                                  "videoCannotBePlayed": "वीडियो नहीं चलाया जा सकता!",
+                                    "noInternetMessage": "आप इंटरनेट से जुड़े नहीं हैं। कृपया अपना कनेक्शन जांचें और पुनः प्रयास करें।",
+                                    "okButton": "ठीक है",
+                                    "continueOffline": "ऑफ़लाइन जारी रखें",
+                                      "unknownUser": "अज्ञात उपयोगकर्ता",
+                                      "noEmail": "कोई ईमेल नहीं",
+                                      "offlineModeDataFromDevice": "ऑफ़लाइन मोड: डिवाइस से डेटा पढ़ा गया।",
+                                      "questionsLoadError": "प्रश्न लोड नहीं किए जा सके। कृपया अपना इंटरनेट कनेक्शन जांचें।",
+                                      "points": "अंक",
+                                      "createWord": "शब्द बनाएं...",
+                                      "clear": "साफ़ करें",
+                                      "submit": "सबमिट करें",
+                                      "checking": "जांच की जा रही है...",
+                                      "chooseYourGame": "अपना खेल चुनें",
+                                      "wordTooShort": "शब्द कम से कम 3 अक्षरों का होना चाहिए!",
+                                      "wordAlreadyFound": "आप यह शब्द पहले ही खोज चुके हैं!",
+                                      "pointsEarned": "+{points} अंक!",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "अमान्य शब्द!",
+                                      "startFindingWords": "शब्द खोजना शुरू करें!",
+                                      "gameOver": "खेल खत्म",
+                                      "yourScore": "आपका स्कोर:",
+                                      "exitWordAlyxTitle": "WordAlyx से बाहर निकलें?",
+                                      "exitWordAlyxDesc": "क्या आप वाकई गेम छोड़ना चाहते हैं? आपकी प्रगति खो जाएगी।",
+                                      "legal": "कानूनी",
+                                      "privacyPolicy": "गोपनीयता नीति",
+                                      "privacyWelcomeTitle": "QuizAlyx में आपका स्वागत है!",
+                                      "privacyWelcomeDesc": "शुरू करने से पहले, कृपया हमारी गोपनीयता नीति पढ़ें और स्वीकार करें ताकि आप समझ सकें कि हम आपके डेटा की सुरक्षा कैसे करते हैं।",
+                                      "readPrivacyPolicy": "गोपनीयता नीति पढ़ें",
+                                      "acceptAndContinue": "स्वीकार करें और जारी रखें",
+                                      "creditsPlayStorePublisher": "Play Store प्रकाशक",
+                                      "creditsAppStorePublisher": "App Store प्रकाशक",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "डेटाबेस",
+                                      "creditsFrontend": "फ्रंटएंड विकास",
+                                      "creditsBackend": "बैकएंड",
+                                      "creditsProduction": "उत्पादन और अपडेट",
+                                      "creditsWordAlyxUpdate": "WordAlyx अपडेट (2026)",
+                                      "creditsProducer": "निर्माता",
+                                      "tapToSkip": "छोड़ने के लिए कहीं भी टैप करें",
+                                      "selectCurrentAccountError": "कृपया हटाने के लिए अपना वर्तमान खाता चुनें!"
 }

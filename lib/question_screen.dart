@@ -34,12 +34,20 @@ class Question {
 
   factory Question.fromJson(Map<String, dynamic> json) {
     return Question(
-      id: json['id'] as int,
-      question: json['question'] as String,
-      options: List<String>.from(json['options'] as List<dynamic>),
-      answerIndex: json['answerIndex'] as int,
-      category: json['category'] as String? ?? '',
-      difficulty: json['difficulty'] as String? ?? '',
+      // If the id is accidentally a string or null in the source JSON, it safely converts it to an int.
+      id: json['id'] is int ? json['id'] : int.tryParse(json['id']?.toString() ?? '0') ?? 0,
+
+      // If the question text is missing, it prints a warning text instead of crashing.
+      question: json['question']?.toString() ?? 'Question data could not be retrieved.',
+
+      // If the options are missing/corrupted, it throws an empty list, it doesn't crash.
+      options: json['options'] != null ? List<String>.from(json['options']) : ["A", "B", "C", "D"],
+
+      // If the answerIndex is corrupted/string, it safely converts it to an int.
+      answerIndex: json['answerIndex'] is int ? json['answerIndex'] : int.tryParse(json['answerIndex']?.toString() ?? '0') ?? 0,
+
+      category: json['category']?.toString() ?? 'Mixed',
+      difficulty: json['difficulty']?.toString() ?? 'Mixed',
     );
   }
 }
@@ -159,10 +167,21 @@ class _QuestionScreenState extends State<QuestionScreen>
     await prefs.setInt('${prefix}correct_answers', correctAnswers + answeredCorrectly);
     await prefs.setInt('${prefix}total_answers', totalAnswers + answeredTotal);
 
-    // CLOUD UPDATE (Synchronize leaderboard data)
+    // CLOUD UPDATE (Synchronizing both Leaderboard and Users collections)
     if (user != null) {
-      await FirebaseFirestore.instance.collection('leaderboard').doc(user.uid).set({
-        'score': newTotalXp, // Updates the score in the leaderboard in real time
+      final db = FirebaseFirestore.instance;
+
+      // 1. Leaderboard Update (For the table everyone sees)
+      await db.collection('leaderboard').doc(user.uid).set({
+        'score': newTotalXp,
+      }, SetOptions(merge: true));
+
+      // 2. User Profile Update (Added for My Statistics screen!)
+      await db.collection('users').doc(user.uid).set({
+        'totalXp': newTotalXp,
+        'quizzesPlayed': quizzesPlayed + 1,
+        'correctAnswers': correctAnswers + answeredCorrectly,
+        'totalAnswers': totalAnswers + answeredTotal,
       }, SetOptions(merge: true));
     }
   }
@@ -423,6 +442,25 @@ class _QuestionScreenState extends State<QuestionScreen>
       category: widget.category,
       difficulty: (widget.mode == 'endless') ? 'Mixed' : widget.difficulty,
     );
+
+    // --- CRITICAL FIX HERE ---
+    // If there is no internet and the cache is empty (first login, etc.), stop the function!
+    if (fetchedQuestions.isEmpty) {
+      if (mounted) {
+        setState(() {
+          _revealed = false; // Close the loading screen, return to the "Start
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.questionsLoadError),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 3),
+          ),
+        );
+      }
+      return; // PREVENTS IT FROM GOING DOWN (COUNTER NEVER STARTS!)
+    }
+    // --------------------------------
 
     // 2. ADJUST QUESTION COUNT BASED ON GAME MODE
     if (widget.mode == 'endless') {

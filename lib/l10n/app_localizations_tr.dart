@@ -577,8 +577,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get deletePermanently => 'Kalıcı Olarak Sil';
 
   @override
-  String get accountDeletedSuccess =>
-      'Hesap ve ilişkili tüm veriler başarıyla silindi!';
+  String get accountDeletedSuccess => 'Hesabınız başarıyla silindi!';
 
   @override
   String deleteAccountError(String error) {
@@ -594,4 +593,150 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'Çıkış Yap & Tekrar Gir';
+
+  @override
+  String get adNotReady => 'Reklam henüz hazır değil, lütfen biraz bekle.';
+
+  @override
+  String get rewardEarned => 'Tebrikler! Ücretsiz altın kazandın.';
+
+  @override
+  String get freeRewards => 'ÜCRETSİZ ÖDÜLLER';
+
+  @override
+  String get watchAd => 'Video İzle';
+
+  @override
+  String get watchAdDesc => 'Ücretsiz altın kazan';
+
+  @override
+  String get videoCannotBePlayed => 'Video oynatılamıyor!';
+
+  @override
+  String get noInternetMessage =>
+      'İnternete bağlı değilsiniz. Lütfen bağlantınızı kontrol edin ve tekrar deneyin.';
+
+  @override
+  String get okButton => 'Tamam';
+
+  @override
+  String get continueOffline => 'Çevrimdışı Devam Et';
+
+  @override
+  String get unknownUser => 'Bilinmeyen Kullanıcı';
+
+  @override
+  String get noEmail => 'E-posta Yok';
+
+  @override
+  String get offlineModeDataFromDevice =>
+      'Çevrimdışı Mod: Veriler cihazdan okunuyor.';
+
+  @override
+  String get questionsLoadError =>
+      'Sorular yüklenemedi. Lütfen internet bağlantınızı kontrol edin.';
+
+  @override
+  String get points => 'Puan';
+
+  @override
+  String get createWord => 'Kelime oluştur...';
+
+  @override
+  String get clear => 'Sil';
+
+  @override
+  String get submit => 'GÖNDER';
+
+  @override
+  String get checking => 'kontrol ediliyor...';
+
+  @override
+  String get chooseYourGame => 'Oyununu Seç';
+
+  @override
+  String get wordTooShort => 'Kelime en az 3 harfli olmalı!';
+
+  @override
+  String get wordAlreadyFound => 'Bu kelimeyi zaten buldun!';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points Puan!';
+  }
+
+  @override
+  String get invalidWord => 'Geçersiz kelime!';
+
+  @override
+  String get startFindingWords => 'Kelime bulmaya başla!';
+
+  @override
+  String get gameOver => 'Oyun Bitti';
+
+  @override
+  String get yourScore => 'Puanın:';
+
+  @override
+  String get exitWordAlyxTitle => 'WordAlyx\'ten Çık?';
+
+  @override
+  String get exitWordAlyxDesc =>
+      'Oyundan ayrılmak istediğine emin misin? İlerlemen kaybolacak.';
+
+  @override
+  String get legal => 'Yasal';
+
+  @override
+  String get privacyPolicy => 'Gizlilik Politikası';
+
+  @override
+  String get privacyWelcomeTitle => 'QuizAlyx\'e Hoş Geldin!';
+
+  @override
+  String get privacyWelcomeDesc =>
+      'Maceraya başlamadan önce, verilerini nasıl koruduğumuzu anlamak için lütfen Gizlilik Politikamızı okuyun ve kabul edin.';
+
+  @override
+  String get readPrivacyPolicy => 'Gizlilik Politikasını Oku';
+
+  @override
+  String get acceptAndContinue => 'Kabul Et ve Devam Et';
+
+  @override
+  String get creditsPlayStorePublisher => 'Play Store Yayıncısı';
+
+  @override
+  String get creditsAppStorePublisher => 'App Store Yayıncısı';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'Veritabanı';
+
+  @override
+  String get creditsFrontend => 'Frontend Geliştirme';
+
+  @override
+  String get creditsBackend => 'Backend';
+
+  @override
+  String get creditsProduction => 'Prodüksiyon ve Güncellemeler';
+
+  @override
+  String get creditsWordAlyxUpdate => 'WordAlyx Güncellemesi (2026)';
+
+  @override
+  String get creditsProducer => 'Yapımcı';
+
+  @override
+  String get tapToSkip => 'Geçmek için ekrana dokunun';
+
+  @override
+  String get selectCurrentAccountError =>
+      'Lütfen silmek istediğiniz mevcut hesabınızı seçin!';
 }

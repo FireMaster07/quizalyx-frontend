@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
-import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audioplayers.dart' hide Source;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/services.dart';
 import 'settings_screen.dart';
@@ -22,6 +22,7 @@ import 'l10n/app_localizations.dart';
 import 'audio_manager.dart'; // ADDED
 import 'avatar_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'game_selection_dialog.dart'; // ADDED
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -182,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         Navigator.of(context).pop();
                       },
                       child: Text(
-                        AppLocalizations.of(context)!.playAsGuest,
+                        AppLocalizations.of(context)!.continueOffline,
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -738,8 +739,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Widget _buildProfileDrawer() {
     final firebaseUser = FirebaseAuth.instance.currentUser;
 
-    // ENGINEERING TRICK: Even if an account is open in Firebase, if there is no internet, make the user "null" (Guest)!
-    final user = _hasInternet ? firebaseUser : null;
+    // We no longer reset the user based on internet connection. If logged in, the user remains valid even without internet!
+    final user = firebaseUser;
 
     // Checking if the user is a guest
     final bool isGuest = user == null;
@@ -763,26 +764,42 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               user?.displayName ??
                   AppLocalizations.of(
                     context,
-                  )!.guestPlayer, // Updated for guest
+                  )!.unknownUser, // Updated for guest
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             accountEmail: Text(
               user?.email ??
-                  AppLocalizations.of(
-                    context,
-                  )!.notLoggedIn, // Updated for guest
+                  AppLocalizations.of(context)!.noEmail, // Updated for guest
               style: TextStyle(color: AppColors.textSecondary),
             ),
             currentAccountPicture: isGuest
-                ? CircleAvatar(
-                    backgroundColor: AppColors.primary,
-                    child: Icon(Icons.person, size: 40, color: Colors.white),
+                ? FutureBuilder<SharedPreferences>(
+                    future: SharedPreferences.getInstance(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        int localAvatarIndex =
+                            snapshot.data!.getInt('user_avatar_index') ?? 0;
+                        return AvatarHelper.buildAvatar(
+                          localAvatarIndex,
+                          radius: 35,
+                        );
+                      }
+                      return CircleAvatar(
+                        backgroundColor: AppColors.primary,
+                        child: Icon(
+                          Icons.person,
+                          size: 40,
+                          color: Colors.white,
+                        ),
+                      );
+                    },
                   )
                 : FutureBuilder<DocumentSnapshot>(
+                    // By using source: Source.serverAndCache, we ensure Firebase reads from the device cache when there is no internet!
                     future: FirebaseFirestore.instance
                         .collection('users')
                         .doc(user.uid)
-                        .get(),
+                        .get(GetOptions(source: Source.serverAndCache)),
                     builder: (context, snapshot) {
                       if (snapshot.hasData && snapshot.data!.exists) {
                         int avatarIndex =
@@ -794,9 +811,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           radius: 35,
                         );
                       }
+                      // If there is no internet and nothing can be found in the cache, don’t crash — show the default avatar
                       return CircleAvatar(
                         backgroundColor: AppColors.primary,
-                        child: CircularProgressIndicator(),
+                        child: const Icon(
+                          Icons.person,
+                          size: 40,
+                          color: Colors.white,
+                        ),
                       );
                     },
                   ),
@@ -847,55 +869,38 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
           ),
 
-          // 3. Dynamic Login/Logout Button
+          // 3. Fixed Logout Button
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
                 // If guest, Primary (Purple) color; if logged in, Error (Red) color is assigned
-                backgroundColor: isGuest
-                    ? AppColors.primary.withOpacity(0.2)
-                    : AppColors.error.withOpacity(0.2),
-                foregroundColor: isGuest
-                    ? AppColors.primaryLight
-                    : AppColors.error,
+                backgroundColor: AppColors.error.withOpacity(0.2),
+                foregroundColor: AppColors.error,
                 minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              // Icon set dynamically
-              icon: Icon(isGuest ? Icons.login_rounded : Icons.logout_rounded),
-              // Text set dynamically
+              // Fixed Icon set
+              icon: Icon(Icons.logout_rounded),
+              // Fixed Text set
               label: Text(
-                isGuest
-                    ? AppLocalizations.of(context)!.loginSignup
-                    : AppLocalizations.of(context)!.logOut,
+                AppLocalizations.of(context)!.logOut,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               onPressed: () async {
                 Navigator.pop(context); // Drawer is closed
-
-                if (isGuest) {
-                  // If user is guest, directly navigated to LoginScreen
-                  Navigator.pushReplacement(
+                // If user is logged in, session is terminated and redirected
+                await AuthService().signOut();
+                if (context.mounted) {
+                  Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const LoginScreen(),
                     ),
+                    (Route<dynamic> route) => false,
                   );
-                } else {
-                  // If user is logged in, session is terminated and redirected
-                  await AuthService().signOut();
-                  if (context.mounted) {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
-                      (Route<dynamic> route) => false,
-                    );
-                  }
                 }
               },
             ),
@@ -980,15 +985,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 ), // How much should we darken the background?
                 builder: (BuildContext context) {
                   // We now delegate the job of stopping music to our central manager (AudioManager)
-                  return ModeSelectionDialog(
+                  return GameSelectionDialog(
                     onStopMusic: () => AudioManager.instance.stopMusic(),
                   );
                 },
               ).then((_) {
                 // This runs when the window is closed (after returning from quiz or canceling)
                 _checkCompletedMissions();
-                AudioManager.instance
-                    .playHomeMusic(); // AFTER QUIZ, CONTINUE MAIN MUSIC
               });
             },
             child: Container(

@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "حذف الحساب والبيانات؟",
                             "deleteAccountConfirmDesc": "سيؤدي هذا إلى حذف ملفك الشخصي وأعلى الدرجات والمخزون وبيانات لوحة المتصدرين بشكل دائم. هذا الإجراء لا يمكن التراجع عنه.",
                             "deletePermanently": "حذف نهائي",
-                            "accountDeletedSuccess": "تم مسح الحساب وجميع البيانات المرتبطة به بنجاح!",
+                            "accountDeletedSuccess": "تم حذف الحساب بنجاح!",
                             "deleteAccountError": "خطأ: {error}. قد تحتاج إلى تسجيل الدخول مرة أخرى لحذف حسابك.",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "فحص أمني",
                                 "securityCheckDesc": "حذف حسابك عملية حساسة. من أجل أمانك، يرجى تسجيل الخروج وتسجيل الدخول مرة أخرى قبل محاولة حذف حسابك.",
-                                "logOutAndReLogin": "تسجيل الخروج وإعادة الدخول"
+                                "logOutAndReLogin": "تسجيل الخروج وإعادة الدخول",
+                                "adNotReady": "الإعلان ليس جاهزًا بعد، يرجى الانتظار لحظة.",
+                                  "rewardEarned": "تهانينا! لقد ربحت عملات مجانية.",
+                                  "freeRewards": "مكافآت مجانية",
+                                  "watchAd": "شاهد الفيديو",
+                                  "watchAdDesc": "اربح عملات مجانية",
+                                  "videoCannotBePlayed": "لا يمكن تشغيل الفيديو!",
+                                    "noInternetMessage": "أنت غير متصل بالإنترنت. يرجى التحقق من اتصالك والمحاولة مرة أخرى.",
+                                    "okButton": "حسناً",
+                                    "continueOffline": "المتابعة دون اتصال",
+                                      "unknownUser": "مستخدم غير معروف",
+                                      "noEmail": "لا يوجد بريد إلكتروني",
+                                      "offlineModeDataFromDevice": "وضع عدم الاتصال: تتم قراءة البيانات من الجهاز.",
+                                      "questionsLoadError": "تعذر تحميل الأسئلة. يرجى التحقق من اتصالك بالإنترنت.",
+                                      "points": "نقاط",
+                                      "createWord": "إنشاء كلمة...",
+                                      "clear": "مسح",
+                                      "submit": "إرسال",
+                                      "checking": "قيد التحقق...",
+                                      "chooseYourGame": "اختر لعبتك",
+                                      "wordTooShort": "يجب أن تتكون الكلمة من 3 أحرف على الأقل!",
+                                      "wordAlreadyFound": "لقد وجدت هذه الكلمة بالفعل!",
+                                      "pointsEarned": "+{points} نقاط!",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "كلمة غير صالحة!",
+                                      "startFindingWords": "ابدأ في البحث عن الكلمات!",
+                                      "gameOver": "نهاية اللعبة",
+                                      "yourScore": "نتيجتك:",
+                                      "exitWordAlyxTitle": "الخروج من WordAlyx؟",
+                                      "exitWordAlyxDesc": "هل أنت متأكد أنك تريد مغادرة اللعبة؟ سيتم فقدان تقدمك.",
+                                      "legal": "قانوني",
+                                      "privacyPolicy": "سياسة الخصوصية",
+                                      "privacyWelcomeTitle": "مرحبًا بك في QuizAlyx!",
+                                      "privacyWelcomeDesc": "قبل أن تبدأ، يرجى قراءة وقبول سياسة الخصوصية الخاصة بنا لفهم كيف نحمي بياناتك.",
+                                      "readPrivacyPolicy": "قراءة سياسة الخصوصية",
+                                      "acceptAndContinue": "قبول ومتابعة",
+                                      "creditsPlayStorePublisher": "ناشر متجر Play",
+                                      "creditsAppStorePublisher": "ناشر متجر التطبيقات",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "قاعدة البيانات",
+                                      "creditsFrontend": "تطوير واجهة المستخدم",
+                                      "creditsBackend": "الخلفية",
+                                      "creditsProduction": "الإنتاج والتحديثات",
+                                      "creditsWordAlyxUpdate": "تحديث WordAlyx (2026)",
+                                      "creditsProducer": "المنتج",
+                                      "tapToSkip": "انقر في أي مكان للتخطي",
+                                      "selectCurrentAccountError": "يرجى تحديد حسابك الحالي لحذفه!"
 }

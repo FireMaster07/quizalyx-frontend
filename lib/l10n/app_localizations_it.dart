@@ -579,8 +579,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get deletePermanently => 'Elimina definitivamente';
 
   @override
-  String get accountDeletedSuccess =>
-      'Account e tutti i dati associati cancellati con successo!';
+  String get accountDeletedSuccess => 'Account eliminato con successo!';
 
   @override
   String deleteAccountError(String error) {
@@ -596,4 +595,151 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'Disconnetti e accedi di nuovo';
+
+  @override
+  String get adNotReady =>
+      'L\'annuncio non è ancora pronto, attendi un momento.';
+
+  @override
+  String get rewardEarned => 'Congratulazioni! Hai guadagnato monete gratuite.';
+
+  @override
+  String get freeRewards => 'PREMI GRATUITI';
+
+  @override
+  String get watchAd => 'Guarda il video';
+
+  @override
+  String get watchAdDesc => 'Guadagna monete gratuite';
+
+  @override
+  String get videoCannotBePlayed => 'Impossibile riprodurre il video!';
+
+  @override
+  String get noInternetMessage =>
+      'Non sei connesso a Internet. Controlla la tua connessione e riprova.';
+
+  @override
+  String get okButton => 'OK';
+
+  @override
+  String get continueOffline => 'Continua offline';
+
+  @override
+  String get unknownUser => 'Utente sconosciuto';
+
+  @override
+  String get noEmail => 'Nessuna email';
+
+  @override
+  String get offlineModeDataFromDevice =>
+      'Modalità offline: dati letti dal dispositivo.';
+
+  @override
+  String get questionsLoadError =>
+      'Impossibile caricare le domande. Controlla la tua connessione internet.';
+
+  @override
+  String get points => 'Punti';
+
+  @override
+  String get createWord => 'Crea parola...';
+
+  @override
+  String get clear => 'Cancella';
+
+  @override
+  String get submit => 'INVIA';
+
+  @override
+  String get checking => 'in fase di controllo...';
+
+  @override
+  String get chooseYourGame => 'Scegli il tuo gioco';
+
+  @override
+  String get wordTooShort => 'La parola deve avere almeno 3 lettere!';
+
+  @override
+  String get wordAlreadyFound => 'Hai già trovato questa parola!';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points Punti!';
+  }
+
+  @override
+  String get invalidWord => 'Parola non valida!';
+
+  @override
+  String get startFindingWords => 'Inizia a trovare le parole!';
+
+  @override
+  String get gameOver => 'Partita finita';
+
+  @override
+  String get yourScore => 'Il tuo punteggio:';
+
+  @override
+  String get exitWordAlyxTitle => 'Uscire da WordAlyx?';
+
+  @override
+  String get exitWordAlyxDesc =>
+      'Sei sicuro di voler abbandonare il gioco? I tuoi progressi andranno persi.';
+
+  @override
+  String get legal => 'Legale';
+
+  @override
+  String get privacyPolicy => 'Informativa sulla privacy';
+
+  @override
+  String get privacyWelcomeTitle => 'Benvenuto su QuizAlyx!';
+
+  @override
+  String get privacyWelcomeDesc =>
+      'Prima di iniziare, leggi e accetta la nostra Informativa sulla privacy per capire come proteggiamo i tuoi dati.';
+
+  @override
+  String get readPrivacyPolicy => 'Leggi l\'Informativa sulla privacy';
+
+  @override
+  String get acceptAndContinue => 'Accetta e continua';
+
+  @override
+  String get creditsPlayStorePublisher => 'Editore Play Store';
+
+  @override
+  String get creditsAppStorePublisher => 'Editore App Store';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'Database';
+
+  @override
+  String get creditsFrontend => 'Sviluppo Frontend';
+
+  @override
+  String get creditsBackend => 'Backend';
+
+  @override
+  String get creditsProduction => 'Produzione e Aggiornamenti';
+
+  @override
+  String get creditsWordAlyxUpdate => 'Aggiornamento WordAlyx (2026)';
+
+  @override
+  String get creditsProducer => 'Produttore';
+
+  @override
+  String get tapToSkip => 'Tocca ovunque per saltare';
+
+  @override
+  String get selectCurrentAccountError =>
+      'Seleziona il tuo account attuale per eliminarlo!';
 }

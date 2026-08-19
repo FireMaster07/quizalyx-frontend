@@ -582,8 +582,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get deletePermanently => 'Οριστική Διαγραφή';
 
   @override
-  String get accountDeletedSuccess =>
-      'Ο λογαριασμός και όλα τα σχετικά δεδομένα διαγράφηκαν επιτυχώς!';
+  String get accountDeletedSuccess => 'Ο λογαριασμός διαγράφηκε με επιτυχία!';
 
   @override
   String deleteAccountError(String error) {
@@ -599,4 +598,152 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'Αποσύνδεση & Επανασύνδεση';
+
+  @override
+  String get adNotReady =>
+      'Η διαφήμιση δεν είναι ακόμα έτοιμη, παρακαλώ περιμένετε μια στιγμή.';
+
+  @override
+  String get rewardEarned => 'Συγχαρητήρια! Κερδίσατε δωρεάν νομίσματα.';
+
+  @override
+  String get freeRewards => 'ΔΩΡΕΑΝ ΑΝΤΑΜΟΙΒΕΣ';
+
+  @override
+  String get watchAd => 'Δείτε βίντεο';
+
+  @override
+  String get watchAdDesc => 'Κερδίστε δωρεάν νομίσματα';
+
+  @override
+  String get videoCannotBePlayed =>
+      'Δεν είναι δυνατή η αναπαραγωγή του βίντεο!';
+
+  @override
+  String get noInternetMessage =>
+      'Δεν είστε συνδεδεμένοι στο διαδίκτυο. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.';
+
+  @override
+  String get okButton => 'ΟΚ';
+
+  @override
+  String get continueOffline => 'Συνέχεια εκτός σύνδεσης';
+
+  @override
+  String get unknownUser => 'Άγνωστος χρήστης';
+
+  @override
+  String get noEmail => 'Χωρίς email';
+
+  @override
+  String get offlineModeDataFromDevice =>
+      'Λειτουργία εκτός σύνδεσης: Ανάγνωση δεδομένων από τη συσκευή.';
+
+  @override
+  String get questionsLoadError =>
+      'Δεν ήταν δυνατή η φόρτωση των ερωτήσεων. Παρακαλώ ελέγξτε τη σύνδεσή σας στο διαδίκτυο.';
+
+  @override
+  String get points => 'Πόντοι';
+
+  @override
+  String get createWord => 'Δημιουργία λέξης...';
+
+  @override
+  String get clear => 'Καθαρισμός';
+
+  @override
+  String get submit => 'ΥΠΟΒΟΛΗ';
+
+  @override
+  String get checking => 'ελέγχεται...';
+
+  @override
+  String get chooseYourGame => 'Επιλέξτε το παιχνίδι σας';
+
+  @override
+  String get wordTooShort => 'Η λέξη πρέπει να έχει τουλάχιστον 3 γράμματα!';
+
+  @override
+  String get wordAlreadyFound => 'Βρήκες ήδη αυτή τη λέξη!';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points Πόντοι!';
+  }
+
+  @override
+  String get invalidWord => 'Άκυρη λέξη!';
+
+  @override
+  String get startFindingWords => 'Ξεκίνα να βρίσκεις λέξεις!';
+
+  @override
+  String get gameOver => 'Τέλος παιχνιδιού';
+
+  @override
+  String get yourScore => 'Η βαθμολογία σου:';
+
+  @override
+  String get exitWordAlyxTitle => 'Έξοδος από το WordAlyx;';
+
+  @override
+  String get exitWordAlyxDesc =>
+      'Είστε σίγουροι ότι θέλετε να εγκαταλείψετε το παιχνίδι; Η πρόοδός σας θα χαθεί.';
+
+  @override
+  String get legal => 'Νομικά';
+
+  @override
+  String get privacyPolicy => 'Πολιτική Απορρήτου';
+
+  @override
+  String get privacyWelcomeTitle => 'Καλώς ήρθατε στο QuizAlyx!';
+
+  @override
+  String get privacyWelcomeDesc =>
+      'Πριν ξεκινήσετε, διαβάστε και αποδεχτείτε την Πολιτική Απορρήτου μας για να κατανοήσετε πώς προστατεύουμε τα δεδομένα σας.';
+
+  @override
+  String get readPrivacyPolicy => 'Διαβάστε την Πολιτική Απορρήτου';
+
+  @override
+  String get acceptAndContinue => 'Αποδοχή και συνέχεια';
+
+  @override
+  String get creditsPlayStorePublisher => 'Εκδότης Play Store';
+
+  @override
+  String get creditsAppStorePublisher => 'Εκδότης App Store';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'Βάση δεδομένων';
+
+  @override
+  String get creditsFrontend => 'Ανάπτυξη Frontend';
+
+  @override
+  String get creditsBackend => 'Backend';
+
+  @override
+  String get creditsProduction => 'Παραγωγή & Ενημερώσεις';
+
+  @override
+  String get creditsWordAlyxUpdate => 'Ενημέρωση WordAlyx (2026)';
+
+  @override
+  String get creditsProducer => 'Παραγωγός';
+
+  @override
+  String get tapToSkip => 'Πατήστε οπουδήποτε για παράλειψη';
+
+  @override
+  String get selectCurrentAccountError =>
+      'Επιλέξτε τον τρέχοντα λογαριασμό σας για διαγραφή!';
 }

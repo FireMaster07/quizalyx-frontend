@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "Konto & Daten löschen?",
                             "deleteAccountConfirmDesc": "Dies wird dein Profil, deine Highscores, dein Inventar und deine Bestenlisten-Daten dauerhaft löschen. Diese Aktion KANN NICHT rückgängig gemacht werden.",
                             "deletePermanently": "Dauerhaft löschen",
-                            "accountDeletedSuccess": "Konto und alle zugehörigen Daten erfolgreich gelöscht!",
+                            "accountDeletedSuccess": "Konto erfolgreich gelöscht!",
                             "deleteAccountError": "Fehler: {error}. Möglicherweise musst du dich erneut anmelden, um dein Konto zu löschen.",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "Sicherheitsprüfung",
                                 "securityCheckDesc": "Das Löschen Ihres Kontos ist ein sensibler Vorgang. Zu Ihrer Sicherheit melden Sie sich bitte ab und wieder an, bevor Sie versuchen, Ihr Konto zu löschen.",
-                                "logOutAndReLogin": "Abmelden & Neu anmelden"
+                                "logOutAndReLogin": "Abmelden & Neu anmelden",
+                                "adNotReady": "Anzeige ist noch nicht bereit, bitte warte einen Moment.",
+                                  "rewardEarned": "Herzlichen Glückwunsch! Du hast kostenlose Münzen verdient.",
+                                  "freeRewards": "KOSTENLOSE BELOHNUNGEN",
+                                  "watchAd": "Video ansehen",
+                                  "watchAdDesc": "Verdiene kostenlose Münzen",
+                                  "videoCannotBePlayed": "Video kann nicht abgespielt werden!",
+                                    "noInternetMessage": "Sie sind nicht mit dem Internet verbunden. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+                                    "okButton": "OK",
+                                    "continueOffline": "Offline fortfahren",
+                                      "unknownUser": "Unbekannter Benutzer",
+                                      "noEmail": "Keine E-Mail",
+                                      "offlineModeDataFromDevice": "Offline-Modus: Daten werden vom Gerät gelesen.",
+                                      "questionsLoadError": "Fragen konnten nicht geladen werden. Bitte überprüfen Sie Ihre Internetverbindung.",
+                                      "points": "Punkte",
+                                      "createWord": "Wort erstellen...",
+                                      "clear": "Löschen",
+                                      "submit": "SENDEN",
+                                      "checking": "wird geprüft...",
+                                      "chooseYourGame": "Wähle dein Spiel",
+                                      "wordTooShort": "Wort muss aus mindestens 3 Buchstaben bestehen!",
+                                      "wordAlreadyFound": "Du hast dieses Wort bereits gefunden!",
+                                      "pointsEarned": "+{points} Punkte!",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "Ungültiges Wort!",
+                                      "startFindingWords": "Fange an, Wörter zu finden!",
+                                      "gameOver": "Spiel beendet",
+                                      "yourScore": "Deine Punktzahl:",
+                                      "exitWordAlyxTitle": "WordAlyx beenden?",
+                                      "exitWordAlyxDesc": "Bist du sicher, dass du das Spiel verlassen möchtest? Dein Fortschritt geht verloren.",
+                                      "legal": "Rechtliches",
+                                      "privacyPolicy": "Datenschutzrichtlinie",
+                                      "privacyWelcomeTitle": "Willkommen bei QuizAlyx!",
+                                      "privacyWelcomeDesc": "Bevor du beginnst, lies und akzeptiere bitte unsere Datenschutzrichtlinie, um zu verstehen, wie wir deine Daten schützen.",
+                                      "readPrivacyPolicy": "Datenschutzrichtlinie lesen",
+                                      "acceptAndContinue": "Akzeptieren & Weiter",
+                                      "creditsPlayStorePublisher": "Play Store Herausgeber",
+                                      "creditsAppStorePublisher": "App Store Herausgeber",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "Datenbank",
+                                      "creditsFrontend": "Frontend-Entwicklung",
+                                      "creditsBackend": "Backend",
+                                      "creditsProduction": "Produktion & Updates",
+                                      "creditsWordAlyxUpdate": "WordAlyx Update (2026)",
+                                      "creditsProducer": "Produzent",
+                                      "tapToSkip": "Tippen Sie auf den Bildschirm, um zu überspringen",
+                                      "selectCurrentAccountError": "Bitte wählen Sie Ihr aktuelles Konto aus, um es zu löschen!"
 }

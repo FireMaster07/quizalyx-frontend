@@ -576,8 +576,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get deletePermanently => 'حذف برای همیشه';
 
   @override
-  String get accountDeletedSuccess =>
-      'حساب و تمام داده‌های مرتبط با آن با موفقیت پاک شدند!';
+  String get accountDeletedSuccess => 'حساب با موفقیت حذف شد!';
 
   @override
   String deleteAccountError(String error) {
@@ -593,4 +592,150 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'خروج و ورود مجدد';
+
+  @override
+  String get adNotReady => 'تبلیغ هنوز آماده نیست، لطفاً یک لحظه صبر کنید.';
+
+  @override
+  String get rewardEarned => 'تبریک! شما سکه‌های رایگان به دست آوردید.';
+
+  @override
+  String get freeRewards => 'جوایز رایگان';
+
+  @override
+  String get watchAd => 'تماشای ویدیو';
+
+  @override
+  String get watchAdDesc => 'کسب سکه رایگان';
+
+  @override
+  String get videoCannotBePlayed => 'ویدیو پخش نمی‌شود!';
+
+  @override
+  String get noInternetMessage =>
+      'شما به اینترنت متصل نیستید. لطفاً اتصال خود را بررسی کرده و دوباره تلاش کنید.';
+
+  @override
+  String get okButton => 'باشه';
+
+  @override
+  String get continueOffline => 'ادامه آفلاین';
+
+  @override
+  String get unknownUser => 'کاربر ناشناس';
+
+  @override
+  String get noEmail => 'بدون ایمیل';
+
+  @override
+  String get offlineModeDataFromDevice =>
+      'حالت آفلاین: داده‌ها از دستگاه خوانده می‌شوند.';
+
+  @override
+  String get questionsLoadError =>
+      'سوالات بارگیری نشدند. لطفاً اتصال اینترنت خود را بررسی کنید.';
+
+  @override
+  String get points => 'امتیاز';
+
+  @override
+  String get createWord => 'ساخت کلمه...';
+
+  @override
+  String get clear => 'پاک کردن';
+
+  @override
+  String get submit => 'ارسال';
+
+  @override
+  String get checking => 'در حال بررسی...';
+
+  @override
+  String get chooseYourGame => 'بازی خود را انتخاب کنید';
+
+  @override
+  String get wordTooShort => 'کلمه باید حداقل ۳ حرف داشته باشد!';
+
+  @override
+  String get wordAlreadyFound => 'شما قبلاً این کلمه را پیدا کرده‌اید!';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points امتیاز!';
+  }
+
+  @override
+  String get invalidWord => 'کلمه نامعتبر!';
+
+  @override
+  String get startFindingWords => 'شروع به پیدا کردن کلمات کنید!';
+
+  @override
+  String get gameOver => 'پایان بازی';
+
+  @override
+  String get yourScore => 'امتیاز شما:';
+
+  @override
+  String get exitWordAlyxTitle => 'خروج از WordAlyx؟';
+
+  @override
+  String get exitWordAlyxDesc =>
+      'آیا مطمئن هستید که می خواهید بازی را ترک کنید؟ پیشرفت شما از بین خواهد رفت.';
+
+  @override
+  String get legal => 'حقوقی';
+
+  @override
+  String get privacyPolicy => 'سیاست حفظ حریم خصوصی';
+
+  @override
+  String get privacyWelcomeTitle => 'به QuizAlyx خوش آمدید!';
+
+  @override
+  String get privacyWelcomeDesc =>
+      'قبل از شروع، لطفاً سیاست حفظ حریم خصوصی ما را بخوانید و بپذیرید تا متوجه شوید چگونه از داده‌های شما محافظت می‌کنیم.';
+
+  @override
+  String get readPrivacyPolicy => 'خواندن سیاست حفظ حریم خصوصی';
+
+  @override
+  String get acceptAndContinue => 'پذیرش و ادامه';
+
+  @override
+  String get creditsPlayStorePublisher => 'ناشر Play Store';
+
+  @override
+  String get creditsAppStorePublisher => 'ناشر App Store';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'پایگاه داده';
+
+  @override
+  String get creditsFrontend => 'توسعه فرانت‌اند';
+
+  @override
+  String get creditsBackend => 'بک‌اند';
+
+  @override
+  String get creditsProduction => 'تولید و بروزرسانی‌ها';
+
+  @override
+  String get creditsWordAlyxUpdate => 'بروزرسانی WordAlyx (2026)';
+
+  @override
+  String get creditsProducer => 'تهیه‌کننده';
+
+  @override
+  String get tapToSkip => 'برای رد شدن هر جایی ضربه بزنید';
+
+  @override
+  String get selectCurrentAccountError =>
+      'لطفاً حساب فعلی خود را برای حذف انتخاب کنید!';
 }

@@ -13,6 +13,7 @@ import 'currency_manager.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'l10n/app_localizations.dart';
 import 'audio_manager.dart'; // ADDED
+import 'package:google_mobile_ads/google_mobile_ads.dart'; // NEWLY ADDED
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,14 +21,14 @@ void main() async {
   // ADDED LINE: We start the Firebase engine right here
   await Firebase.initializeApp();
 
+  // START ADMOB SDK
+  // await MobileAds.instance.initialize();
+
   AudioManager.instance.init(); // ADDED: We initialize the music manager
 
   await AppLanguage.loadLanguage();
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-
-  // FOR TESTING, WE TEMPORARILY PAUSE THE UPLOADS
-  // --- Load saved language ---
 
   // OLD: Load all questions into device memory (Now we have Firebase, so this is no longer needed)
   // --- Load questions from JSON ---
@@ -36,6 +37,12 @@ void main() async {
   // --- Load Theme ---
   String savedTheme = await CurrencyManager.getActiveTheme();
   AppColors.themeNotifier.value = savedTheme;
+
+  // --- GELİŞTİRİCİ ARACI: KOPYA SORULARI BUL ---
+  // Sadece konsol (terminal) çıktısını görmek için kullanıyoruz.
+  // Uygulamanın açılmasını engellememesi için başına 'await' KOYMUYORUZ.
+  // QuestionService.findAndLogDuplicateQuestions();
+  // ---------------------------------------------
 
   runApp(const QuizAlyxApp());
 }

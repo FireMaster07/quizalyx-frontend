@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "Удалить аккаунт и данные?",
                             "deleteAccountConfirmDesc": "Это навсегда удалит ваш профиль, рекорды, инвентарь и данные таблицы лидеров. Это действие НЕЛЬЗЯ отменить.",
                             "deletePermanently": "Удалить навсегда",
-                            "accountDeletedSuccess": "Аккаунт и все связанные с ним данные успешно удалены!",
+                            "accountDeletedSuccess": "Аккаунт успешно удален!",
                             "deleteAccountError": "Ошибка: {error}. Возможно, вам придется войти снова, чтобы удалить аккаунт.",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "Проверка безопасности",
                                 "securityCheckDesc": "Удаление учетной записи — это конфиденциальная операция. В целях безопасности выйдите из системы и войдите снова, прежде чем пытаться удалить свою учетную запись.",
-                                "logOutAndReLogin": "Выйти и войти снова"
+                                "logOutAndReLogin": "Выйти и войти снова",
+                                "adNotReady": "Реклама еще не готова, пожалуйста, подождите немного.",
+                                  "rewardEarned": "Поздравляем! Вы заработали бесплатные монеты.",
+                                  "freeRewards": "БЕСПЛАТНЫЕ НАГРАДЫ",
+                                  "watchAd": "Смотреть видео",
+                                  "watchAdDesc": "Заработать бесплатные монеты",
+                                  "videoCannotBePlayed": "Не удается воспроизвести видео!",
+                                    "noInternetMessage": "Вы не подключены к Интернету. Пожалуйста, проверьте подключение и повторите попытку.",
+                                    "okButton": "ОК",
+                                    "continueOffline": "Продолжить оффлайн",
+                                      "unknownUser": "Неизвестный пользователь",
+                                      "noEmail": "Нет электронной почты",
+                                      "offlineModeDataFromDevice": "Офлайн режим: Данные читаются с устройства.",
+                                      "questionsLoadError": "Не удалось загрузить вопросы. Пожалуйста, проверьте подключение к интернету.",
+                                      "points": "Очки",
+                                      "createWord": "Создать слово...",
+                                      "clear": "Очистить",
+                                      "submit": "ОТПРАВИТЬ",
+                                      "checking": "проверяется...",
+                                      "chooseYourGame": "Выбери свою игру",
+                                      "wordTooShort": "Слово должно состоять минимум из 3 букв!",
+                                      "wordAlreadyFound": "Вы уже нашли это слово!",
+                                      "pointsEarned": "+{points} Очков!",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "Недопустимое слово!",
+                                      "startFindingWords": "Начни искать слова!",
+                                      "gameOver": "Игра окончена",
+                                      "yourScore": "Твой счет:",
+                                      "exitWordAlyxTitle": "Выйти из WordAlyx?",
+                                      "exitWordAlyxDesc": "Вы уверены, что хотите выйти из игры? Ваш прогресс будет потерян.",
+                                      "legal": "Правовая информация",
+                                      "privacyPolicy": "Политика конфиденциальности",
+                                      "privacyWelcomeTitle": "Добро пожаловать в QuizAlyx!",
+                                      "privacyWelcomeDesc": "Перед началом игры, пожалуйста, прочтите и примите нашу Политику конфиденциальности, чтобы узнать, как мы защищаем ваши данные.",
+                                      "readPrivacyPolicy": "Читать Политику конфиденциальности",
+                                      "acceptAndContinue": "Принять и продолжить",
+                                      "creditsPlayStorePublisher": "Издатель Play Маркет",
+                                      "creditsAppStorePublisher": "Издатель App Store",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "База данных",
+                                      "creditsFrontend": "Фронтенд-разработка",
+                                      "creditsBackend": "Бэкенд",
+                                      "creditsProduction": "Производство и обновления",
+                                      "creditsWordAlyxUpdate": "Обновление WordAlyx (2026)",
+                                      "creditsProducer": "Продюсер",
+                                      "tapToSkip": "Нажмите в любом месте, чтобы пропустить",
+                                      "selectCurrentAccountError": "Пожалуйста, выберите ваш текущий аккаунт для удаления!"
 }

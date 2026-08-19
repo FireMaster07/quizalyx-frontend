@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "حذف حساب و داده‌ها؟",
                             "deleteAccountConfirmDesc": "این کار پروفایل، رکوردهای بالا، موجودی و داده‌های جدول امتیازات شما را برای همیشه حذف می‌کند. این عمل قابل بازگشت نیست.",
                             "deletePermanently": "حذف برای همیشه",
-                            "accountDeletedSuccess": "حساب و تمام داده‌های مرتبط با آن با موفقیت پاک شدند!",
+                            "accountDeletedSuccess": "حساب با موفقیت حذف شد!",
                             "deleteAccountError": "خطا: {error}. ممکن است لازم باشد برای حذف حساب کاربری خود دوباره وارد شوید.",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "بررسی امنیتی",
                                 "securityCheckDesc": "حذف حساب کاربری شما یک عملیات حساس است. برای امنیت خود، لطفاً قبل از تلاش برای حذف حساب، از سیستم خارج شوید و دوباره وارد شوید.",
-                                "logOutAndReLogin": "خروج و ورود مجدد"
+                                "logOutAndReLogin": "خروج و ورود مجدد",
+                                "adNotReady": "تبلیغ هنوز آماده نیست، لطفاً یک لحظه صبر کنید.",
+                                  "rewardEarned": "تبریک! شما سکه‌های رایگان به دست آوردید.",
+                                  "freeRewards": "جوایز رایگان",
+                                  "watchAd": "تماشای ویدیو",
+                                  "watchAdDesc": "کسب سکه رایگان",
+                                  "videoCannotBePlayed": "ویدیو پخش نمی‌شود!",
+                                    "noInternetMessage": "شما به اینترنت متصل نیستید. لطفاً اتصال خود را بررسی کرده و دوباره تلاش کنید.",
+                                    "okButton": "باشه",
+                                    "continueOffline": "ادامه آفلاین",
+                                      "unknownUser": "کاربر ناشناس",
+                                      "noEmail": "بدون ایمیل",
+                                      "offlineModeDataFromDevice": "حالت آفلاین: داده‌ها از دستگاه خوانده می‌شوند.",
+                                      "questionsLoadError": "سوالات بارگیری نشدند. لطفاً اتصال اینترنت خود را بررسی کنید.",
+                                      "points": "امتیاز",
+                                      "createWord": "ساخت کلمه...",
+                                      "clear": "پاک کردن",
+                                      "submit": "ارسال",
+                                      "checking": "در حال بررسی...",
+                                      "chooseYourGame": "بازی خود را انتخاب کنید",
+                                      "wordTooShort": "کلمه باید حداقل ۳ حرف داشته باشد!",
+                                      "wordAlreadyFound": "شما قبلاً این کلمه را پیدا کرده‌اید!",
+                                      "pointsEarned": "+{points} امتیاز!",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "کلمه نامعتبر!",
+                                      "startFindingWords": "شروع به پیدا کردن کلمات کنید!",
+                                      "gameOver": "پایان بازی",
+                                      "yourScore": "امتیاز شما:",
+                                      "exitWordAlyxTitle": "خروج از WordAlyx؟",
+                                      "exitWordAlyxDesc": "آیا مطمئن هستید که می خواهید بازی را ترک کنید؟ پیشرفت شما از بین خواهد رفت.",
+                                      "legal": "حقوقی",
+                                      "privacyPolicy": "سیاست حفظ حریم خصوصی",
+                                      "privacyWelcomeTitle": "به QuizAlyx خوش آمدید!",
+                                      "privacyWelcomeDesc": "قبل از شروع، لطفاً سیاست حفظ حریم خصوصی ما را بخوانید و بپذیرید تا متوجه شوید چگونه از داده‌های شما محافظت می‌کنیم.",
+                                      "readPrivacyPolicy": "خواندن سیاست حفظ حریم خصوصی",
+                                      "acceptAndContinue": "پذیرش و ادامه",
+                                      "creditsPlayStorePublisher": "ناشر Play Store",
+                                      "creditsAppStorePublisher": "ناشر App Store",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "پایگاه داده",
+                                      "creditsFrontend": "توسعه فرانت‌اند",
+                                      "creditsBackend": "بک‌اند",
+                                      "creditsProduction": "تولید و بروزرسانی‌ها",
+                                      "creditsWordAlyxUpdate": "بروزرسانی WordAlyx (2026)",
+                                      "creditsProducer": "تهیه‌کننده",
+                                      "tapToSkip": "برای رد شدن هر جایی ضربه بزنید",
+                                      "selectCurrentAccountError": "لطفاً حساب فعلی خود را برای حذف انتخاب کنید!"
 }

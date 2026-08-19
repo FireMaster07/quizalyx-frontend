@@ -579,8 +579,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get deletePermanently => 'Eliminar permanentemente';
 
   @override
-  String get accountDeletedSuccess =>
-      '¡Cuenta y todos los datos asociados borrados con éxito!';
+  String get accountDeletedSuccess => '¡Cuenta eliminada con éxito!';
 
   @override
   String deleteAccountError(String error) {
@@ -596,4 +595,150 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'Cerrar sesión y volver a entrar';
+
+  @override
+  String get adNotReady => 'El anuncio aún no está listo, espera un momento.';
+
+  @override
+  String get rewardEarned => '¡Felicidades! Has ganado monedas gratis.';
+
+  @override
+  String get freeRewards => 'RECOMPENSAS GRATIS';
+
+  @override
+  String get watchAd => 'Ver video';
+
+  @override
+  String get watchAdDesc => 'Gana monedas gratis';
+
+  @override
+  String get videoCannotBePlayed => '¡No se puede reproducir el video!';
+
+  @override
+  String get noInternetMessage =>
+      'No estás conectado a Internet. Por favor, verifica tu conexión y vuelve a intentarlo.';
+
+  @override
+  String get okButton => 'Aceptar';
+
+  @override
+  String get continueOffline => 'Continuar sin conexión';
+
+  @override
+  String get unknownUser => 'Usuario desconocido';
+
+  @override
+  String get noEmail => 'Sin correo electrónico';
+
+  @override
+  String get offlineModeDataFromDevice =>
+      'Modo sin conexión: Datos leídos del dispositivo.';
+
+  @override
+  String get questionsLoadError =>
+      'No se pudieron cargar las preguntas. Por favor, comprueba tu conexión a internet.';
+
+  @override
+  String get points => 'Puntos';
+
+  @override
+  String get createWord => 'Crear palabra...';
+
+  @override
+  String get clear => 'Borrar';
+
+  @override
+  String get submit => 'ENVIAR';
+
+  @override
+  String get checking => 'se está comprobando...';
+
+  @override
+  String get chooseYourGame => 'Elige tu juego';
+
+  @override
+  String get wordTooShort => '¡La palabra debe tener al menos 3 letras!';
+
+  @override
+  String get wordAlreadyFound => '¡Ya has encontrado esta palabra!';
+
+  @override
+  String pointsEarned(int points) {
+    return '¡+$points Puntos!';
+  }
+
+  @override
+  String get invalidWord => '¡Palabra inválida!';
+
+  @override
+  String get startFindingWords => '¡Empieza a buscar palabras!';
+
+  @override
+  String get gameOver => 'Fin del juego';
+
+  @override
+  String get yourScore => 'Tu puntuación:';
+
+  @override
+  String get exitWordAlyxTitle => '¿Salir de WordAlyx?';
+
+  @override
+  String get exitWordAlyxDesc =>
+      '¿Estás seguro de que quieres salir del juego? Tu progreso se perderá.';
+
+  @override
+  String get legal => 'Legal';
+
+  @override
+  String get privacyPolicy => 'Política de privacidad';
+
+  @override
+  String get privacyWelcomeTitle => '¡Bienvenido a QuizAlyx!';
+
+  @override
+  String get privacyWelcomeDesc =>
+      'Antes de comenzar, lee y acepta nuestra Política de privacidad para entender cómo protegemos tus datos.';
+
+  @override
+  String get readPrivacyPolicy => 'Leer Política de privacidad';
+
+  @override
+  String get acceptAndContinue => 'Aceptar y continuar';
+
+  @override
+  String get creditsPlayStorePublisher => 'Editor de Play Store';
+
+  @override
+  String get creditsAppStorePublisher => 'Editor de App Store';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'Base de datos';
+
+  @override
+  String get creditsFrontend => 'Desarrollo Frontend';
+
+  @override
+  String get creditsBackend => 'Backend';
+
+  @override
+  String get creditsProduction => 'Producción y Actualizaciones';
+
+  @override
+  String get creditsWordAlyxUpdate => 'Actualización WordAlyx (2026)';
+
+  @override
+  String get creditsProducer => 'Productor';
+
+  @override
+  String get tapToSkip => 'Toca cualquier lugar para omitir';
+
+  @override
+  String get selectCurrentAccountError =>
+      '¡Por favor selecciona tu cuenta actual para eliminarla!';
 }

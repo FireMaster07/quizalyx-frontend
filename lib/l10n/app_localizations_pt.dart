@@ -579,8 +579,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get deletePermanently => 'Excluir Permanentemente';
 
   @override
-  String get accountDeletedSuccess =>
-      'Conta e todos os dados associados apagados com sucesso!';
+  String get accountDeletedSuccess => 'Conta excluída com sucesso!';
 
   @override
   String deleteAccountError(String error) {
@@ -596,4 +595,151 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'Sair e Entrar Novamente';
+
+  @override
+  String get adNotReady =>
+      'O anúncio ainda não está pronto, aguarde um momento.';
+
+  @override
+  String get rewardEarned => 'Parabéns! Você ganhou moedas grátis.';
+
+  @override
+  String get freeRewards => 'RECOMPENSAS GRÁTIS';
+
+  @override
+  String get watchAd => 'Assistir ao vídeo';
+
+  @override
+  String get watchAdDesc => 'Ganhe moedas grátis';
+
+  @override
+  String get videoCannotBePlayed => 'Não é possível reproduzir o vídeo!';
+
+  @override
+  String get noInternetMessage =>
+      'Você não está conectado à internet. Por favor, verifique sua conexão e tente novamente.';
+
+  @override
+  String get okButton => 'OK';
+
+  @override
+  String get continueOffline => 'Continuar offline';
+
+  @override
+  String get unknownUser => 'Usuário desconhecido';
+
+  @override
+  String get noEmail => 'Nenhum e-mail';
+
+  @override
+  String get offlineModeDataFromDevice =>
+      'Modo offline: Dados lidos do dispositivo.';
+
+  @override
+  String get questionsLoadError =>
+      'Não foi possível carregar as perguntas. Por favor, verifique a sua conexão à internet.';
+
+  @override
+  String get points => 'Pontos';
+
+  @override
+  String get createWord => 'Criar palavra...';
+
+  @override
+  String get clear => 'Limpar';
+
+  @override
+  String get submit => 'ENVIAR';
+
+  @override
+  String get checking => 'está sendo verificado...';
+
+  @override
+  String get chooseYourGame => 'Escolha o seu jogo';
+
+  @override
+  String get wordTooShort => 'A palavra deve ter pelo menos 3 letras!';
+
+  @override
+  String get wordAlreadyFound => 'Você já encontrou esta palavra!';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points Pontos!';
+  }
+
+  @override
+  String get invalidWord => 'Palavra inválida!';
+
+  @override
+  String get startFindingWords => 'Comece a encontrar palavras!';
+
+  @override
+  String get gameOver => 'Fim de jogo';
+
+  @override
+  String get yourScore => 'Sua pontuação:';
+
+  @override
+  String get exitWordAlyxTitle => 'Sair do WordAlyx?';
+
+  @override
+  String get exitWordAlyxDesc =>
+      'Tem certeza de que deseja sair do jogo? Seu progresso será perdido.';
+
+  @override
+  String get legal => 'Legal';
+
+  @override
+  String get privacyPolicy => 'Política de Privacidade';
+
+  @override
+  String get privacyWelcomeTitle => 'Bem-vindo ao QuizAlyx!';
+
+  @override
+  String get privacyWelcomeDesc =>
+      'Antes de começar, leia e aceite nossa Política de Privacidade para entender como protegemos seus dados.';
+
+  @override
+  String get readPrivacyPolicy => 'Ler Política de Privacidade';
+
+  @override
+  String get acceptAndContinue => 'Aceitar e continuar';
+
+  @override
+  String get creditsPlayStorePublisher => 'Editor da Play Store';
+
+  @override
+  String get creditsAppStorePublisher => 'Editor da App Store';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'Banco de Dados';
+
+  @override
+  String get creditsFrontend => 'Desenvolvimento Frontend';
+
+  @override
+  String get creditsBackend => 'Backend';
+
+  @override
+  String get creditsProduction => 'Produção e Atualizações';
+
+  @override
+  String get creditsWordAlyxUpdate => 'Atualização WordAlyx (2026)';
+
+  @override
+  String get creditsProducer => 'Produtor';
+
+  @override
+  String get tapToSkip => 'Toque em qualquer lugar para pular';
+
+  @override
+  String get selectCurrentAccountError =>
+      'Por favor, selecione sua conta atual para excluí-la!';
 }

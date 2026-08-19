@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart'; // YORUMA ALINDI: Reklamlar kapalı test sonrası eklenecek
 import 'main.dart'; // For AppColors
 import 'currency_manager.dart';
 import 'l10n/app_localizations.dart';
+// import 'dart:io'; // YORUMA ALINDI: Sadece reklam internet kontrolü için lazımdı
 
 class StoreScreen extends StatefulWidget {
   const StoreScreen({super.key});
@@ -11,29 +13,190 @@ class StoreScreen extends StatefulWidget {
 }
 
 class _StoreScreenState extends State<StoreScreen> {
+  // ESPRESSO TEST FLAG: Can be set to true in the test environment to completely disable ads.
+  // static bool disableAdsForTesting = false; // YORUMA ALINDI
+
   int _coins = 0;
   int _points = 0;
   bool _isLoading = true;
 
-  // Themes
   bool _hasGoldTheme = false;
   bool _hasDiamondTheme = false;
 
-  // SPECIAL OFFER VARIABLES
   int _bundlePurchasedCount = 0;
   final int _bundleMaxLimit = 50;
-  late DateTime _offerDeadline; // Instead of a fixed date, we made it dynamic
+  late DateTime _offerDeadline;
   bool _isOfferActive = false;
+
+  // ADMOB VARIABLES (YORUMA ALINDI)
+  // RewardedAd? _rewardedAd;
+  // bool _isRewardedAdReady = false;
 
   @override
   void initState() {
     super.initState();
-    // NEW: The offer should always end on the last day of the current month
     final now = DateTime.now();
     _offerDeadline = DateTime(now.year, now.month + 1, 0);
 
     _loadBalances();
+    // _loadRewardedAd(); // Start preloading the ad (YORUMA ALINDI)
   }
+
+  /* --- ADMOB LOADING AND DISPLAYING FUNCTIONS (YORUMA ALINDI) ---
+  void _loadRewardedAd() {
+    if (disableAdsForTesting) return; // Cancel loading if in test mode
+
+    RewardedAd.load(
+      adUnitId: 'ca-app-pub-3940256099942544/5224354917', // ANDROID TEST ID (To be changed before publishing)
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          ad.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (ad) {
+              ad.dispose();
+              _loadRewardedAd(); // Load a new ad when the user closes the ad
+            },
+            onAdFailedToShowFullScreenContent: (ad, error) {
+              ad.dispose();
+              _loadRewardedAd(); // Load a new ad if there is a display error
+            },
+          );
+
+          if (mounted) {
+            setState(() {
+              _rewardedAd = ad;
+              _isRewardedAdReady = true;
+            });
+          }
+        },
+        onAdFailedToLoad: (error) {
+          debugPrint('Failed to load Rewarded Ad: $error');
+          _isRewardedAdReady = false;
+        },
+      ),
+    );
+  }
+
+  Future<bool> _hasInternetConnection() async {
+    try {
+      final result = await InternetAddress.lookup('google.com');
+      return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
+    } on SocketException catch (_) {
+      return false;
+    }
+  }
+
+  void _showNoInternetDialog() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            child: Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.topCenter,
+              children: [
+                // Main Content Box
+                Container(
+                  margin: const EdgeInsets.only(top: 16), // Space for the badge above
+                  padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
+                  decoration: BoxDecoration(
+                    color: AppColors.surface, // QuizAlyx dark surface color
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.purpleAccent.withOpacity(0.5), width: 1.5),
+                    boxShadow: [
+                      BoxShadow(color: Colors.black.withOpacity(0.5), blurRadius: 15, spreadRadius: 5)
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.wifi_off_rounded, color: Colors.redAccent, size: 48),
+                      const SizedBox(height: 16),
+                      Text(
+                        AppLocalizations.of(context)?.noInternetMessage ?? "You are not connected to the internet. Please check your connection and try again.",
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(color: Colors.white70, fontSize: 15, height: 1.4),
+                      ),
+                      const SizedBox(height: 24),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.primary, // QuizAlyx purple
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                          ),
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: Text(
+                            AppLocalizations.of(context)?.okButton ?? "OK",
+                            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                // Top-Center Frame Text (Badge)
+                Positioned(
+                  top: 0,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(colors: [Colors.redAccent, Colors.deepOrange]),
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(color: Colors.redAccent.withOpacity(0.4), blurRadius: 8, offset: const Offset(0, 3))
+                      ],
+                    ),
+                    child: Text(
+                      AppLocalizations.of(context)?.videoCannotBePlayed ?? "Video cannot be played!",
+                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13, letterSpacing: 0.5),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+    );
+  }
+
+  void _showRewardedAd() async {
+    // 1. FIRST CHECK INTERNET
+    bool hasInternet = await _hasInternetConnection();
+    if (!hasInternet) {
+      _showNoInternetDialog();
+      return; // If there is no internet, stop the function here, don’t go further
+    }
+
+    // 2. THEN CHECK IF AD IS READY
+    if (!_isRewardedAdReady || _rewardedAd == null) {
+      _showSnack(AppLocalizations.of(context)?.adNotReady ?? "Ad is not ready yet, please wait a moment.", Colors.orange);
+      return;
+    }
+
+    // 3. SHOW THE AD
+    _rewardedAd!.show(onUserEarnedReward: (AdWithoutView ad, RewardItem reward) async {
+      // REWARD PROCESS (e.g., giving 3 Coins)
+      await CurrencyManager.addCoins(3); // User finished the ad, give the reward
+
+      debugPrint("User watched the ad and earned the reward!");
+      _loadBalances();
+
+      if (mounted) {
+        _showSnack(AppLocalizations.of(context)?.rewardEarned ?? "Congratulations! You earned free coins.", Colors.green);
+      }
+    });
+
+    setState(() {
+      _isRewardedAdReady = false;
+      _rewardedAd = null;
+    });
+  }
+  ---------------------------------------------- */
 
   Future<void> _loadBalances() async {
     final c = await CurrencyManager.getCoins();
@@ -41,11 +204,8 @@ class _StoreScreenState extends State<StoreScreen> {
 
     final goldInv = await CurrencyManager.getInventory('theme_gold');
     final diamondInv = await CurrencyManager.getInventory('theme_diamond');
-
-    // We call it from CurrencyManager (It should now be defined there)
     final bundleCount = await CurrencyManager.getSpecialBundleCount();
 
-    // --- SECURITY & OFFER LOGIC ---
     final now = DateTime.now();
     bool isCheating = await CurrencyManager.isDateManipulated();
 
@@ -70,18 +230,13 @@ class _StoreScreenState extends State<StoreScreen> {
     }
   }
 
-  // --- 1. SPECIAL BUNDLE PURCHASE FUNCTION ---
   Future<void> _buySpecialBundle() async {
-    int cost = 15; // Package Price
-
+    int cost = 15;
     bool success = await CurrencyManager.spendCoins(cost);
 
     if (success) {
-      // Provide contents
       await CurrencyManager.addItem('time_freeze');
       await CurrencyManager.addItem('hint_5050');
-
-      // Increment counter
       await CurrencyManager.incrementSpecialBundleCount();
 
       if (mounted) _showSnack(AppLocalizations.of(context)!.specialBundlePurchased(_bundleMaxLimit - _bundlePurchasedCount - 1), Colors.purpleAccent);
@@ -115,7 +270,6 @@ class _StoreScreenState extends State<StoreScreen> {
       } else {
         if (mounted) _showSnack(AppLocalizations.of(context)!.itemPurchased(itemName), Colors.green);
       }
-
       _loadBalances();
     } else {
       if (mounted) _showSnack(AppLocalizations.of(context)!.notEnoughCoins, Colors.red);
@@ -126,6 +280,12 @@ class _StoreScreenState extends State<StoreScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(msg), backgroundColor: color, duration: const Duration(seconds: 2)),
     );
+  }
+
+  @override
+  void dispose() {
+    // _rewardedAd?.dispose(); // YORUMA ALINDI
+    super.dispose();
   }
 
   @override
@@ -166,18 +326,21 @@ class _StoreScreenState extends State<StoreScreen> {
           : ListView(
         padding: const EdgeInsets.all(16),
         children: [
+
+          // 1. FREE REWARDS SECTION (YORUMA ALINDI)
+          // _buildSectionTitle(AppLocalizations.of(context)?.freeRewards ?? "FREE REWARDS"),
+          // _buildFreeRewardCard(),
+          // const SizedBox(height: 24),
+
+          // 2. CURRENCY EXCHANGE SECTION
           _buildSectionTitle(AppLocalizations.of(context)!.currencyExchange),
           _buildExchangeCard(100, 10),
           _buildExchangeCard(500, 60),
-
           const SizedBox(height: 24),
 
+          // 3. SHOP ITEMS SECTION
           _buildSectionTitle(AppLocalizations.of(context)!.shopItems),
-
-          // --- MISSING PART 2: Adding the card to the list ---
           _buildSpecialOfferCard(),
-          // ------------------------------------------
-
           _buildShopItem(
             icon: Icons.lightbulb_rounded,
             name: AppLocalizations.of(context)!.joker5050,
@@ -215,18 +378,63 @@ class _StoreScreenState extends State<StoreScreen> {
     );
   }
 
-  // --- 3. SPECIAL OFFER CARD WIDGET ---
+  /* --- NEW WIDGET: FREE AD CARD (YORUMA ALINDI) ---
+  Widget _buildFreeRewardCard() {
+    if (disableAdsForTesting) return const SizedBox.shrink(); // Hide in test mode
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppColors.surface,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.greenAccent.withOpacity(0.3)),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                const Icon(Icons.play_circle_fill_rounded, color: Colors.greenAccent, size: 28),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(AppLocalizations.of(context)?.watchAd ?? "Watch Video", style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+                      const SizedBox(height: 4),
+                      Text(AppLocalizations.of(context)?.watchAdDesc ?? "Earn free coins", style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ElevatedButton.icon(
+            onPressed: _isRewardedAdReady ? _showRewardedAd : null,
+            icon: const Icon(Icons.monetization_on_rounded, size: 16, color: Color(0xFFFFD700)),
+            label: const Text("+3"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.green.withOpacity(0.2),
+              foregroundColor: Colors.greenAccent,
+              disabledBackgroundColor: Colors.white10,
+              disabledForegroundColor: Colors.white30,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+  -------------------------------------------------- */
+
   Widget _buildSpecialOfferCard() {
-    // NEW CHECK: If the offer is not active, or the limit has been reached, DO NOT SHOW IT ON SCREEN (prevents negative values)
     if (!_isOfferActive || _bundlePurchasedCount >= _bundleMaxLimit) {
       return const SizedBox.shrink();
     }
-
-    // Time check
     final daysLeft = _offerDeadline.difference(DateTime.now()).inDays;
-    if (daysLeft < 0) {
-      return const SizedBox.shrink(); // Extra safety
-    }
+    if (daysLeft < 0) return const SizedBox.shrink();
 
     return Container(
       margin: const EdgeInsets.only(bottom: 24),
@@ -282,12 +490,12 @@ class _StoreScreenState extends State<StoreScreen> {
                     children: [
                       Text(
                         AppLocalizations.of(context)!.megaBoosterPack,
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       const SizedBox(height: 4),
                       Text(
                         AppLocalizations.of(context)!.boosterPackDesc,
-                        style: TextStyle(color: Colors.white70, fontSize: 12),
+                        style: const TextStyle(color: Colors.white70, fontSize: 12),
                       ),
                       const SizedBox(height: 4),
                       Text(
@@ -298,17 +506,17 @@ class _StoreScreenState extends State<StoreScreen> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: _buySpecialBundle, // Now always active, because if inactive we shrink above
+                  onPressed: _buySpecialBundle,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purpleAccent,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   ),
-                  child: Column(
+                  child: const Column(
                     children: [
-                      const Text("15", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                      const Icon(Icons.monetization_on_rounded, size: 14, color: Color(0xFFFFD700)),
+                      Text("15", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                      Icon(Icons.monetization_on_rounded, size: 14, color: Color(0xFFFFD700)),
                     ],
                   ),
                 ),

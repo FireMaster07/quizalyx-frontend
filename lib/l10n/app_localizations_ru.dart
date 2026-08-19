@@ -578,8 +578,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get deletePermanently => 'Удалить навсегда';
 
   @override
-  String get accountDeletedSuccess =>
-      'Аккаунт и все связанные с ним данные успешно удалены!';
+  String get accountDeletedSuccess => 'Аккаунт успешно удален!';
 
   @override
   String deleteAccountError(String error) {
@@ -595,4 +594,151 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'Выйти и войти снова';
+
+  @override
+  String get adNotReady =>
+      'Реклама еще не готова, пожалуйста, подождите немного.';
+
+  @override
+  String get rewardEarned => 'Поздравляем! Вы заработали бесплатные монеты.';
+
+  @override
+  String get freeRewards => 'БЕСПЛАТНЫЕ НАГРАДЫ';
+
+  @override
+  String get watchAd => 'Смотреть видео';
+
+  @override
+  String get watchAdDesc => 'Заработать бесплатные монеты';
+
+  @override
+  String get videoCannotBePlayed => 'Не удается воспроизвести видео!';
+
+  @override
+  String get noInternetMessage =>
+      'Вы не подключены к Интернету. Пожалуйста, проверьте подключение и повторите попытку.';
+
+  @override
+  String get okButton => 'ОК';
+
+  @override
+  String get continueOffline => 'Продолжить оффлайн';
+
+  @override
+  String get unknownUser => 'Неизвестный пользователь';
+
+  @override
+  String get noEmail => 'Нет электронной почты';
+
+  @override
+  String get offlineModeDataFromDevice =>
+      'Офлайн режим: Данные читаются с устройства.';
+
+  @override
+  String get questionsLoadError =>
+      'Не удалось загрузить вопросы. Пожалуйста, проверьте подключение к интернету.';
+
+  @override
+  String get points => 'Очки';
+
+  @override
+  String get createWord => 'Создать слово...';
+
+  @override
+  String get clear => 'Очистить';
+
+  @override
+  String get submit => 'ОТПРАВИТЬ';
+
+  @override
+  String get checking => 'проверяется...';
+
+  @override
+  String get chooseYourGame => 'Выбери свою игру';
+
+  @override
+  String get wordTooShort => 'Слово должно состоять минимум из 3 букв!';
+
+  @override
+  String get wordAlreadyFound => 'Вы уже нашли это слово!';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points Очков!';
+  }
+
+  @override
+  String get invalidWord => 'Недопустимое слово!';
+
+  @override
+  String get startFindingWords => 'Начни искать слова!';
+
+  @override
+  String get gameOver => 'Игра окончена';
+
+  @override
+  String get yourScore => 'Твой счет:';
+
+  @override
+  String get exitWordAlyxTitle => 'Выйти из WordAlyx?';
+
+  @override
+  String get exitWordAlyxDesc =>
+      'Вы уверены, что хотите выйти из игры? Ваш прогресс будет потерян.';
+
+  @override
+  String get legal => 'Правовая информация';
+
+  @override
+  String get privacyPolicy => 'Политика конфиденциальности';
+
+  @override
+  String get privacyWelcomeTitle => 'Добро пожаловать в QuizAlyx!';
+
+  @override
+  String get privacyWelcomeDesc =>
+      'Перед началом игры, пожалуйста, прочтите и примите нашу Политику конфиденциальности, чтобы узнать, как мы защищаем ваши данные.';
+
+  @override
+  String get readPrivacyPolicy => 'Читать Политику конфиденциальности';
+
+  @override
+  String get acceptAndContinue => 'Принять и продолжить';
+
+  @override
+  String get creditsPlayStorePublisher => 'Издатель Play Маркет';
+
+  @override
+  String get creditsAppStorePublisher => 'Издатель App Store';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'База данных';
+
+  @override
+  String get creditsFrontend => 'Фронтенд-разработка';
+
+  @override
+  String get creditsBackend => 'Бэкенд';
+
+  @override
+  String get creditsProduction => 'Производство и обновления';
+
+  @override
+  String get creditsWordAlyxUpdate => 'Обновление WordAlyx (2026)';
+
+  @override
+  String get creditsProducer => 'Продюсер';
+
+  @override
+  String get tapToSkip => 'Нажмите в любом месте, чтобы пропустить';
+
+  @override
+  String get selectCurrentAccountError =>
+      'Пожалуйста, выберите ваш текущий аккаунт для удаления!';
 }

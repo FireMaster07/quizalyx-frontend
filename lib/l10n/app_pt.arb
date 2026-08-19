@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "Excluir Conta e Dados?",
                             "deleteAccountConfirmDesc": "Isso excluirá permanentemente seu perfil, pontuações altas, inventário e dados da tabela de classificação. Esta ação NÃO pode ser desfeita.",
                             "deletePermanently": "Excluir Permanentemente",
-                            "accountDeletedSuccess": "Conta e todos os dados associados apagados com sucesso!",
+                            "accountDeletedSuccess": "Conta excluída com sucesso!",
                             "deleteAccountError": "Erro: {error}. Você pode precisar se autenticar novamente para excluir sua conta.",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "Verificação de Segurança",
                                 "securityCheckDesc": "A exclusão da sua conta é uma operação sensível. Para sua segurança, saia e faça o login novamente antes de tentar excluir sua conta.",
-                                "logOutAndReLogin": "Sair e Entrar Novamente"
+                                "logOutAndReLogin": "Sair e Entrar Novamente",
+                                "adNotReady": "O anúncio ainda não está pronto, aguarde um momento.",
+                                  "rewardEarned": "Parabéns! Você ganhou moedas grátis.",
+                                  "freeRewards": "RECOMPENSAS GRÁTIS",
+                                  "watchAd": "Assistir ao vídeo",
+                                  "watchAdDesc": "Ganhe moedas grátis",
+                                  "videoCannotBePlayed": "Não é possível reproduzir o vídeo!",
+                                    "noInternetMessage": "Você não está conectado à internet. Por favor, verifique sua conexão e tente novamente.",
+                                    "okButton": "OK",
+                                    "continueOffline": "Continuar offline",
+                                      "unknownUser": "Usuário desconhecido",
+                                      "noEmail": "Nenhum e-mail",
+                                      "offlineModeDataFromDevice": "Modo offline: Dados lidos do dispositivo.",
+                                      "questionsLoadError": "Não foi possível carregar as perguntas. Por favor, verifique a sua conexão à internet.",
+                                      "points": "Pontos",
+                                      "createWord": "Criar palavra...",
+                                      "clear": "Limpar",
+                                      "submit": "ENVIAR",
+                                      "checking": "está sendo verificado...",
+                                      "chooseYourGame": "Escolha o seu jogo",
+                                      "wordTooShort": "A palavra deve ter pelo menos 3 letras!",
+                                      "wordAlreadyFound": "Você já encontrou esta palavra!",
+                                      "pointsEarned": "+{points} Pontos!",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "Palavra inválida!",
+                                      "startFindingWords": "Comece a encontrar palavras!",
+                                      "gameOver": "Fim de jogo",
+                                      "yourScore": "Sua pontuação:",
+                                      "exitWordAlyxTitle": "Sair do WordAlyx?",
+                                      "exitWordAlyxDesc": "Tem certeza de que deseja sair do jogo? Seu progresso será perdido.",
+                                      "legal": "Legal",
+                                      "privacyPolicy": "Política de Privacidade",
+                                      "privacyWelcomeTitle": "Bem-vindo ao QuizAlyx!",
+                                      "privacyWelcomeDesc": "Antes de começar, leia e aceite nossa Política de Privacidade para entender como protegemos seus dados.",
+                                      "readPrivacyPolicy": "Ler Política de Privacidade",
+                                      "acceptAndContinue": "Aceitar e continuar",
+                                      "creditsPlayStorePublisher": "Editor da Play Store",
+                                      "creditsAppStorePublisher": "Editor da App Store",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "Banco de Dados",
+                                      "creditsFrontend": "Desenvolvimento Frontend",
+                                      "creditsBackend": "Backend",
+                                      "creditsProduction": "Produção e Atualizações",
+                                      "creditsWordAlyxUpdate": "Atualização WordAlyx (2026)",
+                                      "creditsProducer": "Produtor",
+                                      "tapToSkip": "Toque em qualquer lugar para pular",
+                                      "selectCurrentAccountError": "Por favor, selecione sua conta atual para excluí-la!"
 }

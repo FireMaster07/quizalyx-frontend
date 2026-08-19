@@ -580,8 +580,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get deletePermanently => 'Dauerhaft löschen';
 
   @override
-  String get accountDeletedSuccess =>
-      'Konto und alle zugehörigen Daten erfolgreich gelöscht!';
+  String get accountDeletedSuccess => 'Konto erfolgreich gelöscht!';
 
   @override
   String deleteAccountError(String error) {
@@ -597,4 +596,152 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'Abmelden & Neu anmelden';
+
+  @override
+  String get adNotReady =>
+      'Anzeige ist noch nicht bereit, bitte warte einen Moment.';
+
+  @override
+  String get rewardEarned =>
+      'Herzlichen Glückwunsch! Du hast kostenlose Münzen verdient.';
+
+  @override
+  String get freeRewards => 'KOSTENLOSE BELOHNUNGEN';
+
+  @override
+  String get watchAd => 'Video ansehen';
+
+  @override
+  String get watchAdDesc => 'Verdiene kostenlose Münzen';
+
+  @override
+  String get videoCannotBePlayed => 'Video kann nicht abgespielt werden!';
+
+  @override
+  String get noInternetMessage =>
+      'Sie sind nicht mit dem Internet verbunden. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.';
+
+  @override
+  String get okButton => 'OK';
+
+  @override
+  String get continueOffline => 'Offline fortfahren';
+
+  @override
+  String get unknownUser => 'Unbekannter Benutzer';
+
+  @override
+  String get noEmail => 'Keine E-Mail';
+
+  @override
+  String get offlineModeDataFromDevice =>
+      'Offline-Modus: Daten werden vom Gerät gelesen.';
+
+  @override
+  String get questionsLoadError =>
+      'Fragen konnten nicht geladen werden. Bitte überprüfen Sie Ihre Internetverbindung.';
+
+  @override
+  String get points => 'Punkte';
+
+  @override
+  String get createWord => 'Wort erstellen...';
+
+  @override
+  String get clear => 'Löschen';
+
+  @override
+  String get submit => 'SENDEN';
+
+  @override
+  String get checking => 'wird geprüft...';
+
+  @override
+  String get chooseYourGame => 'Wähle dein Spiel';
+
+  @override
+  String get wordTooShort => 'Wort muss aus mindestens 3 Buchstaben bestehen!';
+
+  @override
+  String get wordAlreadyFound => 'Du hast dieses Wort bereits gefunden!';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points Punkte!';
+  }
+
+  @override
+  String get invalidWord => 'Ungültiges Wort!';
+
+  @override
+  String get startFindingWords => 'Fange an, Wörter zu finden!';
+
+  @override
+  String get gameOver => 'Spiel beendet';
+
+  @override
+  String get yourScore => 'Deine Punktzahl:';
+
+  @override
+  String get exitWordAlyxTitle => 'WordAlyx beenden?';
+
+  @override
+  String get exitWordAlyxDesc =>
+      'Bist du sicher, dass du das Spiel verlassen möchtest? Dein Fortschritt geht verloren.';
+
+  @override
+  String get legal => 'Rechtliches';
+
+  @override
+  String get privacyPolicy => 'Datenschutzrichtlinie';
+
+  @override
+  String get privacyWelcomeTitle => 'Willkommen bei QuizAlyx!';
+
+  @override
+  String get privacyWelcomeDesc =>
+      'Bevor du beginnst, lies und akzeptiere bitte unsere Datenschutzrichtlinie, um zu verstehen, wie wir deine Daten schützen.';
+
+  @override
+  String get readPrivacyPolicy => 'Datenschutzrichtlinie lesen';
+
+  @override
+  String get acceptAndContinue => 'Akzeptieren & Weiter';
+
+  @override
+  String get creditsPlayStorePublisher => 'Play Store Herausgeber';
+
+  @override
+  String get creditsAppStorePublisher => 'App Store Herausgeber';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'Datenbank';
+
+  @override
+  String get creditsFrontend => 'Frontend-Entwicklung';
+
+  @override
+  String get creditsBackend => 'Backend';
+
+  @override
+  String get creditsProduction => 'Produktion & Updates';
+
+  @override
+  String get creditsWordAlyxUpdate => 'WordAlyx Update (2026)';
+
+  @override
+  String get creditsProducer => 'Produzent';
+
+  @override
+  String get tapToSkip => 'Tippen Sie auf den Bildschirm, um zu überspringen';
+
+  @override
+  String get selectCurrentAccountError =>
+      'Bitte wählen Sie Ihr aktuelles Konto aus, um es zu löschen!';
 }

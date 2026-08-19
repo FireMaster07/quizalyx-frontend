@@ -582,8 +582,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get deletePermanently => 'Supprimer définitivement';
 
   @override
-  String get accountDeletedSuccess =>
-      'Compte et toutes les données associées supprimés avec succès !';
+  String get accountDeletedSuccess => 'Compte supprimé avec succès !';
 
   @override
   String deleteAccountError(String error) {
@@ -599,4 +598,152 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get logOutAndReLogin => 'Se déconnecter et se reconnecter';
+
+  @override
+  String get adNotReady =>
+      'La publicité n\'est pas encore prête, veuillez patienter un moment.';
+
+  @override
+  String get rewardEarned =>
+      'Félicitations ! Vous avez gagné des pièces gratuites.';
+
+  @override
+  String get freeRewards => 'RÉCOMPENSES GRATUITES';
+
+  @override
+  String get watchAd => 'Regarder la vidéo';
+
+  @override
+  String get watchAdDesc => 'Gagnez des pièces gratuites';
+
+  @override
+  String get videoCannotBePlayed => 'La vidéo ne peut pas être lue !';
+
+  @override
+  String get noInternetMessage =>
+      'Vous n\'êtes pas connecté à Internet. Veuillez vérifier votre connexion et réessayer.';
+
+  @override
+  String get okButton => 'OK';
+
+  @override
+  String get continueOffline => 'Continuer hors ligne';
+
+  @override
+  String get unknownUser => 'Utilisateur inconnu';
+
+  @override
+  String get noEmail => 'Aucun e-mail';
+
+  @override
+  String get offlineModeDataFromDevice =>
+      'Mode hors ligne : Données lues depuis l\'appareil.';
+
+  @override
+  String get questionsLoadError =>
+      'Impossible de charger les questions. Veuillez vérifier votre connexion internet.';
+
+  @override
+  String get points => 'Points';
+
+  @override
+  String get createWord => 'Créer un mot...';
+
+  @override
+  String get clear => 'Effacer';
+
+  @override
+  String get submit => 'ENVOYER';
+
+  @override
+  String get checking => 'est en cours de vérification...';
+
+  @override
+  String get chooseYourGame => 'Choisis ton jeu';
+
+  @override
+  String get wordTooShort => 'Le mot doit contenir au moins 3 lettres !';
+
+  @override
+  String get wordAlreadyFound => 'Vous avez déjà trouvé ce mot !';
+
+  @override
+  String pointsEarned(int points) {
+    return '+$points Points !';
+  }
+
+  @override
+  String get invalidWord => 'Mot invalide !';
+
+  @override
+  String get startFindingWords => 'Commencez à chercher des mots !';
+
+  @override
+  String get gameOver => 'Partie terminée';
+
+  @override
+  String get yourScore => 'Ton score :';
+
+  @override
+  String get exitWordAlyxTitle => 'Quitter WordAlyx ?';
+
+  @override
+  String get exitWordAlyxDesc =>
+      'Es-tu sûr de vouloir quitter le jeu ? Ta progression sera perdue.';
+
+  @override
+  String get legal => 'Légal';
+
+  @override
+  String get privacyPolicy => 'Politique de confidentialité';
+
+  @override
+  String get privacyWelcomeTitle => 'Bienvenue sur QuizAlyx !';
+
+  @override
+  String get privacyWelcomeDesc =>
+      'Avant de commencer, veuillez lire et accepter notre Politique de confidentialité pour comprendre comment nous protégeons vos données.';
+
+  @override
+  String get readPrivacyPolicy => 'Lire la Politique de confidentialité';
+
+  @override
+  String get acceptAndContinue => 'Accepter et continuer';
+
+  @override
+  String get creditsPlayStorePublisher => 'Éditeur Play Store';
+
+  @override
+  String get creditsAppStorePublisher => 'Éditeur App Store';
+
+  @override
+  String get creditsIDEAndroid => 'IDE (Android)';
+
+  @override
+  String get creditsIDEiOS => 'IDE (iOS)';
+
+  @override
+  String get creditsDatabase => 'Base de données';
+
+  @override
+  String get creditsFrontend => 'Développement Frontend';
+
+  @override
+  String get creditsBackend => 'Backend';
+
+  @override
+  String get creditsProduction => 'Production et Mises à jour';
+
+  @override
+  String get creditsWordAlyxUpdate => 'Mise à jour WordAlyx (2026)';
+
+  @override
+  String get creditsProducer => 'Producteur';
+
+  @override
+  String get tapToSkip => 'Appuyez n\'importe où pour passer';
+
+  @override
+  String get selectCurrentAccountError =>
+      'Veuillez sélectionner votre compte actuel pour le supprimer !';
 }

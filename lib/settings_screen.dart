@@ -7,7 +7,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'main.dart';
 import 'currency_manager.dart';
 import 'login_screen.dart'; // ADDED FOR NAVIGATION
+import 'credits_screen.dart'; // For the credits screen
+import 'auth_service.dart'; // NEWLY ADDED: Our service to solve errors
 import 'l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -190,14 +193,38 @@ class _SettingsScreenState extends State<SettingsScreen> {
       setState(() => _isLoading = true);
 
       try {
-        final user = FirebaseAuth.instance.currentUser;
-        if (user != null) {
+        final currentUser = FirebaseAuth.instance.currentUser;
+        if (currentUser != null) {
+          final currentUid = currentUser.uid;
+
+          // 1. IMPORTANT SECURITY STEP (RE-AUTHENTICATION):
+          // We open the authentication window using our already working AuthService.
+          // This breaks the 'requires-recent-login' loop without needing any extra packages!
+          final userCredential = await AuthService().signInWithGoogle();
+
+          // If the user closes the account selection window with the 'X' button, cancel the operation.
+          if (userCredential == null || userCredential.user == null) {
+            setState(() => _isLoading = false);
+            return;
+          }
+
+          // Security measure: Stop the process if the user accidentally clicks (on another account)
+          if (userCredential.user!.uid != currentUid) {
+            setState(() => _isLoading = false);
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(AppLocalizations.of(context)!.selectCurrentAccountError), backgroundColor: Colors.red)
+              );
+            }
+            return;
+          }
+
+          final user = userCredential.user!;
           final uid = user.uid;
 
-          // 1. CLOUD: Delete leaderboard record
+          // 2. IDENTITY VERIFIED, NOW WE CAN SAFELY DELETE THE DATA
+          // CLOUD: Delete leaderboard and user information
           await FirebaseFirestore.instance.collection('leaderboard').doc(uid).delete();
-
-          // 2. CLOUD: Delete user information
           await FirebaseFirestore.instance.collection('users').doc(uid).delete();
 
           // 3. LOCAL: Delete all local data
@@ -208,70 +235,60 @@ class _SettingsScreenState extends State<SettingsScreen> {
               await prefs.remove(key);
             }
           }
-
-          // MANUALLY DELETE OVERLOOKED GLOBAL DATA (Streak etc.)
           await prefs.remove('daily_streak');
           await prefs.remove('last_reward_date');
 
-          // 4. AUTH: Completely delete account
+          // 4. AUTH: Permanently delete the account and log out
           await user.delete();
+          await FirebaseAuth.instance.signOut();
 
+          // 5. SUCCESS NOTIFICATION AND REDIRECTION TO CREDITS SCREEN
           if (mounted) {
+            ScaffoldMessenger.of(context).clearSnackBars();
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(AppLocalizations.of(context)!.accountDeletedSuccess), backgroundColor: Colors.green),
-            );
-            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const LoginScreen()), (route) => false);
-          }
-        }
-      } on FirebaseAuthException catch (e) {
-        setState(() => _isLoading = false);
-
-        // SECURITY CHECK - NOW TRANSLATION SUPPORTED!
-        if (e.code == 'requires-recent-login') {
-          if (mounted) {
-            showDialog(
-              context: context,
-              barrierDismissible: false,
-              builder: (context) => AlertDialog(
-                backgroundColor: AppColors.surface,
-                title: Row(
+              SnackBar(
+                content: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.security_rounded, color: AppColors.warning),
-                    const SizedBox(width: 8),
-                    Text(AppLocalizations.of(context)!.securityCheckTitle, style: const TextStyle(color: AppColors.warning, fontWeight: FontWeight.bold, fontSize: 18)),
+                    const Icon(Icons.check_circle_outline_rounded, color: Colors.white, size: 24),
+                    const SizedBox(width: 12),
+
+                    // THE SOLUTION IS HERE: We included the Text widget in Flexible!
+                    Flexible(
+                      child: Text(
+                        AppLocalizations.of(context)!.accountDeletedSuccess,
+                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                        textAlign: TextAlign.center,
+                        softWrap: true, // If the text does not fit, it allows it to move to the bottom line
+                      ),
+                    )
                   ],
                 ),
-                content: Text(
-                  AppLocalizations.of(context)!.securityCheckDesc,
-                  style: const TextStyle(color: Colors.white),
+                backgroundColor: Colors.green,
+                behavior: SnackBarBehavior.floating,
+                margin: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height - 160,
+                  left: 32, right: 32,
                 ),
-                actions: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
-                    onPressed: () async {
-                      await FirebaseAuth.instance.signOut();
-                      if (context.mounted) {
-                        Navigator.of(context).pushAndRemoveUntil(
-                          MaterialPageRoute(builder: (context) => const LoginScreen()),
-                              (route) => false,
-                        );
-                      }
-                    },
-                    child: Text(AppLocalizations.of(context)!.logOutAndReLogin, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  )
-                ],
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                elevation: 6,
               ),
             );
-          }
-        } else {
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: ${e.message}"), backgroundColor: Colors.red));
+
+            // Clear all navigation history and go directly to the animated Credits screen
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const CreditsScreen()),
+                  (route) => false,
+            );
           }
         }
       } catch (e) {
         setState(() => _isLoading = false);
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e"), backgroundColor: Colors.red));
+          ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("Error: $e"), backgroundColor: Colors.red)
+          );
         }
       }
     }
@@ -545,6 +562,51 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ],
           ),
           const SizedBox(height: AppSpacing.xxl),
+
+          // --- LEGAL SECTION ---
+          _buildSectionHeader(
+            AppLocalizations.of(context)!.legal, // You can add "Legal" or "About" in l10n
+            Icons.policy_rounded,
+          ),
+          const SizedBox(height: AppSpacing.md),
+          _buildSettingCard(
+            child: ListTile(
+              leading: Icon(
+                Icons.privacy_tip_rounded,
+                color: AppColors.primary,
+              ),
+              title: Text(
+                AppLocalizations.of(context)!.privacyPolicy, // "Privacy Policy"
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              trailing: const Icon(
+                Icons.open_in_new_rounded,
+                color: Colors.white24,
+              ),
+              contentPadding: EdgeInsets.zero,
+              onTap: () async {
+                // Add the actual link to your Firebase website here
+                final Uri url = Uri.parse('https://quizalyx.web.app/privacy-policy.html');
+
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(
+                    url,
+                    mode: LaunchMode.externalApplication, // Opens in the user's default browser (Chrome, Safari, etc.)
+                  );
+                } else {
+                  if (mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Could not open the link.')),
+                    );
+                  }
+                }
+              },
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xl),
 
           // --- DANGER ZONE SECTION (Only shown to logged-in users) ---
           if (FirebaseAuth.instance.currentUser != null) ...[

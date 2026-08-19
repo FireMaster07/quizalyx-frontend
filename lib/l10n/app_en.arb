@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "Delete Account & Data?",
                             "deleteAccountConfirmDesc": "This will permanently delete your profile, high scores, inventory, and leaderboard data. This action CANNOT be undone.",
                             "deletePermanently": "Delete Permanently",
-                            "accountDeletedSuccess": "Account and all associated data successfully wiped!",
+                            "accountDeletedSuccess": "Account successfully deleted!",
                             "deleteAccountError": "Error: {error}. You might need to re-authenticate to delete your account.",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "Security Check",
                                 "securityCheckDesc": "Deleting your account is a sensitive operation. For your security, please log out and log in again before trying to delete your account.",
-                                "logOutAndReLogin": "Log Out & Re-Login"
+                                "logOutAndReLogin": "Log Out & Re-Login",
+                                "adNotReady": "Ad is not ready yet, please wait a moment.",
+                                  "rewardEarned": "Congratulations! You earned free coins.",
+                                  "freeRewards": "FREE REWARDS",
+                                  "watchAd": "Watch Video",
+                                  "watchAdDesc": "Earn free coins",
+                                  "videoCannotBePlayed": "Video cannot be played!",
+                                    "noInternetMessage": "You are not connected to the internet. Please check your connection and try again.",
+                                    "okButton": "OK",
+                                    "continueOffline": "Continue Offline",
+                                      "unknownUser": "Unknown User",
+                                      "noEmail": "No Email",
+                                      "offlineModeDataFromDevice": "Offline Mode: Data read from device.",
+                                      "questionsLoadError": "Questions could not be loaded. Please check your internet connection.",
+                                      "points": "Points",
+                                      "createWord": "Create word...",
+                                      "clear": "Clear",
+                                      "submit": "SUBMIT",
+                                      "checking": "is being checked...",
+                                      "chooseYourGame": "Choose Your Game",
+                                      "wordTooShort": "Word must be at least 3 letters!",
+                                      "wordAlreadyFound": "You already found this word!",
+                                      "pointsEarned": "+{points} Points!",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "Invalid word!",
+                                      "startFindingWords": "Start finding words!",
+                                      "gameOver": "Game Over",
+                                      "yourScore": "Your score:",
+                                      "exitWordAlyxTitle": "Quit WordAlyx?",
+                                      "exitWordAlyxDesc": "Are you sure you want to leave? Your progress will be lost.",
+                                      "legal": "Legal",
+                                      "privacyPolicy": "Privacy Policy",
+                                      "privacyWelcomeTitle": "Welcome to QuizAlyx!",
+                                      "privacyWelcomeDesc": "Before you start your journey, please read and accept our Privacy Policy to understand how we protect your data.",
+                                      "readPrivacyPolicy": "Read Privacy Policy",
+                                      "acceptAndContinue": "Accept & Continue",
+                                      "creditsPlayStorePublisher": "Play Store Publisher",
+                                      "creditsAppStorePublisher": "App Store Publisher",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "Database",
+                                      "creditsFrontend": "Frontend Development",
+                                      "creditsBackend": "Backend",
+                                      "creditsProduction": "Production & Updates",
+                                      "creditsWordAlyxUpdate": "WordAlyx Update (2026)",
+                                      "creditsProducer": "Producer",
+                                      "tapToSkip": "Tap anywhere to skip",
+                                      "selectCurrentAccountError": "Please select your current account to delete it!"
 }

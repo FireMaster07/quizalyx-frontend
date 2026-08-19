@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "アカウントとデータを削除しますか？",
                             "deleteAccountConfirmDesc": "これにより、プロフィール、ハイスコア、インベントリ、リーダーボードのデータが完全に削除されます。この操作は元に戻せません。",
                             "deletePermanently": "完全に削除",
-                            "accountDeletedSuccess": "アカウントとすべての関連データが正常に消去されました！",
+                            "accountDeletedSuccess": "アカウントが正常に削除されました！",
                             "deleteAccountError": "エラー：{error}。アカウントを削除するには、再度ログインする必要がある場合があります。",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "セキュリティチェック",
                                 "securityCheckDesc": "アカウントの削除は重要な操作です。セキュリティのため、アカウントを削除する前に一度ログアウトし、再度ログインしてください。",
-                                "logOutAndReLogin": "ログアウトして再ログイン"
+                                "logOutAndReLogin": "ログアウトして再ログイン",
+                                "adNotReady": "広告の準備がまだできていません。少々お待ちください。",
+                                  "rewardEarned": "おめでとうございます！無料のコインを獲得しました。",
+                                  "freeRewards": "無料報酬",
+                                  "watchAd": "動画を見る",
+                                  "watchAdDesc": "無料コインを稼ぐ",
+                                  "videoCannotBePlayed": "動画を再生できません！",
+                                    "noInternetMessage": "インターネットに接続されていません。接続を確認して、もう一度お試しください。",
+                                    "okButton": "OK",
+                                    "continueOffline": "オフラインで続行",
+                                      "unknownUser": "不明なユーザー",
+                                      "noEmail": "メールなし",
+                                      "offlineModeDataFromDevice": "オフラインモード：デバイスからデータを読み取ります。",
+                                      "questionsLoadError": "問題が読み込めませんでした。インターネット接続を確認してください。",
+                                      "points": "スコア",
+                                      "createWord": "単語を作成...",
+                                      "clear": "クリア",
+                                      "submit": "送信",
+                                      "checking": "確認中...",
+                                      "chooseYourGame": "ゲームを選択",
+                                      "wordTooShort": "単語は3文字以上である必要があります！",
+                                      "wordAlreadyFound": "この単語はすでに見つけました！",
+                                      "pointsEarned": "+{points} ポイント！",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "無効な単語です！",
+                                      "startFindingWords": "単語を見つけ始めましょう！",
+                                      "gameOver": "ゲームオーバー",
+                                      "yourScore": "あなたのスコア：",
+                                      "exitWordAlyxTitle": "WordAlyxを終了しますか？",
+                                      "exitWordAlyxDesc": "本当にゲームを終了しますか？進行状況は失われます。",
+                                      "legal": "法的情報",
+                                      "privacyPolicy": "プライバシーポリシー",
+                                      "privacyWelcomeTitle": "QuizAlyxへようこそ！",
+                                      "privacyWelcomeDesc": "始める前に、データの保護方法をご理解いただくため、プライバシーポリシーを読み、同意してください。",
+                                      "readPrivacyPolicy": "プライバシーポリシーを読む",
+                                      "acceptAndContinue": "同意して続ける",
+                                      "creditsPlayStorePublisher": "Play ストア パブリッシャー",
+                                      "creditsAppStorePublisher": "App Store パブリッシャー",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "データベース",
+                                      "creditsFrontend": "フロントエンド開発",
+                                      "creditsBackend": "バックエンド",
+                                      "creditsProduction": "制作とアップデート",
+                                      "creditsWordAlyxUpdate": "WordAlyx アップデート (2026)",
+                                      "creditsProducer": "プロデューサー",
+                                      "tapToSkip": "どこでもタップしてスキップ",
+                                      "selectCurrentAccountError": "削除する現在のアカウントを選択してください！"
 }

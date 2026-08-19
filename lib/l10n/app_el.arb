@@ -241,7 +241,7 @@
                             "deleteAccountConfirmTitle": "Διαγραφή Λογαριασμού & Δεδομένων;",
                             "deleteAccountConfirmDesc": "Αυτό θα διαγράψει οριστικά το προφίλ σας, τις υψηλές βαθμολογίες, το απόθεμα και τα δεδομένα του πίνακα κατάταξης. Αυτή η ενέργεια ΔΕΝ μπορεί να αναιρεθεί.",
                             "deletePermanently": "Οριστική Διαγραφή",
-                            "accountDeletedSuccess": "Ο λογαριασμός και όλα τα σχετικά δεδομένα διαγράφηκαν επιτυχώς!",
+                            "accountDeletedSuccess": "Ο λογαριασμός διαγράφηκε με επιτυχία!",
                             "deleteAccountError": "Σφάλμα: {error}. Ίσως χρειαστεί να συνδεθείτε ξανά για να διαγράψετε τον λογαριασμό σας.",
                               "@deleteAccountError": {
                                 "placeholders": {
@@ -250,5 +250,58 @@
                               },
                               "securityCheckTitle": "Έλεγχος Ασφαλείας",
                                 "securityCheckDesc": "Η διαγραφή του λογαριασμού σας είναι μια ευαίσθητη διαδικασία. Για την ασφάλειά σας, αποσυνδεθείτε και συνδεθείτε ξανά πριν προσπαθήσετε να διαγράψετε τον λογαριασμό σας.",
-                                "logOutAndReLogin": "Αποσύνδεση & Επανασύνδεση"
+                                "logOutAndReLogin": "Αποσύνδεση & Επανασύνδεση",
+                                "adNotReady": "Η διαφήμιση δεν είναι ακόμα έτοιμη, παρακαλώ περιμένετε μια στιγμή.",
+                                  "rewardEarned": "Συγχαρητήρια! Κερδίσατε δωρεάν νομίσματα.",
+                                  "freeRewards": "ΔΩΡΕΑΝ ΑΝΤΑΜΟΙΒΕΣ",
+                                  "watchAd": "Δείτε βίντεο",
+                                  "watchAdDesc": "Κερδίστε δωρεάν νομίσματα",
+                                  "videoCannotBePlayed": "Δεν είναι δυνατή η αναπαραγωγή του βίντεο!",
+                                    "noInternetMessage": "Δεν είστε συνδεδεμένοι στο διαδίκτυο. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.",
+                                    "okButton": "ΟΚ",
+                                    "continueOffline": "Συνέχεια εκτός σύνδεσης",
+                                      "unknownUser": "Άγνωστος χρήστης",
+                                      "noEmail": "Χωρίς email",
+                                      "offlineModeDataFromDevice": "Λειτουργία εκτός σύνδεσης: Ανάγνωση δεδομένων από τη συσκευή.",
+                                      "questionsLoadError": "Δεν ήταν δυνατή η φόρτωση των ερωτήσεων. Παρακαλώ ελέγξτε τη σύνδεσή σας στο διαδίκτυο.",
+                                      "points": "Πόντοι",
+                                      "createWord": "Δημιουργία λέξης...",
+                                      "clear": "Καθαρισμός",
+                                      "submit": "ΥΠΟΒΟΛΗ",
+                                      "checking": "ελέγχεται...",
+                                      "chooseYourGame": "Επιλέξτε το παιχνίδι σας",
+                                      "wordTooShort": "Η λέξη πρέπει να έχει τουλάχιστον 3 γράμματα!",
+                                      "wordAlreadyFound": "Βρήκες ήδη αυτή τη λέξη!",
+                                      "pointsEarned": "+{points} Πόντοι!",
+                                      "@pointsEarned": {
+                                        "placeholders": {
+                                          "points": {
+                                            "type": "int"
+                                          }
+                                        }
+                                      },
+                                      "invalidWord": "Άκυρη λέξη!",
+                                      "startFindingWords": "Ξεκίνα να βρίσκεις λέξεις!",
+                                      "gameOver": "Τέλος παιχνιδιού",
+                                      "yourScore": "Η βαθμολογία σου:",
+                                      "exitWordAlyxTitle": "Έξοδος από το WordAlyx;",
+                                      "exitWordAlyxDesc": "Είστε σίγουροι ότι θέλετε να εγκαταλείψετε το παιχνίδι; Η πρόοδός σας θα χαθεί.",
+                                      "legal": "Νομικά",
+                                      "privacyPolicy": "Πολιτική Απορρήτου",
+                                      "privacyWelcomeTitle": "Καλώς ήρθατε στο QuizAlyx!",
+                                      "privacyWelcomeDesc": "Πριν ξεκινήσετε, διαβάστε και αποδεχτείτε την Πολιτική Απορρήτου μας για να κατανοήσετε πώς προστατεύουμε τα δεδομένα σας.",
+                                      "readPrivacyPolicy": "Διαβάστε την Πολιτική Απορρήτου",
+                                      "acceptAndContinue": "Αποδοχή και συνέχεια",
+                                      "creditsPlayStorePublisher": "Εκδότης Play Store",
+                                      "creditsAppStorePublisher": "Εκδότης App Store",
+                                      "creditsIDEAndroid": "IDE (Android)",
+                                      "creditsIDEiOS": "IDE (iOS)",
+                                      "creditsDatabase": "Βάση δεδομένων",
+                                      "creditsFrontend": "Ανάπτυξη Frontend",
+                                      "creditsBackend": "Backend",
+                                      "creditsProduction": "Παραγωγή & Ενημερώσεις",
+                                      "creditsWordAlyxUpdate": "Ενημέρωση WordAlyx (2026)",
+                                      "creditsProducer": "Παραγωγός",
+                                      "tapToSkip": "Πατήστε οπουδήποτε για παράλειψη",
+                                      "selectCurrentAccountError": "Επιλέξτε τον τρέχοντα λογαριασμό σας για διαγραφή!"
 }

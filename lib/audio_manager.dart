@@ -47,6 +47,10 @@ class AudioManager with WidgetsBindingObserver {
     await _play('audio/quiz-background-loop-thinking-news-275636.mp3');
   }
 
+  Future<void> playWordAlyxMusic() async {
+    await _play('audio/melodigne-quiz-music-209350.mp3');
+  }
+
   // Smart Play Function
   Future<void> _play(String trackPath) async {
     if (!isSoundOn) {
